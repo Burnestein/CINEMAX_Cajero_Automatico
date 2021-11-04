@@ -33,7 +33,21 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void BtnCartelera_Click(object sender, EventArgs e)
         {
+            TableLayoutPanel Mitabla;
+            Mitabla = new TableLayoutPanel();
             
+            PnlCartelera.Controls.Add(Mitabla);
+            Mitabla.Location = new System.Drawing.Point(0, 0);
+            Mitabla.RowCount = 2;
+            Mitabla.ColumnCount = 3;
+            Mitabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            Mitabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            Mitabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            Mitabla.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            Mitabla.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            Mitabla.Dock = DockStyle.Fill;
+            Mitabla.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+
         }
 
         private void BtnConfiguracion_Click(object sender, EventArgs e)
@@ -54,6 +68,14 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.Text = string.Empty;
             this.MstPrincipal.Visible = false;
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void carteleraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DlgConfigurarCartelera MenuCartelera;
+
+            MenuCartelera = new DlgConfigurarCartelera();
+            MenuCartelera.Show();
         }
     }
 }

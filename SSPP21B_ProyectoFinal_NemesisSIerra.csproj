@@ -46,6 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CTablaPeliculas.cs" />
+    <Compile Include="CPelicula.cs" />
+    <Compile Include="DlgCartelera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgCartelera.Designer.cs">
+      <DependentUpon>DlgCartelera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DlgConfigurarCartelera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgConfigurarCartelera.Designer.cs">
+      <DependentUpon>DlgConfigurarCartelera.cs</DependentUpon>
+    </Compile>
     <Compile Include="DlgMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +68,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DlgCartelera.resx">
+      <DependentUpon>DlgCartelera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgConfigurarCartelera.resx">
+      <DependentUpon>DlgConfigurarCartelera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DlgMenuPrincipal.resx">
       <DependentUpon>DlgMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>

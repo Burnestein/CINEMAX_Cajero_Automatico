@@ -68,6 +68,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PanelPelicula.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelPelicula.Designer.cs">
+      <DependentUpon>PanelPelicula.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DlgCartelera.resx">
       <DependentUpon>DlgCartelera.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DlgMenuPrincipal.resx">
       <DependentUpon>DlgMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelPelicula.resx">
+      <DependentUpon>PanelPelicula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

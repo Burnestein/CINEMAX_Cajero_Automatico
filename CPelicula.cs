@@ -15,7 +15,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public string Duracion { get; set; }
         public string Clasificacion { get; set; }
         public string Genero { get; set; }
-        public string Horarios { get; set; }
+        public List<string> Horarios { get; set; }
         public string Sinopsis { get; set; }
 
 
@@ -23,7 +23,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         //Constructor.
         //---------------------------------------------------------------------
-        public CPelicula(string Titulo, string Duracion, string Genero, string Clasificacion, string Sinopsis, string Horarios)
+        public CPelicula(string Titulo, string Duracion, string Genero, string Clasificacion, string Sinopsis, List<string> Horarios)
         {
             this.Titulo = Titulo;
             this.Duracion = Duracion;
@@ -34,6 +34,19 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         }
 
+        //---------------------------------------------------------------------
+        //Retorna el objeto en forma de lista.
+        //---------------------------------------------------------------------
+        public List<string> ToList()
+        {
+            List<string> lista = new List<string>();
+            lista.Add(Titulo);
+            lista.Add(Duracion);
+            lista.Add(Clasificacion);
+            lista.Add(Genero);
+            lista.Add(Sinopsis);
+            return lista;
+        }
         //---------------------------------------------------------------------
         //Obtiene el titulo de la Pelicula.
         //---------------------------------------------------------------------
@@ -48,20 +61,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public string GetGenero()
         {
             return Genero;
-            /*string Tipo;
-            switch (Genero){
-                case 0:
-                    Tipo = "Acción";
-                    break;
-                case 1:
-                    Tipo = "Ciencia Ficción";
-                    break;
-                default:
-                    Tipo = "";
-                    break;
-
-                }
-            return Tipo;*/
         }
 
         //---------------------------------------------------------------------

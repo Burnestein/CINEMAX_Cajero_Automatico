@@ -57,7 +57,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.DgvPeliculas = new System.Windows.Forms.DataGridView();
             this.PnlTablaPeliculas = new System.Windows.Forms.Panel();
-            this.BtnCrearPelicula = new System.Windows.Forms.Button();
+            this.BtnLimpiarFormulario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NudDuracionPelicula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxImagenPelicula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPeliculas)).BeginInit();
@@ -66,9 +66,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // BtnGuardarPelicula
             // 
-            this.BtnGuardarPelicula.Location = new System.Drawing.Point(774, 278);
+            this.BtnGuardarPelicula.Location = new System.Drawing.Point(397, 289);
             this.BtnGuardarPelicula.Name = "BtnGuardarPelicula";
-            this.BtnGuardarPelicula.Size = new System.Drawing.Size(104, 53);
+            this.BtnGuardarPelicula.Size = new System.Drawing.Size(121, 42);
             this.BtnGuardarPelicula.TabIndex = 1;
             this.BtnGuardarPelicula.Text = "Guardar Pelicula";
             this.BtnGuardarPelicula.UseVisualStyleBackColor = true;
@@ -225,7 +225,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             this.RtbSinopsisPelicula.Location = new System.Drawing.Point(664, 92);
             this.RtbSinopsisPelicula.Name = "RtbSinopsisPelicula";
-            this.RtbSinopsisPelicula.Size = new System.Drawing.Size(306, 180);
+            this.RtbSinopsisPelicula.Size = new System.Drawing.Size(306, 239);
             this.RtbSinopsisPelicula.TabIndex = 21;
             this.RtbSinopsisPelicula.Text = "";
             // 
@@ -240,7 +240,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblImportarXML
             // 
-            this.LblImportarXML.Location = new System.Drawing.Point(9, 12);
+            this.LblImportarXML.Location = new System.Drawing.Point(712, 12);
             this.LblImportarXML.Name = "LblImportarXML";
             this.LblImportarXML.Size = new System.Drawing.Size(126, 27);
             this.LblImportarXML.TabIndex = 23;
@@ -249,7 +249,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblExportarXML
             // 
-            this.LblExportarXML.Location = new System.Drawing.Point(148, 12);
+            this.LblExportarXML.Location = new System.Drawing.Point(844, 12);
             this.LblExportarXML.Name = "LblExportarXML";
             this.LblExportarXML.Size = new System.Drawing.Size(126, 27);
             this.LblExportarXML.TabIndex = 24;
@@ -270,9 +270,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // BtnRemoverPelicula
             // 
-            this.BtnRemoverPelicula.Location = new System.Drawing.Point(884, 278);
+            this.BtnRemoverPelicula.Location = new System.Drawing.Point(524, 289);
             this.BtnRemoverPelicula.Name = "BtnRemoverPelicula";
-            this.BtnRemoverPelicula.Size = new System.Drawing.Size(86, 53);
+            this.BtnRemoverPelicula.Size = new System.Drawing.Size(121, 42);
             this.BtnRemoverPelicula.TabIndex = 26;
             this.BtnRemoverPelicula.Text = "Remover Pelicula";
             this.BtnRemoverPelicula.UseVisualStyleBackColor = true;
@@ -282,7 +282,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             this.PbxImagenPelicula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PbxImagenPelicula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PbxImagenPelicula.Location = new System.Drawing.Point(449, 58);
+            this.PbxImagenPelicula.Location = new System.Drawing.Point(449, 22);
             this.PbxImagenPelicula.Name = "PbxImagenPelicula";
             this.PbxImagenPelicula.Size = new System.Drawing.Size(160, 200);
             this.PbxImagenPelicula.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -291,7 +291,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // BtnCargarImagen
             // 
-            this.BtnCargarImagen.Location = new System.Drawing.Point(449, 271);
+            this.BtnCargarImagen.Location = new System.Drawing.Point(449, 231);
             this.BtnCargarImagen.Name = "BtnCargarImagen";
             this.BtnCargarImagen.Size = new System.Drawing.Size(160, 27);
             this.BtnCargarImagen.TabIndex = 28;
@@ -321,6 +321,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvPeliculas.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvPeliculas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DgvPeliculas.Location = new System.Drawing.Point(0, 0);
             this.DgvPeliculas.Name = "DgvPeliculas";
             this.DgvPeliculas.ReadOnly = true;
@@ -329,7 +330,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.DgvPeliculas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvPeliculas.Size = new System.Drawing.Size(958, 195);
             this.DgvPeliculas.TabIndex = 0;
-            this.DgvPeliculas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPeliculas_CellClick);
             this.DgvPeliculas.DoubleClick += new System.EventHandler(this.DgvPeliculas_DoubleClick);
             // 
             // PnlTablaPeliculas
@@ -342,15 +342,15 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlTablaPeliculas.Size = new System.Drawing.Size(958, 195);
             this.PnlTablaPeliculas.TabIndex = 0;
             // 
-            // BtnCrearPelicula
+            // BtnLimpiarFormulario
             // 
-            this.BtnCrearPelicula.Location = new System.Drawing.Point(664, 278);
-            this.BtnCrearPelicula.Name = "BtnCrearPelicula";
-            this.BtnCrearPelicula.Size = new System.Drawing.Size(101, 53);
-            this.BtnCrearPelicula.TabIndex = 29;
-            this.BtnCrearPelicula.Text = "Nueva Pelicula";
-            this.BtnCrearPelicula.UseVisualStyleBackColor = true;
-            this.BtnCrearPelicula.Click += new System.EventHandler(this.BtnCrearPelicula_Click);
+            this.BtnLimpiarFormulario.Location = new System.Drawing.Point(9, 11);
+            this.BtnLimpiarFormulario.Name = "BtnLimpiarFormulario";
+            this.BtnLimpiarFormulario.Size = new System.Drawing.Size(193, 28);
+            this.BtnLimpiarFormulario.TabIndex = 29;
+            this.BtnLimpiarFormulario.Text = "Limpiar Formulario";
+            this.BtnLimpiarFormulario.UseVisualStyleBackColor = true;
+            this.BtnLimpiarFormulario.Click += new System.EventHandler(this.BtnLimpiarFormulario_Click);
             // 
             // DlgConfigurarCartelera
             // 
@@ -358,7 +358,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(982, 553);
-            this.Controls.Add(this.BtnCrearPelicula);
+            this.Controls.Add(this.BtnLimpiarFormulario);
             this.Controls.Add(this.BtnCargarImagen);
             this.Controls.Add(this.PbxImagenPelicula);
             this.Controls.Add(this.BtnRemoverPelicula);
@@ -423,6 +423,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DataGridView DgvPeliculas;
         private System.Windows.Forms.Panel PnlTablaPeliculas;
-        private System.Windows.Forms.Button BtnCrearPelicula;
+        private System.Windows.Forms.Button BtnLimpiarFormulario;
     }
 }

@@ -16,7 +16,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DlgProyectoFinal());
+            Application.Run(new DlgMenuPrincipal());
         }
     }
 }

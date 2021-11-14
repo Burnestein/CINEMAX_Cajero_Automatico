@@ -29,6 +29,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DlgMenuPrincipal));
             this.PnlBotones = new System.Windows.Forms.Panel();
             this.BtnPromociones = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlSuperior = new System.Windows.Forms.Panel();
+            this.LblCurrentTime = new System.Windows.Forms.Label();
             this.BtnConfiguracion = new System.Windows.Forms.Button();
             this.LblCaja = new System.Windows.Forms.Label();
             this.MstPrincipal = new System.Windows.Forms.MenuStrip();
@@ -45,6 +47,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PnlCartelera = new System.Windows.Forms.Panel();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.PnlBotones.SuspendLayout();
             this.PnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +57,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // PnlBotones
             // 
-            this.PnlBotones.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.PnlBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
             this.PnlBotones.Controls.Add(this.BtnPromociones);
             this.PnlBotones.Controls.Add(this.BtnFuenteSodas);
             this.PnlBotones.Controls.Add(this.BtnCartelera);
@@ -62,7 +65,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlBotones.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnlBotones.Location = new System.Drawing.Point(0, 28);
             this.PnlBotones.Name = "PnlBotones";
-            this.PnlBotones.Size = new System.Drawing.Size(230, 942);
+            this.PnlBotones.Size = new System.Drawing.Size(308, 942);
             this.PnlBotones.TabIndex = 0;
             // 
             // BtnPromociones
@@ -70,15 +73,15 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnPromociones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnPromociones.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnPromociones.FlatAppearance.BorderSize = 0;
-            this.BtnPromociones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateBlue;
+            this.BtnPromociones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
             this.BtnPromociones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPromociones.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPromociones.ForeColor = System.Drawing.Color.White;
             this.BtnPromociones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnPromociones.Location = new System.Drawing.Point(0, 280);
+            this.BtnPromociones.Location = new System.Drawing.Point(0, 348);
             this.BtnPromociones.Name = "BtnPromociones";
             this.BtnPromociones.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnPromociones.Size = new System.Drawing.Size(230, 70);
+            this.BtnPromociones.Size = new System.Drawing.Size(308, 100);
             this.BtnPromociones.TabIndex = 3;
             this.BtnPromociones.Text = "Promociones";
             this.BtnPromociones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -89,15 +92,15 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnFuenteSodas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnFuenteSodas.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnFuenteSodas.FlatAppearance.BorderSize = 0;
-            this.BtnFuenteSodas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateBlue;
+            this.BtnFuenteSodas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
             this.BtnFuenteSodas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFuenteSodas.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFuenteSodas.ForeColor = System.Drawing.Color.White;
             this.BtnFuenteSodas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFuenteSodas.Location = new System.Drawing.Point(0, 210);
+            this.BtnFuenteSodas.Location = new System.Drawing.Point(0, 248);
             this.BtnFuenteSodas.Name = "BtnFuenteSodas";
             this.BtnFuenteSodas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnFuenteSodas.Size = new System.Drawing.Size(230, 70);
+            this.BtnFuenteSodas.Size = new System.Drawing.Size(308, 100);
             this.BtnFuenteSodas.TabIndex = 2;
             this.BtnFuenteSodas.Text = "Fuente de Sodas";
             this.BtnFuenteSodas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -108,15 +111,15 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnCartelera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnCartelera.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnCartelera.FlatAppearance.BorderSize = 0;
-            this.BtnCartelera.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateBlue;
+            this.BtnCartelera.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
             this.BtnCartelera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCartelera.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCartelera.ForeColor = System.Drawing.Color.White;
             this.BtnCartelera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCartelera.Location = new System.Drawing.Point(0, 140);
+            this.BtnCartelera.Location = new System.Drawing.Point(0, 148);
             this.BtnCartelera.Name = "BtnCartelera";
             this.BtnCartelera.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnCartelera.Size = new System.Drawing.Size(230, 70);
+            this.BtnCartelera.Size = new System.Drawing.Size(308, 100);
             this.BtnCartelera.TabIndex = 1;
             this.BtnCartelera.Text = "Cartelera";
             this.BtnCartelera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -129,39 +132,53 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlLogo.Location = new System.Drawing.Point(0, 0);
             this.PnlLogo.Name = "PnlLogo";
-            this.PnlLogo.Size = new System.Drawing.Size(230, 140);
+            this.PnlLogo.Size = new System.Drawing.Size(308, 148);
             this.PnlLogo.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.CinemaxWhite_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(308, 148);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // PnlSuperior
             // 
-            this.PnlSuperior.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.PnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.PnlSuperior.Controls.Add(this.LblCurrentTime);
             this.PnlSuperior.Controls.Add(this.BtnConfiguracion);
             this.PnlSuperior.Controls.Add(this.LblCaja);
             this.PnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlSuperior.Location = new System.Drawing.Point(230, 28);
+            this.PnlSuperior.Location = new System.Drawing.Point(308, 28);
             this.PnlSuperior.Name = "PnlSuperior";
-            this.PnlSuperior.Size = new System.Drawing.Size(1353, 100);
+            this.PnlSuperior.Size = new System.Drawing.Size(1275, 148);
             this.PnlSuperior.TabIndex = 1;
+            // 
+            // LblCurrentTime
+            // 
+            this.LblCurrentTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblCurrentTime.AutoSize = true;
+            this.LblCurrentTime.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCurrentTime.ForeColor = System.Drawing.Color.White;
+            this.LblCurrentTime.Location = new System.Drawing.Point(6, 57);
+            this.LblCurrentTime.Name = "LblCurrentTime";
+            this.LblCurrentTime.Size = new System.Drawing.Size(145, 30);
+            this.LblCurrentTime.TabIndex = 2;
+            this.LblCurrentTime.Text = "--/--/-- --:--";
             // 
             // BtnConfiguracion
             // 
             this.BtnConfiguracion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnConfiguracion.BackColor = System.Drawing.Color.SlateBlue;
+            this.BtnConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(34)))), ((int)(((byte)(214)))), ((int)(((byte)(30)))));
             this.BtnConfiguracion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnConfiguracion.BackgroundImage")));
             this.BtnConfiguracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnConfiguracion.FlatAppearance.BorderSize = 0;
             this.BtnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConfiguracion.Location = new System.Drawing.Point(1328, 0);
+            this.BtnConfiguracion.Location = new System.Drawing.Point(1250, 0);
             this.BtnConfiguracion.Name = "BtnConfiguracion";
             this.BtnConfiguracion.Size = new System.Drawing.Size(25, 25);
             this.BtnConfiguracion.TabIndex = 1;
@@ -172,11 +189,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             this.LblCaja.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblCaja.AutoSize = true;
-            this.LblCaja.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCaja.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCaja.ForeColor = System.Drawing.Color.White;
-            this.LblCaja.Location = new System.Drawing.Point(1204, 33);
+            this.LblCaja.Location = new System.Drawing.Point(1126, 57);
             this.LblCaja.Name = "LblCaja";
-            this.LblCaja.Size = new System.Drawing.Size(81, 30);
+            this.LblCaja.Size = new System.Drawing.Size(83, 31);
             this.LblCaja.TabIndex = 0;
             this.LblCaja.Text = "Caja 1";
             // 
@@ -228,14 +245,19 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // PnlCartelera
             // 
-            this.PnlCartelera.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.PnlCartelera.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PnlCartelera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlCartelera.Location = new System.Drawing.Point(230, 128);
+            this.PnlCartelera.Location = new System.Drawing.Point(308, 176);
             this.PnlCartelera.Name = "PnlCartelera";
-            this.PnlCartelera.Size = new System.Drawing.Size(1353, 842);
+            this.PnlCartelera.Size = new System.Drawing.Size(1275, 794);
             this.PnlCartelera.TabIndex = 3;
             // 
-            // DlgProyectoFinal
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // DlgMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -248,10 +270,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MstPrincipal;
             this.MaximizeBox = false;
-            this.Name = "DlgProyectoFinal";
+            this.Name = "DlgMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cinemax || Punto de venta automático";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.DlgMenuPrincipal_Load);
             this.PnlBotones.ResumeLayout(false);
             this.PnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -281,6 +304,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private System.Windows.Forms.ToolStripMenuItem VolverToolStripMenuItem;
         private System.Windows.Forms.Panel PnlCartelera;
         private System.Windows.Forms.ToolStripMenuItem carteleraToolStripMenuItem;
+        private System.Windows.Forms.Label LblCurrentTime;
+        private System.Windows.Forms.Timer timer;
     }
 }
 

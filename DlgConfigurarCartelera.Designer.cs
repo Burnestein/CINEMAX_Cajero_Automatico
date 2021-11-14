@@ -52,16 +52,16 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblExportarXML = new System.Windows.Forms.Button();
             this.DtpHorarioPelicula = new System.Windows.Forms.DateTimePicker();
             this.BtnRemoverPelicula = new System.Windows.Forms.Button();
-            this.PbxImagenPelicula = new System.Windows.Forms.PictureBox();
             this.BtnCargarImagen = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.DgvPeliculas = new System.Windows.Forms.DataGridView();
             this.PnlTablaPeliculas = new System.Windows.Forms.Panel();
             this.BtnLimpiarFormulario = new System.Windows.Forms.Button();
+            this.PbxImagenPelicula = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.NudDuracionPelicula)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxImagenPelicula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPeliculas)).BeginInit();
             this.PnlTablaPeliculas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxImagenPelicula)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnGuardarPelicula
@@ -102,6 +102,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // CbxGeneroPelicula
             // 
+            this.CbxGeneroPelicula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxGeneroPelicula.FormattingEnabled = true;
             this.CbxGeneroPelicula.Items.AddRange(new object[] {
             "Acción",
@@ -122,6 +123,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // CbxClasificacionPelicula
             // 
+            this.CbxClasificacionPelicula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxClasificacionPelicula.FormattingEnabled = true;
             this.CbxClasificacionPelicula.Items.AddRange(new object[] {
             "AA",
@@ -258,13 +260,13 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // DtpHorarioPelicula
             // 
-            this.DtpHorarioPelicula.CustomFormat = "HH:mm";
+            this.DtpHorarioPelicula.CustomFormat = "hh:mm tt";
             this.DtpHorarioPelicula.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DtpHorarioPelicula.Location = new System.Drawing.Point(226, 236);
             this.DtpHorarioPelicula.Name = "DtpHorarioPelicula";
             this.DtpHorarioPelicula.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DtpHorarioPelicula.ShowUpDown = true;
-            this.DtpHorarioPelicula.Size = new System.Drawing.Size(83, 22);
+            this.DtpHorarioPelicula.Size = new System.Drawing.Size(106, 22);
             this.DtpHorarioPelicula.TabIndex = 25;
             this.DtpHorarioPelicula.Value = new System.DateTime(2021, 10, 30, 0, 0, 0, 0);
             // 
@@ -277,17 +279,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnRemoverPelicula.Text = "Remover Pelicula";
             this.BtnRemoverPelicula.UseVisualStyleBackColor = true;
             this.BtnRemoverPelicula.Click += new System.EventHandler(this.BtnRemoverPelicula_Click);
-            // 
-            // PbxImagenPelicula
-            // 
-            this.PbxImagenPelicula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PbxImagenPelicula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PbxImagenPelicula.Location = new System.Drawing.Point(449, 22);
-            this.PbxImagenPelicula.Name = "PbxImagenPelicula";
-            this.PbxImagenPelicula.Size = new System.Drawing.Size(160, 200);
-            this.PbxImagenPelicula.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PbxImagenPelicula.TabIndex = 27;
-            this.PbxImagenPelicula.TabStop = false;
             // 
             // BtnCargarImagen
             // 
@@ -323,6 +314,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.DgvPeliculas.DefaultCellStyle = dataGridViewCellStyle1;
             this.DgvPeliculas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DgvPeliculas.Location = new System.Drawing.Point(0, 0);
+            this.DgvPeliculas.MultiSelect = false;
             this.DgvPeliculas.Name = "DgvPeliculas";
             this.DgvPeliculas.ReadOnly = true;
             this.DgvPeliculas.RowHeadersWidth = 51;
@@ -351,6 +343,20 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnLimpiarFormulario.Text = "Limpiar Formulario";
             this.BtnLimpiarFormulario.UseVisualStyleBackColor = true;
             this.BtnLimpiarFormulario.Click += new System.EventHandler(this.BtnLimpiarFormulario_Click);
+            // 
+            // PbxImagenPelicula
+            // 
+            this.PbxImagenPelicula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PbxImagenPelicula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PbxImagenPelicula.ErrorImage = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.Cinemax_Logo;
+            this.PbxImagenPelicula.Image = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.Cinemax_Logo;
+            this.PbxImagenPelicula.InitialImage = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.Cinemax_Logo;
+            this.PbxImagenPelicula.Location = new System.Drawing.Point(449, 22);
+            this.PbxImagenPelicula.Name = "PbxImagenPelicula";
+            this.PbxImagenPelicula.Size = new System.Drawing.Size(160, 200);
+            this.PbxImagenPelicula.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbxImagenPelicula.TabIndex = 27;
+            this.PbxImagenPelicula.TabStop = false;
             // 
             // DlgConfigurarCartelera
             // 
@@ -388,9 +394,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.Text = "Configurar Cartelera";
             this.Load += new System.EventHandler(this.DlgConfigurarCartelera_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NudDuracionPelicula)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxImagenPelicula)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPeliculas)).EndInit();
             this.PnlTablaPeliculas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PbxImagenPelicula)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

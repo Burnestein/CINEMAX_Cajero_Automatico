@@ -35,11 +35,28 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.MstPrincipal.Visible = false;
             this.Mitabla = new TableLayoutPanel();
             ListaPeliculas = new List<CPelicula>();
-            //ListaPeliculas = null;
+            //ListaHorarios = new List<string>();
+            Label Date = new Label();
+            Date = LblCurrentTime;
+
         }
         
         private void BtnCartelera_Click(object sender, EventArgs e)
         {
+            CargarCartelera();
+        }
+
+        public void CargarPanelPelicula(CPelicula Pelicula)
+        {
+            PanelPeliculaGrande MiPanelGrande = new PanelPeliculaGrande(Pelicula);
+            PnlCartelera.Controls.Clear();
+            PnlCartelera.Controls.Add(MiPanelGrande);
+            MiPanelGrande.Dock = DockStyle.Fill;
+            //MessageBox.Show(ListaPeliculas.IndexOf(""));
+        }
+        public void CargarCartelera()
+        {
+            PnlCartelera.Controls.Clear();
             Mitabla.Controls.Clear();
             PnlCartelera.Controls.Add(Mitabla);
             Mitabla.Location = new System.Drawing.Point(0, 0);
@@ -51,9 +68,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             Mitabla.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             Mitabla.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             Mitabla.Dock = DockStyle.Fill;
-            Mitabla.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-            //List<string> Lista=ListaPeliculas[0].ToList();
-            //MessageBox.Show(Lista[0]);
+            Mitabla.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
+
             int n = 0;
             int rows;
             int cols;
@@ -67,21 +83,36 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 rows = 2;
                 cols = 3;
             }
-            for(int row = 0; row < rows; row++)
+            for (int row = 0; row < rows; row++)
             {
                 for (int col = 0; col < cols; col++)
                 {
-                    List<string> Lista = ListaPeliculas[n].ToList();
-                    PanelPelicula MiPanel = new PanelPelicula();
-                    //CPelicula[] arreglo = ListaPeliculas.ToArray();
-                    MiPanel.Lbl.Text = Lista[0];
+                    //List<string> Lista = ListaPeliculas[n].ToList();
+                    PanelPelicula MiPanel = new PanelPelicula(ListaPeliculas[n]);
+                    //DlgConfigurarCartelera MiConfPeli = new DlgConfigurarCartelera;
+                    //MiPanel.Titulo.Text = ListaPeliculas[n].Titulo;
+                    //MiPanel.Clasificacion.Text = "Clasificación " + ListaPeliculas[n].Clasificacion;
+                    //MiPanel.Duracion.Text = ListaPeliculas[n].Duracion + " Mins";
+                    //MiPanel.Genero.Text = ListaPeliculas[n].Genero;
+                    //MiPanel.Portada.Image = ListaPeliculas[n].Portada;
+                    //MiPanel.Portada.Image = 
+                    //MiPanel.Titulo.Text = Lista[0];
+                    //MiPanel.Clasificacion.Text = "Clasificación " + Lista[1];
+                    //MiPanel.Duracion.Text = Lista[2] + " Mins";
+                    //MiPanel.Genero.Text = Lista[3];
+                    /*int ConteoHorarios = ListaPeliculas[n].Horarios.Count;
+                    for (int i = 0; i < ConteoHorarios; i++)
+                    {
+                        Label Hora = new Label();
+                        Hora.Text = ListaPeliculas[n].Horarios[i];
+                        MiPanel.Horarios.Controls.Add(Hora);
+                    }*/
                     Mitabla.Controls.Add(MiPanel, col, row);
                     n++;
                 }
                 cols = ListaPeliculas.Count - 3;
             }
         }
-
         private void BtnConfiguracion_Click(object sender, EventArgs e)
         {
             this.ControlBox = true;
@@ -103,11 +134,19 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         {
             DlgConfigurarCartelera MenuCartelera;
 
-            MenuCartelera = new DlgConfigurarCartelera(ListaPeliculas);
+            MenuCartelera = new DlgConfigurarCartelera();
             MenuCartelera.Show();
-            //DlgConfigurarCartelera Miobjeto = new DlgConfigurarCartelera();
-            //ListaPeliculas = Miobjeto.ValorLIsta();
-            //MessageBox.Show(ListaPeliculas[0].ToString());
+        }
+
+        private void DlgMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            CargarCartelera();
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            LblCurrentTime.Text = DateTime.Now.ToString("dddd dd/MMM/yyyy hh:mm tt");
         }
     }
 }

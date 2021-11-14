@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
@@ -9,14 +10,14 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
     {
         public static DlgConfigurarCartelera ConfigurarCartelera;
         private int indice=-1;
-        private List<CPelicula> Peliculas;
+        public List<CPelicula> Peliculas = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas;
+        //private Image Portada;
         //private string filepath = "C:\\Users\\burn_\\Desktop\\Test.txt";
 
-        public DlgConfigurarCartelera(List<CPelicula> Peliculas)
+        public DlgConfigurarCartelera()
         {
             InitializeComponent();
             ConfigurarCartelera = this;
-            this.Peliculas = Peliculas;
         }
         private void BtnLimpiarFormulario_Click(object sender, EventArgs e)
         {
@@ -46,7 +47,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 CbxGeneroPelicula.Text,
                 CbxClasificacionPelicula.Text,
                 RtbSinopsisPelicula.Text,
-                HorarioPelicula
+                HorarioPelicula,
+                PbxImagenPelicula.Image
                 );
 
             if (indice > -1)
@@ -58,10 +60,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 Peliculas.Add(Pelicula);
             }
-            //Peliculas.Add(Pelicula);
-            //List<string> lista = Peliculas.ToList();
-            //File.WriteAllLines(filepath, Peliculas);
-            DlgMenuPrincipal.MenuPrincipal.ListaPeliculas = Peliculas;
+            //DlgMenuPrincipal.MenuPrincipal.ListaPeliculas = Peliculas;
+            //DlgMenuPrincipal.MenuPrincipal.ListaHorarios = HorarioPelicula;
+            DlgMenuPrincipal.MenuPrincipal.CargarCartelera();
             LimpiarFormulario();
             ActualizarTabla();
         }
@@ -76,8 +77,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             CbxGeneroPelicula.Text = "";
             CbxClasificacionPelicula.Text = "";
             LbxHorariosPelicula.Items.Clear();
-            PbxImagenPelicula.Image = null;
+            PbxImagenPelicula.Image = Properties.Resources.Cinemax_Logo;
             RtbSinopsisPelicula.Text = "";
+
         }
 
         //---------------------------------------------------------------------
@@ -85,7 +87,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         private void BtnAgregarHorario_Click(object sender, EventArgs e)
         {
-            LbxHorariosPelicula.Items.Add(DtpHorarioPelicula.Value.TimeOfDay.ToString());
+            LbxHorariosPelicula.Items.Add(DtpHorarioPelicula.Value.ToString("hh:mm tt"));
         }
 
         //---------------------------------------------------------------------
@@ -107,6 +109,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 indice = -1;
                 LimpiarFormulario();
                 ActualizarTabla();
+                DlgMenuPrincipal.MenuPrincipal.CargarCartelera();
             }
             else
             {
@@ -115,7 +118,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         }
 
         //---------------------------------------------------------------------
-        //Carga una imagen de la película.
+        //Carga una imagen para la portada de la película.
         //---------------------------------------------------------------------
         private void BtnCargarImagen_Click(object sender, EventArgs e)
         {
@@ -129,6 +132,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         { 
                 DgvPeliculas.DataSource = null;
                 DgvPeliculas.DataSource = Peliculas;
+                DgvPeliculas.Columns["Portada"].Visible = false;
+                DgvPeliculas.Columns["Sinopsis"].Visible = false;
                 DgvPeliculas.ClearSelection();
         }
 
@@ -144,6 +149,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             CbxGeneroPelicula.Text = Pelicula.Genero;
             RtbSinopsisPelicula.Text = Pelicula.Sinopsis;
             LbxHorariosPelicula.Items.Clear();
+            PbxImagenPelicula.Image = Pelicula.Portada;
             for(int i=0;i< Pelicula.Horarios.Count; i++)
             {
                 LbxHorariosPelicula.Items.Add(Pelicula.Horarios[i]);
@@ -155,6 +161,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             if (Peliculas.Count!=0)
             {
                 ActualizarTabla();
+                
             }
         }
     }

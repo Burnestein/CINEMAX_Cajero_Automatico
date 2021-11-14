@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
@@ -11,19 +12,19 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         //Atributos.
         //---------------------------------------------------------------------
+        public int NumPelicula { get; set; }
         public string Titulo { get; set; }
         public string Duracion { get; set; }
         public string Clasificacion { get; set; }
         public string Genero { get; set; }
         public List<string> Horarios { get; set; }
         public string Sinopsis { get; set; }
-
-
+        public Image Portada { get; set; }
 
         //---------------------------------------------------------------------
         //Constructor.
         //---------------------------------------------------------------------
-        public CPelicula(string Titulo, string Duracion, string Genero, string Clasificacion, string Sinopsis, List<string> Horarios)
+        public CPelicula(string Titulo, string Duracion, string Genero, string Clasificacion, string Sinopsis, List<string> Horarios, Image Portada)
         {
             this.Titulo = Titulo;
             this.Duracion = Duracion;
@@ -31,22 +32,23 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.Genero = Genero;
             this.Sinopsis = Sinopsis;
             this.Horarios = Horarios;
-
+            this.Portada = Portada;
         }
 
         //---------------------------------------------------------------------
-        //Retorna el objeto en forma de lista.
+        //Retorna el objeto CPelicula en forma de lista.
         //---------------------------------------------------------------------
         public List<string> ToList()
         {
             List<string> lista = new List<string>();
             lista.Add(Titulo);
-            lista.Add(Duracion);
             lista.Add(Clasificacion);
+            lista.Add(Duracion);
             lista.Add(Genero);
             lista.Add(Sinopsis);
             return lista;
         }
+
         //---------------------------------------------------------------------
         //Obtiene el titulo de la Pelicula.
         //---------------------------------------------------------------------
@@ -69,21 +71,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public string GetClasificacion()
         {
             return Clasificacion;
-            /*string Tipo;
-            switch (Clasificacion)
-            {
-                case 0:
-                    Tipo = "AA";
-                    break;
-                case 1:
-                    Tipo = "A";
-                    break;
-                default:
-                    Tipo = "";
-                    break;
-
-            }
-            return Tipo;*/
         }
 
         //---------------------------------------------------------------------

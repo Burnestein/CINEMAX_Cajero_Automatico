@@ -46,12 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCaja.cs" />
     <Compile Include="CPelicula.cs" />
+    <Compile Include="CProducto.cs" />
     <Compile Include="DlgConfigurarCartelera.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DlgConfigurarCartelera.Designer.cs">
       <DependentUpon>DlgConfigurarCartelera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DlgConfigurarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgConfigurarProductos.Designer.cs">
+      <DependentUpon>DlgConfigurarProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="DlgMenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -75,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="DlgConfigurarCartelera.resx">
       <DependentUpon>DlgConfigurarCartelera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgConfigurarProductos.resx">
+      <DependentUpon>DlgConfigurarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DlgMenuPrincipal.resx">
       <DependentUpon>DlgMenuPrincipal.cs</DependentUpon>
@@ -113,6 +124,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CinemaxWhite-Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

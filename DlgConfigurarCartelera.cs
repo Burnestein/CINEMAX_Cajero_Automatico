@@ -11,8 +11,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public static DlgConfigurarCartelera ConfigurarCartelera;
         private int indice=-1;
         public List<CPelicula> Peliculas = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas;
-        //private Image Portada;
-        //private string filepath = "C:\\Users\\burn_\\Desktop\\Test.txt";
 
         public DlgConfigurarCartelera()
         {

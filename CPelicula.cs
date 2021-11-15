@@ -12,7 +12,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         //Atributos.
         //---------------------------------------------------------------------
-        public int NumPelicula { get; set; }
         public string Titulo { get; set; }
         public string Duracion { get; set; }
         public string Clasificacion { get; set; }

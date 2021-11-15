@@ -20,8 +20,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //Atributos.
         //---------------------------------------------------------------------
         public static DlgMenuPrincipal MenuPrincipal;
-        private TableLayoutPanel Mitabla;
+        //private TableLayoutPanel TablaCartelera;
         public List<CPelicula> ListaPeliculas;
+        public List<CProducto> ListaProductos;
+        private int indice=0;
 
         //---------------------------------------------------------------------
         //Constructor.
@@ -33,9 +35,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.ControlBox = false;
             this.Text = string.Empty;
             this.MstPrincipal.Visible = false;
-            this.Mitabla = new TableLayoutPanel();
+            //this.TablaCartelera = new TableLayoutPanel();
             ListaPeliculas = new List<CPelicula>();
-            //ListaHorarios = new List<string>();
             Label Date = new Label();
             Date = LblCurrentTime;
 
@@ -46,37 +47,39 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             CargarCartelera();
         }
 
+        private void BtnFuenteSodas_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public void CargarPanelPelicula(CPelicula Pelicula)
         {
             PanelPeliculaGrande MiPanelGrande = new PanelPeliculaGrande(Pelicula);
             PnlCartelera.Controls.Clear();
             PnlCartelera.Controls.Add(MiPanelGrande);
             MiPanelGrande.Dock = DockStyle.Fill;
-            //MessageBox.Show(ListaPeliculas.IndexOf(""));
         }
         public void CargarCartelera()
         {
-            PnlCartelera.Controls.Clear();
-            Mitabla.Controls.Clear();
-            PnlCartelera.Controls.Add(Mitabla);
-            Mitabla.Location = new System.Drawing.Point(0, 0);
-            Mitabla.RowCount = 2;
-            Mitabla.ColumnCount = 3;
-            Mitabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            Mitabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            Mitabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            Mitabla.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            Mitabla.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            Mitabla.Dock = DockStyle.Fill;
-            Mitabla.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
+            TableLayoutPanel TablaCartelera;
+            TablaCartelera = DibujarTabla(2, 3);
+            TablaCartelera.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            TablaCartelera.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            TablaCartelera.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            TablaCartelera.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            TablaCartelera.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
 
+            PnlCartelera.Controls.Clear();
+            PnlCartelera.Controls.Add(TablaCartelera);
+            
             int n = 0;
             int rows;
             int cols;
-            if (ListaPeliculas.Count <= 3)
+            int Cantidad = ListaPeliculas.Count-indice;
+            if (Cantidad <= 3)
             {
                 rows = 1;
-                cols = ListaPeliculas.Count;
+                cols = Cantidad;
             }
             else
             {
@@ -87,31 +90,20 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 for (int col = 0; col < cols; col++)
                 {
-                    //List<string> Lista = ListaPeliculas[n].ToList();
-                    PanelPelicula MiPanel = new PanelPelicula(ListaPeliculas[n]);
-                    //DlgConfigurarCartelera MiConfPeli = new DlgConfigurarCartelera;
-                    //MiPanel.Titulo.Text = ListaPeliculas[n].Titulo;
-                    //MiPanel.Clasificacion.Text = "Clasificación " + ListaPeliculas[n].Clasificacion;
-                    //MiPanel.Duracion.Text = ListaPeliculas[n].Duracion + " Mins";
-                    //MiPanel.Genero.Text = ListaPeliculas[n].Genero;
-                    //MiPanel.Portada.Image = ListaPeliculas[n].Portada;
-                    //MiPanel.Portada.Image = 
-                    //MiPanel.Titulo.Text = Lista[0];
-                    //MiPanel.Clasificacion.Text = "Clasificación " + Lista[1];
-                    //MiPanel.Duracion.Text = Lista[2] + " Mins";
-                    //MiPanel.Genero.Text = Lista[3];
-                    /*int ConteoHorarios = ListaPeliculas[n].Horarios.Count;
-                    for (int i = 0; i < ConteoHorarios; i++)
+                    
+                    if (n < 6)
                     {
-                        Label Hora = new Label();
-                        Hora.Text = ListaPeliculas[n].Horarios[i];
-                        MiPanel.Horarios.Controls.Add(Hora);
-                    }*/
-                    Mitabla.Controls.Add(MiPanel, col, row);
-                    n++;
+                        PanelPelicula MiPanel = new PanelPelicula(ListaPeliculas[n+indice]);
+                        TablaCartelera.Controls.Add(MiPanel, col, row);
+                        n++;
+                    }
                 }
-                cols = ListaPeliculas.Count - 3;
+                cols = Cantidad - 3;
             }
+            if (Cantidad > 6) PnlBtnDerecho.Visible = true;
+            else PnlBtnDerecho.Visible = false;
+
+            if (indice == 0) PnlBtnIzquierdo.Visible = false;
         }
         private void BtnConfiguracion_Click(object sender, EventArgs e)
         {
@@ -121,9 +113,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.WindowState = FormWindowState.Normal;
             Size = new Size(1200, 800);
             CenterToScreen();
+            SspMenuPrincipal.Visible = true;
         }
         private void VolverToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SspMenuPrincipal.Visible = false;
             this.ControlBox = false;
             this.Text = string.Empty;
             this.MstPrincipal.Visible = false;
@@ -138,6 +132,19 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             MenuCartelera.Show();
         }
 
+        private TableLayoutPanel DibujarTabla(int Filas, int Columnas)
+        {
+            TableLayoutPanel MiTabla = new TableLayoutPanel();
+            MiTabla.Controls.Clear();
+            MiTabla.Location = new System.Drawing.Point(0, 0);
+            MiTabla.RowCount = Filas;
+            MiTabla.ColumnCount = Columnas;
+            MiTabla.Dock = DockStyle.Fill;
+            MiTabla.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
+            MiTabla.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
+            return MiTabla;
+        }
+
         private void DlgMenuPrincipal_Load(object sender, EventArgs e)
         {
             CargarCartelera();
@@ -147,6 +154,31 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private void timer_Tick(object sender, EventArgs e)
         {
             LblCurrentTime.Text = DateTime.Now.ToString("dddd dd/MMM/yyyy hh:mm tt");
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DlgConfigurarProductos ConfigProductos;
+
+            ConfigProductos = new DlgConfigurarProductos();
+            ConfigProductos.Show();
+        }
+
+        private void BtnDerecho_Click(object sender, EventArgs e)
+        {
+            if (indice < ListaPeliculas.Count)
+            {
+                indice += 6;
+                PnlBtnIzquierdo.Visible = true;
+                CargarCartelera();
+            }
+            
+        }
+
+        private void BtnIzquierdo_Click(object sender, EventArgs e)
+        {
+            indice -= 6;
+            CargarCartelera();
         }
     }
 }

@@ -31,100 +31,98 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DlgMenuPrincipal));
-            this.PnlBotones = new System.Windows.Forms.Panel();
-            this.BtnPromociones = new System.Windows.Forms.Button();
-            this.BtnFuenteSodas = new System.Windows.Forms.Button();
-            this.BtnCartelera = new System.Windows.Forms.Button();
-            this.PnlLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.PnlSuperior = new System.Windows.Forms.Panel();
-            this.LblCurrentTime = new System.Windows.Forms.Label();
-            this.BtnConfiguracion = new System.Windows.Forms.Button();
-            this.LblCaja = new System.Windows.Forms.Label();
             this.MstPrincipal = new System.Windows.Forms.MenuStrip();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carteleraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PnlCartelera = new System.Windows.Forms.Panel();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.PnlBotones.SuspendLayout();
+            this.PnlLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnCartelera = new System.Windows.Forms.Button();
+            this.BtnFuenteSodas = new System.Windows.Forms.Button();
+            this.BtnPromociones = new System.Windows.Forms.Button();
+            this.PnlBotones = new System.Windows.Forms.Panel();
+            this.LblCaja = new System.Windows.Forms.Label();
+            this.LblCurrentTime = new System.Windows.Forms.Label();
+            this.PnlSuperior = new System.Windows.Forms.Panel();
+            this.BtnConfiguracion = new System.Windows.Forms.Button();
+            this.PnlCartelera = new System.Windows.Forms.Panel();
+            this.PnlBtnIzquierdo = new System.Windows.Forms.Panel();
+            this.BtnIzquierdo = new System.Windows.Forms.Button();
+            this.PnlBtnDerecho = new System.Windows.Forms.Panel();
+            this.BtnDerecho = new System.Windows.Forms.Button();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.SspMenuPrincipal = new System.Windows.Forms.StatusStrip();
+            this.MstPrincipal.SuspendLayout();
             this.PnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PnlBotones.SuspendLayout();
             this.PnlSuperior.SuspendLayout();
-            this.MstPrincipal.SuspendLayout();
+            this.PnlBtnIzquierdo.SuspendLayout();
+            this.PnlBtnDerecho.SuspendLayout();
+            this.SspMenuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // PnlBotones
+            // MstPrincipal
             // 
-            this.PnlBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
-            this.PnlBotones.Controls.Add(this.BtnPromociones);
-            this.PnlBotones.Controls.Add(this.BtnFuenteSodas);
-            this.PnlBotones.Controls.Add(this.BtnCartelera);
-            this.PnlBotones.Controls.Add(this.PnlLogo);
-            this.PnlBotones.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PnlBotones.Location = new System.Drawing.Point(0, 28);
-            this.PnlBotones.Name = "PnlBotones";
-            this.PnlBotones.Size = new System.Drawing.Size(308, 942);
-            this.PnlBotones.TabIndex = 0;
+            this.MstPrincipal.BackColor = System.Drawing.SystemColors.Control;
+            this.MstPrincipal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MstPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MstPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem,
+            this.ayudaToolStripMenuItem,
+            this.VolverToolStripMenuItem});
+            this.MstPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.MstPrincipal.Name = "MstPrincipal";
+            this.MstPrincipal.Size = new System.Drawing.Size(1583, 28);
+            this.MstPrincipal.TabIndex = 2;
+            this.MstPrincipal.Text = "menuStrip1";
             // 
-            // BtnPromociones
+            // editarToolStripMenuItem
             // 
-            this.BtnPromociones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnPromociones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnPromociones.FlatAppearance.BorderSize = 0;
-            this.BtnPromociones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
-            this.BtnPromociones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPromociones.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPromociones.ForeColor = System.Drawing.Color.White;
-            this.BtnPromociones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnPromociones.Location = new System.Drawing.Point(0, 348);
-            this.BtnPromociones.Name = "BtnPromociones";
-            this.BtnPromociones.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnPromociones.Size = new System.Drawing.Size(308, 100);
-            this.BtnPromociones.TabIndex = 3;
-            this.BtnPromociones.Text = "Promociones";
-            this.BtnPromociones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnPromociones.UseVisualStyleBackColor = true;
+            this.editarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.carteleraToolStripMenuItem,
+            this.productosToolStripMenuItem});
+            this.editarToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.editarToolStripMenuItem.Text = "Editar";
             // 
-            // BtnFuenteSodas
+            // carteleraToolStripMenuItem
             // 
-            this.BtnFuenteSodas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnFuenteSodas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnFuenteSodas.FlatAppearance.BorderSize = 0;
-            this.BtnFuenteSodas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
-            this.BtnFuenteSodas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFuenteSodas.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnFuenteSodas.ForeColor = System.Drawing.Color.White;
-            this.BtnFuenteSodas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFuenteSodas.Location = new System.Drawing.Point(0, 248);
-            this.BtnFuenteSodas.Name = "BtnFuenteSodas";
-            this.BtnFuenteSodas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnFuenteSodas.Size = new System.Drawing.Size(308, 100);
-            this.BtnFuenteSodas.TabIndex = 2;
-            this.BtnFuenteSodas.Text = "Fuente de Sodas";
-            this.BtnFuenteSodas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFuenteSodas.UseVisualStyleBackColor = true;
+            this.carteleraToolStripMenuItem.Name = "carteleraToolStripMenuItem";
+            this.carteleraToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.carteleraToolStripMenuItem.Text = "Cartelera";
+            this.carteleraToolStripMenuItem.Click += new System.EventHandler(this.carteleraToolStripMenuItem_Click);
             // 
-            // BtnCartelera
+            // productosToolStripMenuItem
             // 
-            this.BtnCartelera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnCartelera.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnCartelera.FlatAppearance.BorderSize = 0;
-            this.BtnCartelera.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
-            this.BtnCartelera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCartelera.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCartelera.ForeColor = System.Drawing.Color.White;
-            this.BtnCartelera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCartelera.Location = new System.Drawing.Point(0, 148);
-            this.BtnCartelera.Name = "BtnCartelera";
-            this.BtnCartelera.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnCartelera.Size = new System.Drawing.Size(308, 100);
-            this.BtnCartelera.TabIndex = 1;
-            this.BtnCartelera.Text = "Cartelera";
-            this.BtnCartelera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCartelera.UseVisualStyleBackColor = true;
-            this.BtnCartelera.Click += new System.EventHandler(this.BtnCartelera_Click);
+            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.productosToolStripMenuItem.Text = "Productos";
+            this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // VolverToolStripMenuItem
+            // 
+            this.VolverToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem";
+            this.VolverToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
+            this.VolverToolStripMenuItem.Text = "Volver a terminal";
+            this.VolverToolStripMenuItem.Click += new System.EventHandler(this.VolverToolStripMenuItem_Click);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // PnlLogo
             // 
@@ -146,17 +144,89 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // PnlSuperior
+            // BtnCartelera
             // 
-            this.PnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
-            this.PnlSuperior.Controls.Add(this.LblCurrentTime);
-            this.PnlSuperior.Controls.Add(this.BtnConfiguracion);
-            this.PnlSuperior.Controls.Add(this.LblCaja);
-            this.PnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlSuperior.Location = new System.Drawing.Point(308, 28);
-            this.PnlSuperior.Name = "PnlSuperior";
-            this.PnlSuperior.Size = new System.Drawing.Size(1275, 148);
-            this.PnlSuperior.TabIndex = 1;
+            this.BtnCartelera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnCartelera.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnCartelera.FlatAppearance.BorderSize = 0;
+            this.BtnCartelera.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.BtnCartelera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCartelera.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCartelera.ForeColor = System.Drawing.Color.White;
+            this.BtnCartelera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCartelera.Location = new System.Drawing.Point(0, 148);
+            this.BtnCartelera.Name = "BtnCartelera";
+            this.BtnCartelera.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnCartelera.Size = new System.Drawing.Size(308, 100);
+            this.BtnCartelera.TabIndex = 1;
+            this.BtnCartelera.Text = "Cartelera";
+            this.BtnCartelera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCartelera.UseVisualStyleBackColor = true;
+            this.BtnCartelera.Click += new System.EventHandler(this.BtnCartelera_Click);
+            // 
+            // BtnFuenteSodas
+            // 
+            this.BtnFuenteSodas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnFuenteSodas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnFuenteSodas.FlatAppearance.BorderSize = 0;
+            this.BtnFuenteSodas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.BtnFuenteSodas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnFuenteSodas.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFuenteSodas.ForeColor = System.Drawing.Color.White;
+            this.BtnFuenteSodas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnFuenteSodas.Location = new System.Drawing.Point(0, 248);
+            this.BtnFuenteSodas.Name = "BtnFuenteSodas";
+            this.BtnFuenteSodas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnFuenteSodas.Size = new System.Drawing.Size(308, 100);
+            this.BtnFuenteSodas.TabIndex = 2;
+            this.BtnFuenteSodas.Text = "Fuente de Sodas";
+            this.BtnFuenteSodas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnFuenteSodas.UseVisualStyleBackColor = true;
+            this.BtnFuenteSodas.Click += new System.EventHandler(this.BtnFuenteSodas_Click);
+            // 
+            // BtnPromociones
+            // 
+            this.BtnPromociones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnPromociones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnPromociones.FlatAppearance.BorderSize = 0;
+            this.BtnPromociones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.BtnPromociones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPromociones.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPromociones.ForeColor = System.Drawing.Color.White;
+            this.BtnPromociones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnPromociones.Location = new System.Drawing.Point(0, 348);
+            this.BtnPromociones.Name = "BtnPromociones";
+            this.BtnPromociones.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnPromociones.Size = new System.Drawing.Size(308, 100);
+            this.BtnPromociones.TabIndex = 3;
+            this.BtnPromociones.Text = "Promociones";
+            this.BtnPromociones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnPromociones.UseVisualStyleBackColor = true;
+            // 
+            // PnlBotones
+            // 
+            this.PnlBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.PnlBotones.Controls.Add(this.BtnPromociones);
+            this.PnlBotones.Controls.Add(this.BtnFuenteSodas);
+            this.PnlBotones.Controls.Add(this.BtnCartelera);
+            this.PnlBotones.Controls.Add(this.PnlLogo);
+            this.PnlBotones.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PnlBotones.Location = new System.Drawing.Point(0, 28);
+            this.PnlBotones.Name = "PnlBotones";
+            this.PnlBotones.Size = new System.Drawing.Size(308, 942);
+            this.PnlBotones.TabIndex = 0;
+            // 
+            // LblCaja
+            // 
+            this.LblCaja.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.LblCaja.AutoSize = true;
+            this.LblCaja.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCaja.ForeColor = System.Drawing.Color.White;
+            this.LblCaja.Location = new System.Drawing.Point(1126, 57);
+            this.LblCaja.Name = "LblCaja";
+            this.LblCaja.Size = new System.Drawing.Size(83, 31);
+            this.LblCaja.TabIndex = 0;
+            this.LblCaja.Text = "Caja 1";
             // 
             // LblCurrentTime
             // 
@@ -169,6 +239,18 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblCurrentTime.Size = new System.Drawing.Size(145, 30);
             this.LblCurrentTime.TabIndex = 2;
             this.LblCurrentTime.Text = "--/--/-- --:--";
+            // 
+            // PnlSuperior
+            // 
+            this.PnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.PnlSuperior.Controls.Add(this.LblCurrentTime);
+            this.PnlSuperior.Controls.Add(this.BtnConfiguracion);
+            this.PnlSuperior.Controls.Add(this.LblCaja);
+            this.PnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlSuperior.Location = new System.Drawing.Point(308, 28);
+            this.PnlSuperior.Name = "PnlSuperior";
+            this.PnlSuperior.Size = new System.Drawing.Size(1275, 148);
+            this.PnlSuperior.TabIndex = 1;
             // 
             // BtnConfiguracion
             // 
@@ -185,77 +267,82 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnConfiguracion.UseVisualStyleBackColor = false;
             this.BtnConfiguracion.Click += new System.EventHandler(this.BtnConfiguracion_Click);
             // 
-            // LblCaja
-            // 
-            this.LblCaja.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.LblCaja.AutoSize = true;
-            this.LblCaja.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCaja.ForeColor = System.Drawing.Color.White;
-            this.LblCaja.Location = new System.Drawing.Point(1126, 57);
-            this.LblCaja.Name = "LblCaja";
-            this.LblCaja.Size = new System.Drawing.Size(83, 31);
-            this.LblCaja.TabIndex = 0;
-            this.LblCaja.Text = "Caja 1";
-            // 
-            // MstPrincipal
-            // 
-            this.MstPrincipal.BackColor = System.Drawing.SystemColors.Control;
-            this.MstPrincipal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MstPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MstPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarToolStripMenuItem,
-            this.ayudaToolStripMenuItem,
-            this.VolverToolStripMenuItem});
-            this.MstPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.MstPrincipal.Name = "MstPrincipal";
-            this.MstPrincipal.Size = new System.Drawing.Size(1583, 28);
-            this.MstPrincipal.TabIndex = 2;
-            this.MstPrincipal.Text = "menuStrip1";
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.carteleraToolStripMenuItem});
-            this.editarToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.editarToolStripMenuItem.Text = "Editar";
-            // 
-            // carteleraToolStripMenuItem
-            // 
-            this.carteleraToolStripMenuItem.Name = "carteleraToolStripMenuItem";
-            this.carteleraToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
-            this.carteleraToolStripMenuItem.Text = "Cartelera";
-            this.carteleraToolStripMenuItem.Click += new System.EventHandler(this.carteleraToolStripMenuItem_Click);
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // VolverToolStripMenuItem
-            // 
-            this.VolverToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem";
-            this.VolverToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
-            this.VolverToolStripMenuItem.Text = "Volver a terminal";
-            this.VolverToolStripMenuItem.Click += new System.EventHandler(this.VolverToolStripMenuItem_Click);
-            // 
             // PnlCartelera
             // 
             this.PnlCartelera.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PnlCartelera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlCartelera.Location = new System.Drawing.Point(308, 176);
+            this.PnlCartelera.Location = new System.Drawing.Point(358, 176);
+            this.PnlCartelera.Margin = new System.Windows.Forms.Padding(10);
             this.PnlCartelera.Name = "PnlCartelera";
-            this.PnlCartelera.Size = new System.Drawing.Size(1275, 794);
-            this.PnlCartelera.TabIndex = 3;
+            this.PnlCartelera.Size = new System.Drawing.Size(1175, 794);
+            this.PnlCartelera.TabIndex = 7;
             // 
-            // timer
+            // PnlBtnIzquierdo
             // 
-            this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            this.PnlBtnIzquierdo.Controls.Add(this.BtnIzquierdo);
+            this.PnlBtnIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PnlBtnIzquierdo.Location = new System.Drawing.Point(308, 176);
+            this.PnlBtnIzquierdo.Name = "PnlBtnIzquierdo";
+            this.PnlBtnIzquierdo.Size = new System.Drawing.Size(50, 794);
+            this.PnlBtnIzquierdo.TabIndex = 8;
+            this.PnlBtnIzquierdo.Visible = false;
+            // 
+            // BtnIzquierdo
+            // 
+            this.BtnIzquierdo.BackgroundImage = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.left_arrow;
+            this.BtnIzquierdo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnIzquierdo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnIzquierdo.FlatAppearance.BorderSize = 0;
+            this.BtnIzquierdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnIzquierdo.Location = new System.Drawing.Point(0, 0);
+            this.BtnIzquierdo.Name = "BtnIzquierdo";
+            this.BtnIzquierdo.Size = new System.Drawing.Size(50, 794);
+            this.BtnIzquierdo.TabIndex = 10;
+            this.BtnIzquierdo.UseVisualStyleBackColor = true;
+            this.BtnIzquierdo.Click += new System.EventHandler(this.BtnIzquierdo_Click);
+            // 
+            // PnlBtnDerecho
+            // 
+            this.PnlBtnDerecho.Controls.Add(this.BtnDerecho);
+            this.PnlBtnDerecho.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PnlBtnDerecho.Location = new System.Drawing.Point(1533, 176);
+            this.PnlBtnDerecho.Name = "PnlBtnDerecho";
+            this.PnlBtnDerecho.Size = new System.Drawing.Size(50, 794);
+            this.PnlBtnDerecho.TabIndex = 9;
+            this.PnlBtnDerecho.Visible = false;
+            // 
+            // BtnDerecho
+            // 
+            this.BtnDerecho.BackgroundImage = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.right_arrow;
+            this.BtnDerecho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnDerecho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnDerecho.FlatAppearance.BorderSize = 0;
+            this.BtnDerecho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDerecho.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDerecho.Location = new System.Drawing.Point(0, 0);
+            this.BtnDerecho.Name = "BtnDerecho";
+            this.BtnDerecho.Size = new System.Drawing.Size(50, 794);
+            this.BtnDerecho.TabIndex = 11;
+            this.BtnDerecho.UseVisualStyleBackColor = true;
+            this.BtnDerecho.Click += new System.EventHandler(this.BtnDerecho_Click);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(43, 20);
+            this.toolStripStatusLabel1.Text = "NJSA";
+            // 
+            // SspMenuPrincipal
+            // 
+            this.SspMenuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.SspMenuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.SspMenuPrincipal.Location = new System.Drawing.Point(0, 944);
+            this.SspMenuPrincipal.Name = "SspMenuPrincipal";
+            this.SspMenuPrincipal.Size = new System.Drawing.Size(1583, 26);
+            this.SspMenuPrincipal.TabIndex = 4;
+            this.SspMenuPrincipal.Text = "statusStrip1";
+            this.SspMenuPrincipal.Visible = false;
             // 
             // DlgMenuPrincipal
             // 
@@ -264,9 +351,12 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1583, 970);
             this.Controls.Add(this.PnlCartelera);
+            this.Controls.Add(this.PnlBtnDerecho);
+            this.Controls.Add(this.PnlBtnIzquierdo);
             this.Controls.Add(this.PnlSuperior);
             this.Controls.Add(this.PnlBotones);
             this.Controls.Add(this.MstPrincipal);
+            this.Controls.Add(this.SspMenuPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MstPrincipal;
             this.MaximizeBox = false;
@@ -275,37 +365,47 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.Text = "Cinemax || Punto de venta automático";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DlgMenuPrincipal_Load);
-            this.PnlBotones.ResumeLayout(false);
-            this.PnlLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.PnlSuperior.ResumeLayout(false);
-            this.PnlSuperior.PerformLayout();
             this.MstPrincipal.ResumeLayout(false);
             this.MstPrincipal.PerformLayout();
+            this.PnlLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.PnlBotones.ResumeLayout(false);
+            this.PnlSuperior.ResumeLayout(false);
+            this.PnlSuperior.PerformLayout();
+            this.PnlBtnIzquierdo.ResumeLayout(false);
+            this.PnlBtnDerecho.ResumeLayout(false);
+            this.SspMenuPrincipal.ResumeLayout(false);
+            this.SspMenuPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel PnlBotones;
-        private System.Windows.Forms.Button BtnPromociones;
-        private System.Windows.Forms.Button BtnFuenteSodas;
-        private System.Windows.Forms.Button BtnCartelera;
-        private System.Windows.Forms.Panel PnlLogo;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel PnlSuperior;
-        private System.Windows.Forms.Label LblCaja;
-        private System.Windows.Forms.Button BtnConfiguracion;
         private System.Windows.Forms.MenuStrip MstPrincipal;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VolverToolStripMenuItem;
-        private System.Windows.Forms.Panel PnlCartelera;
         private System.Windows.Forms.ToolStripMenuItem carteleraToolStripMenuItem;
-        private System.Windows.Forms.Label LblCurrentTime;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
+        private System.Windows.Forms.Panel PnlLogo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BtnCartelera;
+        private System.Windows.Forms.Button BtnFuenteSodas;
+        private System.Windows.Forms.Button BtnPromociones;
+        private System.Windows.Forms.Panel PnlBotones;
+        private System.Windows.Forms.Label LblCaja;
+        private System.Windows.Forms.Button BtnConfiguracion;
+        private System.Windows.Forms.Label LblCurrentTime;
+        private System.Windows.Forms.Panel PnlSuperior;
+        private System.Windows.Forms.Panel PnlCartelera;
+        private System.Windows.Forms.Panel PnlBtnIzquierdo;
+        private System.Windows.Forms.Button BtnIzquierdo;
+        private System.Windows.Forms.Panel PnlBtnDerecho;
+        private System.Windows.Forms.Button BtnDerecho;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.StatusStrip SspMenuPrincipal;
     }
 }
 

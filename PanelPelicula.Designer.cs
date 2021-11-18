@@ -58,27 +58,21 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblGenero
             // 
-            this.LblGenero.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LblGenero.AutoSize = true;
             this.LblGenero.BackColor = System.Drawing.Color.MediumTurquoise;
             this.LblGenero.Font = new System.Drawing.Font("Microsoft YaHei Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblGenero.Location = new System.Drawing.Point(281, 109);
+            this.LblGenero.Location = new System.Drawing.Point(293, 100);
             this.LblGenero.Name = "LblGenero";
-            this.LblGenero.Size = new System.Drawing.Size(102, 20);
+            this.LblGenero.Size = new System.Drawing.Size(57, 20);
             this.LblGenero.TabIndex = 6;
-            this.LblGenero.Text = "Ciencia Ficción";
+            this.LblGenero.Text = "Género";
             // 
             // TlpHorariosPelicula
             // 
-            this.TlpHorariosPelicula.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TlpHorariosPelicula.AutoSize = true;
             this.TlpHorariosPelicula.ColumnCount = 1;
             this.TlpHorariosPelicula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.TlpHorariosPelicula.Location = new System.Drawing.Point(285, 176);
+            this.TlpHorariosPelicula.Location = new System.Drawing.Point(297, 167);
             this.TlpHorariosPelicula.Name = "TlpHorariosPelicula";
             this.TlpHorariosPelicula.RowCount = 4;
             this.TlpHorariosPelicula.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -90,12 +84,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblHorarios
             // 
-            this.LblHorarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LblHorarios.AutoSize = true;
             this.LblHorarios.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblHorarios.Location = new System.Drawing.Point(280, 148);
+            this.LblHorarios.Location = new System.Drawing.Point(292, 139);
             this.LblHorarios.Name = "LblHorarios";
             this.LblHorarios.Size = new System.Drawing.Size(99, 27);
             this.LblHorarios.TabIndex = 4;
@@ -103,56 +94,45 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblDuracionPelicula
             // 
-            this.LblDuracionPelicula.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LblDuracionPelicula.AutoSize = true;
             this.LblDuracionPelicula.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDuracionPelicula.Location = new System.Drawing.Point(280, 82);
+            this.LblDuracionPelicula.Location = new System.Drawing.Point(292, 73);
             this.LblDuracionPelicula.Name = "LblDuracionPelicula";
-            this.LblDuracionPelicula.Size = new System.Drawing.Size(76, 23);
+            this.LblDuracionPelicula.Size = new System.Drawing.Size(60, 23);
             this.LblDuracionPelicula.TabIndex = 3;
-            this.LblDuracionPelicula.Text = "157 min";
+            this.LblDuracionPelicula.Text = "-- min";
             // 
             // LblClasificacionPelicula
             // 
-            this.LblClasificacionPelicula.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LblClasificacionPelicula.AutoSize = true;
             this.LblClasificacionPelicula.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblClasificacionPelicula.Location = new System.Drawing.Point(280, 55);
+            this.LblClasificacionPelicula.Location = new System.Drawing.Point(292, 46);
             this.LblClasificacionPelicula.Name = "LblClasificacionPelicula";
-            this.LblClasificacionPelicula.Size = new System.Drawing.Size(128, 23);
+            this.LblClasificacionPelicula.Size = new System.Drawing.Size(112, 23);
             this.LblClasificacionPelicula.TabIndex = 2;
-            this.LblClasificacionPelicula.Text = "Clasificación B";
+            this.LblClasificacionPelicula.Text = "Clasificación";
             // 
             // LblNombrePelicula
             // 
-            this.LblNombrePelicula.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LblNombrePelicula.AutoEllipsis = true;
             this.LblNombrePelicula.AutoSize = true;
             this.LblNombrePelicula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblNombrePelicula.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNombrePelicula.Location = new System.Drawing.Point(29, 21);
+            this.LblNombrePelicula.Location = new System.Drawing.Point(16, 12);
             this.LblNombrePelicula.Name = "LblNombrePelicula";
-            this.LblNombrePelicula.Size = new System.Drawing.Size(75, 31);
+            this.LblNombrePelicula.Size = new System.Drawing.Size(79, 31);
             this.LblNombrePelicula.TabIndex = 1;
-            this.LblNombrePelicula.Text = "Duna";
+            this.LblNombrePelicula.Text = "Titulo";
             // 
             // PbxPelicula
             // 
-            this.PbxPelicula.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PbxPelicula.BackColor = System.Drawing.SystemColors.Control;
             this.PbxPelicula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbxPelicula.Image = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.Cinemax_Logo;
-            this.PbxPelicula.Location = new System.Drawing.Point(35, 55);
+            this.PbxPelicula.Location = new System.Drawing.Point(22, 46);
             this.PbxPelicula.Name = "PbxPelicula";
-            this.PbxPelicula.Size = new System.Drawing.Size(239, 349);
-            this.PbxPelicula.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbxPelicula.Size = new System.Drawing.Size(269, 349);
+            this.PbxPelicula.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbxPelicula.TabIndex = 0;
             this.PbxPelicula.TabStop = false;
             this.PbxPelicula.Click += new System.EventHandler(this.PbxPelicula_Click);

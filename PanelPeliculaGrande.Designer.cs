@@ -30,7 +30,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelPeliculaGrande));
-            this.PbxPortadaGrande = new System.Windows.Forms.PictureBox();
             this.LblGenero = new System.Windows.Forms.Label();
             this.LblDuracionPelicula = new System.Windows.Forms.Label();
             this.LblClasificacionPelicula = new System.Windows.Forms.Label();
@@ -41,46 +40,35 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.CbxHorarios = new System.Windows.Forms.ComboBox();
             this.BtnComprar = new System.Windows.Forms.Button();
             this.PnlSeleccionBoletos = new System.Windows.Forms.Panel();
-            this.LblBoletoNiño = new System.Windows.Forms.Label();
-            this.LblBoletoAdulto = new System.Windows.Forms.Label();
-            this.LblBoleto3raEdad = new System.Windows.Forms.Label();
-            this.BtnMasNiño = new System.Windows.Forms.Button();
-            this.BtnMasAdulto = new System.Windows.Forms.Button();
-            this.BtnMas3raEdad = new System.Windows.Forms.Button();
-            this.BtnMenosNiño = new System.Windows.Forms.Button();
-            this.BtnMenosAdulto = new System.Windows.Forms.Button();
-            this.BtnMenos3raEdad = new System.Windows.Forms.Button();
-            this.LblCantidadNiño = new System.Windows.Forms.Label();
-            this.LblCantidadAdulto = new System.Windows.Forms.Label();
-            this.LblCantidad3raEdad = new System.Windows.Forms.Label();
-            this.LblPrecioNiño = new System.Windows.Forms.Label();
-            this.LblPrecioAdulto = new System.Windows.Forms.Label();
             this.LblPrecio3raEdad = new System.Windows.Forms.Label();
+            this.LblPrecioAdulto = new System.Windows.Forms.Label();
+            this.LblPrecioNiño = new System.Windows.Forms.Label();
+            this.LblCantidad3raEdad = new System.Windows.Forms.Label();
+            this.LblCantidadAdulto = new System.Windows.Forms.Label();
+            this.LblCantidadNiño = new System.Windows.Forms.Label();
+            this.BtnMenos3raEdad = new System.Windows.Forms.Button();
+            this.BtnMenosAdulto = new System.Windows.Forms.Button();
+            this.BtnMenosNiño = new System.Windows.Forms.Button();
+            this.BtnMas3raEdad = new System.Windows.Forms.Button();
+            this.BtnMasAdulto = new System.Windows.Forms.Button();
+            this.BtnMasNiño = new System.Windows.Forms.Button();
+            this.LblBoleto3raEdad = new System.Windows.Forms.Label();
+            this.LblBoletoAdulto = new System.Windows.Forms.Label();
+            this.LblBoletoNiño = new System.Windows.Forms.Label();
             this.LblTotal = new System.Windows.Forms.Label();
             this.LblTotalPesos = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxPortadaGrande)).BeginInit();
+            this.PbxPortadaGrande = new System.Windows.Forms.PictureBox();
             this.PnlSeleccionBoletos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxPortadaGrande)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PbxPortadaGrande
-            // 
-            this.PbxPortadaGrande.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.PbxPortadaGrande.ErrorImage = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.Cinemax_Logo;
-            this.PbxPortadaGrande.Image = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.Cinemax_Logo;
-            this.PbxPortadaGrande.Location = new System.Drawing.Point(26, 37);
-            this.PbxPortadaGrande.Name = "PbxPortadaGrande";
-            this.PbxPortadaGrande.Size = new System.Drawing.Size(523, 702);
-            this.PbxPortadaGrande.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PbxPortadaGrande.TabIndex = 0;
-            this.PbxPortadaGrande.TabStop = false;
             // 
             // LblGenero
             // 
-            this.LblGenero.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblGenero.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblGenero.AutoSize = true;
             this.LblGenero.BackColor = System.Drawing.Color.MediumTurquoise;
             this.LblGenero.Font = new System.Drawing.Font("Microsoft YaHei Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblGenero.Location = new System.Drawing.Point(569, 114);
+            this.LblGenero.Location = new System.Drawing.Point(569, 107);
             this.LblGenero.Name = "LblGenero";
             this.LblGenero.Size = new System.Drawing.Size(57, 20);
             this.LblGenero.TabIndex = 12;
@@ -88,10 +76,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblDuracionPelicula
             // 
-            this.LblDuracionPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblDuracionPelicula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblDuracionPelicula.AutoSize = true;
             this.LblDuracionPelicula.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDuracionPelicula.Location = new System.Drawing.Point(569, 91);
+            this.LblDuracionPelicula.Location = new System.Drawing.Point(569, 84);
             this.LblDuracionPelicula.Name = "LblDuracionPelicula";
             this.LblDuracionPelicula.Size = new System.Drawing.Size(60, 23);
             this.LblDuracionPelicula.TabIndex = 9;
@@ -99,10 +87,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblClasificacionPelicula
             // 
-            this.LblClasificacionPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblClasificacionPelicula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblClasificacionPelicula.AutoSize = true;
             this.LblClasificacionPelicula.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblClasificacionPelicula.Location = new System.Drawing.Point(569, 68);
+            this.LblClasificacionPelicula.Location = new System.Drawing.Point(569, 61);
             this.LblClasificacionPelicula.Name = "LblClasificacionPelicula";
             this.LblClasificacionPelicula.Size = new System.Drawing.Size(112, 23);
             this.LblClasificacionPelicula.TabIndex = 8;
@@ -110,12 +98,12 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblNombrePelicula
             // 
-            this.LblNombrePelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblNombrePelicula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblNombrePelicula.AutoEllipsis = true;
             this.LblNombrePelicula.AutoSize = true;
             this.LblNombrePelicula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblNombrePelicula.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNombrePelicula.Location = new System.Drawing.Point(567, 37);
+            this.LblNombrePelicula.Location = new System.Drawing.Point(567, 30);
             this.LblNombrePelicula.Name = "LblNombrePelicula";
             this.LblNombrePelicula.Size = new System.Drawing.Size(79, 31);
             this.LblNombrePelicula.TabIndex = 7;
@@ -123,12 +111,12 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblSinopsis
             // 
-            this.LblSinopsis.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblSinopsis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblSinopsis.AutoEllipsis = true;
             this.LblSinopsis.AutoSize = true;
             this.LblSinopsis.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblSinopsis.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSinopsis.Location = new System.Drawing.Point(567, 238);
+            this.LblSinopsis.Location = new System.Drawing.Point(567, 138);
             this.LblSinopsis.Name = "LblSinopsis";
             this.LblSinopsis.Size = new System.Drawing.Size(107, 31);
             this.LblSinopsis.TabIndex = 13;
@@ -136,23 +124,23 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblContSinopsis
             // 
-            this.LblContSinopsis.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblContSinopsis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblContSinopsis.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblContSinopsis.Location = new System.Drawing.Point(569, 269);
+            this.LblContSinopsis.Location = new System.Drawing.Point(569, 169);
             this.LblContSinopsis.Name = "LblContSinopsis";
-            this.LblContSinopsis.Size = new System.Drawing.Size(681, 254);
+            this.LblContSinopsis.Size = new System.Drawing.Size(681, 343);
             this.LblContSinopsis.TabIndex = 14;
             this.LblContSinopsis.Text = resources.GetString("LblContSinopsis.Text");
             this.LblContSinopsis.Click += new System.EventHandler(this.LblContSinopsis_Click);
             // 
             // LblSelecHorario
             // 
-            this.LblSelecHorario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LblSelecHorario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.LblSelecHorario.AutoEllipsis = true;
             this.LblSelecHorario.AutoSize = true;
             this.LblSelecHorario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblSelecHorario.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSelecHorario.Location = new System.Drawing.Point(567, 521);
+            this.LblSelecHorario.Location = new System.Drawing.Point(567, 556);
             this.LblSelecHorario.Name = "LblSelecHorario";
             this.LblSelecHorario.Size = new System.Drawing.Size(100, 31);
             this.LblSelecHorario.TabIndex = 15;
@@ -160,13 +148,12 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // CbxHorarios
             // 
-            this.CbxHorarios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CbxHorarios.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.CbxHorarios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CbxHorarios.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CbxHorarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbxHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CbxHorarios.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbxHorarios.FormattingEnabled = true;
-            this.CbxHorarios.Location = new System.Drawing.Point(573, 555);
+            this.CbxHorarios.Location = new System.Drawing.Point(573, 590);
             this.CbxHorarios.Name = "CbxHorarios";
             this.CbxHorarios.Size = new System.Drawing.Size(148, 31);
             this.CbxHorarios.TabIndex = 16;
@@ -176,13 +163,12 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             this.BtnComprar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnComprar.BackColor = System.Drawing.Color.DarkGray;
-            this.BtnComprar.Enabled = false;
             this.BtnComprar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.BtnComprar.FlatAppearance.BorderSize = 5;
             this.BtnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnComprar.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.BtnComprar.Location = new System.Drawing.Point(1119, 670);
+            this.BtnComprar.Location = new System.Drawing.Point(1119, 705);
             this.BtnComprar.Name = "BtnComprar";
             this.BtnComprar.Size = new System.Drawing.Size(131, 66);
             this.BtnComprar.TabIndex = 17;
@@ -209,189 +195,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlSeleccionBoletos.Controls.Add(this.LblBoleto3raEdad);
             this.PnlSeleccionBoletos.Controls.Add(this.LblBoletoAdulto);
             this.PnlSeleccionBoletos.Controls.Add(this.LblBoletoNiño);
-            this.PnlSeleccionBoletos.Location = new System.Drawing.Point(727, 517);
+            this.PnlSeleccionBoletos.Location = new System.Drawing.Point(727, 552);
             this.PnlSeleccionBoletos.Name = "PnlSeleccionBoletos";
             this.PnlSeleccionBoletos.Size = new System.Drawing.Size(386, 220);
             this.PnlSeleccionBoletos.TabIndex = 19;
             this.PnlSeleccionBoletos.Visible = false;
-            // 
-            // LblBoletoNiño
-            // 
-            this.LblBoletoNiño.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblBoletoNiño.AutoEllipsis = true;
-            this.LblBoletoNiño.AutoSize = true;
-            this.LblBoletoNiño.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblBoletoNiño.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBoletoNiño.ForeColor = System.Drawing.Color.White;
-            this.LblBoletoNiño.Location = new System.Drawing.Point(13, 29);
-            this.LblBoletoNiño.Name = "LblBoletoNiño";
-            this.LblBoletoNiño.Size = new System.Drawing.Size(70, 31);
-            this.LblBoletoNiño.TabIndex = 16;
-            this.LblBoletoNiño.Text = "Niño";
-            // 
-            // LblBoletoAdulto
-            // 
-            this.LblBoletoAdulto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblBoletoAdulto.AutoEllipsis = true;
-            this.LblBoletoAdulto.AutoSize = true;
-            this.LblBoletoAdulto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblBoletoAdulto.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBoletoAdulto.ForeColor = System.Drawing.Color.White;
-            this.LblBoletoAdulto.Location = new System.Drawing.Point(13, 93);
-            this.LblBoletoAdulto.Name = "LblBoletoAdulto";
-            this.LblBoletoAdulto.Size = new System.Drawing.Size(91, 31);
-            this.LblBoletoAdulto.TabIndex = 17;
-            this.LblBoletoAdulto.Text = "Adulto";
-            // 
-            // LblBoleto3raEdad
-            // 
-            this.LblBoleto3raEdad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblBoleto3raEdad.AutoEllipsis = true;
-            this.LblBoleto3raEdad.AutoSize = true;
-            this.LblBoleto3raEdad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblBoleto3raEdad.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBoleto3raEdad.ForeColor = System.Drawing.Color.White;
-            this.LblBoleto3raEdad.Location = new System.Drawing.Point(13, 153);
-            this.LblBoleto3raEdad.Name = "LblBoleto3raEdad";
-            this.LblBoleto3raEdad.Size = new System.Drawing.Size(113, 31);
-            this.LblBoleto3raEdad.TabIndex = 18;
-            this.LblBoleto3raEdad.Text = "3ra Edad";
-            // 
-            // BtnMasNiño
-            // 
-            this.BtnMasNiño.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnMasNiño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMasNiño.Location = new System.Drawing.Point(333, 27);
-            this.BtnMasNiño.Name = "BtnMasNiño";
-            this.BtnMasNiño.Size = new System.Drawing.Size(36, 36);
-            this.BtnMasNiño.TabIndex = 19;
-            this.BtnMasNiño.Text = "+";
-            this.BtnMasNiño.UseVisualStyleBackColor = false;
-            // 
-            // BtnMasAdulto
-            // 
-            this.BtnMasAdulto.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnMasAdulto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMasAdulto.Location = new System.Drawing.Point(333, 91);
-            this.BtnMasAdulto.Name = "BtnMasAdulto";
-            this.BtnMasAdulto.Size = new System.Drawing.Size(36, 36);
-            this.BtnMasAdulto.TabIndex = 20;
-            this.BtnMasAdulto.Text = "+";
-            this.BtnMasAdulto.UseVisualStyleBackColor = false;
-            // 
-            // BtnMas3raEdad
-            // 
-            this.BtnMas3raEdad.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnMas3raEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMas3raEdad.Location = new System.Drawing.Point(333, 153);
-            this.BtnMas3raEdad.Name = "BtnMas3raEdad";
-            this.BtnMas3raEdad.Size = new System.Drawing.Size(36, 36);
-            this.BtnMas3raEdad.TabIndex = 21;
-            this.BtnMas3raEdad.Text = "+";
-            this.BtnMas3raEdad.UseVisualStyleBackColor = false;
-            // 
-            // BtnMenosNiño
-            // 
-            this.BtnMenosNiño.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnMenosNiño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMenosNiño.Location = new System.Drawing.Point(291, 27);
-            this.BtnMenosNiño.Name = "BtnMenosNiño";
-            this.BtnMenosNiño.Size = new System.Drawing.Size(36, 36);
-            this.BtnMenosNiño.TabIndex = 22;
-            this.BtnMenosNiño.Text = "-";
-            this.BtnMenosNiño.UseVisualStyleBackColor = false;
-            // 
-            // BtnMenosAdulto
-            // 
-            this.BtnMenosAdulto.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnMenosAdulto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMenosAdulto.Location = new System.Drawing.Point(291, 91);
-            this.BtnMenosAdulto.Name = "BtnMenosAdulto";
-            this.BtnMenosAdulto.Size = new System.Drawing.Size(36, 36);
-            this.BtnMenosAdulto.TabIndex = 23;
-            this.BtnMenosAdulto.Text = "-";
-            this.BtnMenosAdulto.UseVisualStyleBackColor = false;
-            // 
-            // BtnMenos3raEdad
-            // 
-            this.BtnMenos3raEdad.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnMenos3raEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMenos3raEdad.Location = new System.Drawing.Point(291, 153);
-            this.BtnMenos3raEdad.Name = "BtnMenos3raEdad";
-            this.BtnMenos3raEdad.Size = new System.Drawing.Size(36, 36);
-            this.BtnMenos3raEdad.TabIndex = 24;
-            this.BtnMenos3raEdad.Text = "-";
-            this.BtnMenos3raEdad.UseVisualStyleBackColor = false;
-            // 
-            // LblCantidadNiño
-            // 
-            this.LblCantidadNiño.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblCantidadNiño.AutoEllipsis = true;
-            this.LblCantidadNiño.AutoSize = true;
-            this.LblCantidadNiño.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblCantidadNiño.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCantidadNiño.ForeColor = System.Drawing.Color.White;
-            this.LblCantidadNiño.Location = new System.Drawing.Point(236, 29);
-            this.LblCantidadNiño.Name = "LblCantidadNiño";
-            this.LblCantidadNiño.Size = new System.Drawing.Size(40, 31);
-            this.LblCantidadNiño.TabIndex = 25;
-            this.LblCantidadNiño.Text = "x0";
-            // 
-            // LblCantidadAdulto
-            // 
-            this.LblCantidadAdulto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblCantidadAdulto.AutoEllipsis = true;
-            this.LblCantidadAdulto.AutoSize = true;
-            this.LblCantidadAdulto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblCantidadAdulto.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCantidadAdulto.ForeColor = System.Drawing.Color.White;
-            this.LblCantidadAdulto.Location = new System.Drawing.Point(236, 93);
-            this.LblCantidadAdulto.Name = "LblCantidadAdulto";
-            this.LblCantidadAdulto.Size = new System.Drawing.Size(40, 31);
-            this.LblCantidadAdulto.TabIndex = 26;
-            this.LblCantidadAdulto.Text = "x0";
-            // 
-            // LblCantidad3raEdad
-            // 
-            this.LblCantidad3raEdad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblCantidad3raEdad.AutoEllipsis = true;
-            this.LblCantidad3raEdad.AutoSize = true;
-            this.LblCantidad3raEdad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblCantidad3raEdad.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCantidad3raEdad.ForeColor = System.Drawing.Color.White;
-            this.LblCantidad3raEdad.Location = new System.Drawing.Point(236, 155);
-            this.LblCantidad3raEdad.Name = "LblCantidad3raEdad";
-            this.LblCantidad3raEdad.Size = new System.Drawing.Size(40, 31);
-            this.LblCantidad3raEdad.TabIndex = 27;
-            this.LblCantidad3raEdad.Text = "x0";
-            // 
-            // LblPrecioNiño
-            // 
-            this.LblPrecioNiño.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblPrecioNiño.AutoEllipsis = true;
-            this.LblPrecioNiño.AutoSize = true;
-            this.LblPrecioNiño.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblPrecioNiño.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPrecioNiño.ForeColor = System.Drawing.Color.White;
-            this.LblPrecioNiño.Location = new System.Drawing.Point(154, 29);
-            this.LblPrecioNiño.Name = "LblPrecioNiño";
-            this.LblPrecioNiño.Size = new System.Drawing.Size(28, 31);
-            this.LblPrecioNiño.TabIndex = 28;
-            this.LblPrecioNiño.Text = "$";
-            // 
-            // LblPrecioAdulto
-            // 
-            this.LblPrecioAdulto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblPrecioAdulto.AutoEllipsis = true;
-            this.LblPrecioAdulto.AutoSize = true;
-            this.LblPrecioAdulto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblPrecioAdulto.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPrecioAdulto.ForeColor = System.Drawing.Color.White;
-            this.LblPrecioAdulto.Location = new System.Drawing.Point(154, 93);
-            this.LblPrecioAdulto.Name = "LblPrecioAdulto";
-            this.LblPrecioAdulto.Size = new System.Drawing.Size(28, 31);
-            this.LblPrecioAdulto.TabIndex = 29;
-            this.LblPrecioAdulto.Text = "$";
             // 
             // LblPrecio3raEdad
             // 
@@ -407,6 +215,184 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblPrecio3raEdad.TabIndex = 30;
             this.LblPrecio3raEdad.Text = "$";
             // 
+            // LblPrecioAdulto
+            // 
+            this.LblPrecioAdulto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblPrecioAdulto.AutoEllipsis = true;
+            this.LblPrecioAdulto.AutoSize = true;
+            this.LblPrecioAdulto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblPrecioAdulto.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPrecioAdulto.ForeColor = System.Drawing.Color.White;
+            this.LblPrecioAdulto.Location = new System.Drawing.Point(154, 93);
+            this.LblPrecioAdulto.Name = "LblPrecioAdulto";
+            this.LblPrecioAdulto.Size = new System.Drawing.Size(28, 31);
+            this.LblPrecioAdulto.TabIndex = 29;
+            this.LblPrecioAdulto.Text = "$";
+            // 
+            // LblPrecioNiño
+            // 
+            this.LblPrecioNiño.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblPrecioNiño.AutoEllipsis = true;
+            this.LblPrecioNiño.AutoSize = true;
+            this.LblPrecioNiño.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblPrecioNiño.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPrecioNiño.ForeColor = System.Drawing.Color.White;
+            this.LblPrecioNiño.Location = new System.Drawing.Point(154, 29);
+            this.LblPrecioNiño.Name = "LblPrecioNiño";
+            this.LblPrecioNiño.Size = new System.Drawing.Size(28, 31);
+            this.LblPrecioNiño.TabIndex = 28;
+            this.LblPrecioNiño.Text = "$";
+            // 
+            // LblCantidad3raEdad
+            // 
+            this.LblCantidad3raEdad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblCantidad3raEdad.AutoEllipsis = true;
+            this.LblCantidad3raEdad.AutoSize = true;
+            this.LblCantidad3raEdad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblCantidad3raEdad.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCantidad3raEdad.ForeColor = System.Drawing.Color.White;
+            this.LblCantidad3raEdad.Location = new System.Drawing.Point(236, 155);
+            this.LblCantidad3raEdad.Name = "LblCantidad3raEdad";
+            this.LblCantidad3raEdad.Size = new System.Drawing.Size(40, 31);
+            this.LblCantidad3raEdad.TabIndex = 27;
+            this.LblCantidad3raEdad.Text = "x0";
+            // 
+            // LblCantidadAdulto
+            // 
+            this.LblCantidadAdulto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblCantidadAdulto.AutoEllipsis = true;
+            this.LblCantidadAdulto.AutoSize = true;
+            this.LblCantidadAdulto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblCantidadAdulto.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCantidadAdulto.ForeColor = System.Drawing.Color.White;
+            this.LblCantidadAdulto.Location = new System.Drawing.Point(236, 93);
+            this.LblCantidadAdulto.Name = "LblCantidadAdulto";
+            this.LblCantidadAdulto.Size = new System.Drawing.Size(40, 31);
+            this.LblCantidadAdulto.TabIndex = 26;
+            this.LblCantidadAdulto.Text = "x0";
+            // 
+            // LblCantidadNiño
+            // 
+            this.LblCantidadNiño.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblCantidadNiño.AutoEllipsis = true;
+            this.LblCantidadNiño.AutoSize = true;
+            this.LblCantidadNiño.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblCantidadNiño.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCantidadNiño.ForeColor = System.Drawing.Color.White;
+            this.LblCantidadNiño.Location = new System.Drawing.Point(236, 29);
+            this.LblCantidadNiño.Name = "LblCantidadNiño";
+            this.LblCantidadNiño.Size = new System.Drawing.Size(40, 31);
+            this.LblCantidadNiño.TabIndex = 25;
+            this.LblCantidadNiño.Text = "x0";
+            // 
+            // BtnMenos3raEdad
+            // 
+            this.BtnMenos3raEdad.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnMenos3raEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMenos3raEdad.Location = new System.Drawing.Point(291, 153);
+            this.BtnMenos3raEdad.Name = "BtnMenos3raEdad";
+            this.BtnMenos3raEdad.Size = new System.Drawing.Size(36, 36);
+            this.BtnMenos3raEdad.TabIndex = 24;
+            this.BtnMenos3raEdad.Text = "-";
+            this.BtnMenos3raEdad.UseVisualStyleBackColor = false;
+            // 
+            // BtnMenosAdulto
+            // 
+            this.BtnMenosAdulto.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnMenosAdulto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMenosAdulto.Location = new System.Drawing.Point(291, 91);
+            this.BtnMenosAdulto.Name = "BtnMenosAdulto";
+            this.BtnMenosAdulto.Size = new System.Drawing.Size(36, 36);
+            this.BtnMenosAdulto.TabIndex = 23;
+            this.BtnMenosAdulto.Text = "-";
+            this.BtnMenosAdulto.UseVisualStyleBackColor = false;
+            // 
+            // BtnMenosNiño
+            // 
+            this.BtnMenosNiño.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnMenosNiño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMenosNiño.Location = new System.Drawing.Point(291, 27);
+            this.BtnMenosNiño.Name = "BtnMenosNiño";
+            this.BtnMenosNiño.Size = new System.Drawing.Size(36, 36);
+            this.BtnMenosNiño.TabIndex = 22;
+            this.BtnMenosNiño.Text = "-";
+            this.BtnMenosNiño.UseVisualStyleBackColor = false;
+            // 
+            // BtnMas3raEdad
+            // 
+            this.BtnMas3raEdad.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnMas3raEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMas3raEdad.Location = new System.Drawing.Point(333, 153);
+            this.BtnMas3raEdad.Name = "BtnMas3raEdad";
+            this.BtnMas3raEdad.Size = new System.Drawing.Size(36, 36);
+            this.BtnMas3raEdad.TabIndex = 21;
+            this.BtnMas3raEdad.Text = "+";
+            this.BtnMas3raEdad.UseVisualStyleBackColor = false;
+            // 
+            // BtnMasAdulto
+            // 
+            this.BtnMasAdulto.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnMasAdulto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMasAdulto.Location = new System.Drawing.Point(333, 91);
+            this.BtnMasAdulto.Name = "BtnMasAdulto";
+            this.BtnMasAdulto.Size = new System.Drawing.Size(36, 36);
+            this.BtnMasAdulto.TabIndex = 20;
+            this.BtnMasAdulto.Text = "+";
+            this.BtnMasAdulto.UseVisualStyleBackColor = false;
+            // 
+            // BtnMasNiño
+            // 
+            this.BtnMasNiño.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnMasNiño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMasNiño.Location = new System.Drawing.Point(333, 27);
+            this.BtnMasNiño.Name = "BtnMasNiño";
+            this.BtnMasNiño.Size = new System.Drawing.Size(36, 36);
+            this.BtnMasNiño.TabIndex = 19;
+            this.BtnMasNiño.Text = "+";
+            this.BtnMasNiño.UseVisualStyleBackColor = false;
+            // 
+            // LblBoleto3raEdad
+            // 
+            this.LblBoleto3raEdad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblBoleto3raEdad.AutoEllipsis = true;
+            this.LblBoleto3raEdad.AutoSize = true;
+            this.LblBoleto3raEdad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblBoleto3raEdad.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBoleto3raEdad.ForeColor = System.Drawing.Color.White;
+            this.LblBoleto3raEdad.Location = new System.Drawing.Point(13, 153);
+            this.LblBoleto3raEdad.Name = "LblBoleto3raEdad";
+            this.LblBoleto3raEdad.Size = new System.Drawing.Size(113, 31);
+            this.LblBoleto3raEdad.TabIndex = 18;
+            this.LblBoleto3raEdad.Text = "3ra Edad";
+            // 
+            // LblBoletoAdulto
+            // 
+            this.LblBoletoAdulto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblBoletoAdulto.AutoEllipsis = true;
+            this.LblBoletoAdulto.AutoSize = true;
+            this.LblBoletoAdulto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblBoletoAdulto.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBoletoAdulto.ForeColor = System.Drawing.Color.White;
+            this.LblBoletoAdulto.Location = new System.Drawing.Point(13, 93);
+            this.LblBoletoAdulto.Name = "LblBoletoAdulto";
+            this.LblBoletoAdulto.Size = new System.Drawing.Size(91, 31);
+            this.LblBoletoAdulto.TabIndex = 17;
+            this.LblBoletoAdulto.Text = "Adulto";
+            // 
+            // LblBoletoNiño
+            // 
+            this.LblBoletoNiño.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblBoletoNiño.AutoEllipsis = true;
+            this.LblBoletoNiño.AutoSize = true;
+            this.LblBoletoNiño.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblBoletoNiño.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBoletoNiño.ForeColor = System.Drawing.Color.White;
+            this.LblBoletoNiño.Location = new System.Drawing.Point(13, 29);
+            this.LblBoletoNiño.Name = "LblBoletoNiño";
+            this.LblBoletoNiño.Size = new System.Drawing.Size(70, 31);
+            this.LblBoletoNiño.TabIndex = 16;
+            this.LblBoletoNiño.Text = "Niño";
+            // 
             // LblTotal
             // 
             this.LblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -414,7 +400,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblTotal.AutoSize = true;
             this.LblTotal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblTotal.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotal.Location = new System.Drawing.Point(1150, 517);
+            this.LblTotal.Location = new System.Drawing.Point(1127, 552);
             this.LblTotal.Name = "LblTotal";
             this.LblTotal.Size = new System.Drawing.Size(76, 31);
             this.LblTotal.TabIndex = 20;
@@ -427,11 +413,22 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblTotalPesos.AutoSize = true;
             this.LblTotalPesos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblTotalPesos.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalPesos.Location = new System.Drawing.Point(1150, 555);
+            this.LblTotalPesos.Location = new System.Drawing.Point(1127, 590);
             this.LblTotalPesos.Name = "LblTotalPesos";
             this.LblTotalPesos.Size = new System.Drawing.Size(28, 31);
             this.LblTotalPesos.TabIndex = 21;
             this.LblTotalPesos.Text = "$";
+            // 
+            // PbxPortadaGrande
+            // 
+            this.PbxPortadaGrande.ErrorImage = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.Cinemax_Logo;
+            this.PbxPortadaGrande.Image = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.Cinemax_Logo;
+            this.PbxPortadaGrande.Location = new System.Drawing.Point(20, 19);
+            this.PbxPortadaGrande.Name = "PbxPortadaGrande";
+            this.PbxPortadaGrande.Size = new System.Drawing.Size(541, 729);
+            this.PbxPortadaGrande.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbxPortadaGrande.TabIndex = 0;
+            this.PbxPortadaGrande.TabStop = false;
             // 
             // PanelPeliculaGrande
             // 
@@ -454,9 +451,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.Name = "PanelPeliculaGrande";
             this.Size = new System.Drawing.Size(1275, 794);
             this.Load += new System.EventHandler(this.PanelPeliculaGrande_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.PbxPortadaGrande)).EndInit();
             this.PnlSeleccionBoletos.ResumeLayout(false);
             this.PnlSeleccionBoletos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxPortadaGrande)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

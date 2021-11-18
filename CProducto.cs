@@ -20,19 +20,21 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public string Producto { get; set; }
         public double Precio { get; set; }
         public int Stock { get; set; }
+        public bool Oculto;
 
         public Image Imagen;
 
         //---------------------------------------------------------------------
         //Constructor.
         //---------------------------------------------------------------------
-        public CProducto(int Codigo, string Producto, double Precio, int Stock, Image Imagen)
+        public CProducto(int Codigo, string Producto, double Precio, int Stock, Image Imagen, bool Oculto)
         {
             this.Codigo = Codigo;
             this.Producto = Producto;
             this.Precio = Precio;
             this.Stock = Stock;
             this.Imagen = Imagen;
+            this.Oculto = Oculto;
         }
     }
 }

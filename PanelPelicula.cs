@@ -12,17 +12,18 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
     public partial class PanelPelicula : UserControl
     {
-
-        public Label Titulo;
+        //public static PanelPelicula PnlPelicula;
+        /*public Label Titulo;
         public Label Clasificacion;
         public Label Duracion;
         public Label Genero;
         public TableLayoutPanel Horarios;
-        public PictureBox Portada;
+        public PictureBox Portada;*/
         private CPelicula Pelicula;
         public PanelPelicula(CPelicula Pelicula)
         {
             InitializeComponent();
+            //PnlPelicula = this;
             this.Pelicula = Pelicula;
 
             LblNombrePelicula.Text = Pelicula.Titulo;

@@ -46,6 +46,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PbxImagenProducto = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.BtnNuevoProducto = new System.Windows.Forms.Button();
+            this.CbxOcultar = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudStockProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudPrecioProducto)).BeginInit();
@@ -221,12 +222,23 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnNuevoProducto.UseVisualStyleBackColor = true;
             this.BtnNuevoProducto.Click += new System.EventHandler(this.BtnNuevoProducto_Click);
             // 
+            // CbxOcultar
+            // 
+            this.CbxOcultar.AutoSize = true;
+            this.CbxOcultar.Location = new System.Drawing.Point(156, 12);
+            this.CbxOcultar.Name = "CbxOcultar";
+            this.CbxOcultar.Size = new System.Drawing.Size(135, 21);
+            this.CbxOcultar.TabIndex = 32;
+            this.CbxOcultar.Text = "Ocultar en menú";
+            this.CbxOcultar.UseVisualStyleBackColor = true;
+            // 
             // DlgConfigurarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.CbxOcultar);
             this.Controls.Add(this.BtnNuevoProducto);
             this.Controls.Add(this.BtnCargarImagen);
             this.Controls.Add(this.PbxImagenProducto);
@@ -272,5 +284,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private System.Windows.Forms.PictureBox PbxImagenProducto;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button BtnNuevoProducto;
+        private System.Windows.Forms.CheckBox CbxOcultar;
     }
 }

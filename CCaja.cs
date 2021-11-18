@@ -15,33 +15,18 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         //Atributos.
         //---------------------------------------------------------------------
-        private double BoletoNiño;
-        private double BoletoAdulto;
-        private double Boleto3raEdad;
-
+        private double Dinero;
 
         //---------------------------------------------------------------------
         //Costructor.
         //---------------------------------------------------------------------
         public CCaja()
         {
-            BoletoNiño = 57;
-            BoletoAdulto = 75;
-            Boleto3raEdad = 57;
+            
         }
+        public void GetTotalCaja()
+        {
 
-        public double GetBoletoNiño()
-        {
-            return BoletoNiño;
-        }
-        public double GetBoletoAdulto()
-        {
-            return BoletoAdulto;
-        }
-
-        public double GetBoleto3raEdad()
-        {
-            return Boleto3raEdad;
         }
     }
 }

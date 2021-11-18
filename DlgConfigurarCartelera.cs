@@ -8,14 +8,14 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
     public partial class DlgConfigurarCartelera : Form
     {
-        public static DlgConfigurarCartelera ConfigurarCartelera;
+        //public static DlgConfigurarCartelera ConfigurarCartelera;
         private int indice=-1;
         public List<CPelicula> Peliculas = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas;
 
         public DlgConfigurarCartelera()
         {
             InitializeComponent();
-            ConfigurarCartelera = this;
+            //ConfigurarCartelera = this;
         }
         private void BtnLimpiarFormulario_Click(object sender, EventArgs e)
         {
@@ -28,17 +28,13 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         private void BtnGuardarPelicula_Click(object sender, EventArgs e)
         {
-            //string Horarios = "";
             int ConteoHorarios = LbxHorariosPelicula.Items.Count;
-            //string[] Horarios = new string[ConteoHorarios];
             List<string> HorarioPelicula = new List<string>();
 
             for (int i = 0; i < ConteoHorarios; i++)
             {
-                //Horarios = Horarios+LbxHorariosPelicula.Items[i].ToString()+"\n";
                 HorarioPelicula.Add(LbxHorariosPelicula.Items[i].ToString());
             }
-            //int indice = DgvPeliculas.Rows.Add();
             CPelicula Pelicula = new CPelicula(//"Title","Duration","Gender","Clasif","Sinopsis","Schedule"
                 TbxTituloPelicula.Text,
                 NudDuracionPelicula.Text,
@@ -58,8 +54,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 Peliculas.Add(Pelicula);
             }
-            //DlgMenuPrincipal.MenuPrincipal.ListaPeliculas = Peliculas;
-            //DlgMenuPrincipal.MenuPrincipal.ListaHorarios = HorarioPelicula;
             DlgMenuPrincipal.MenuPrincipal.CargarCartelera();
             LimpiarFormulario();
             ActualizarTabla();

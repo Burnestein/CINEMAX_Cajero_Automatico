@@ -19,6 +19,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public List<string> Horarios { get; set; }
         public string Sinopsis { get; set; }
         public Image Portada { get; set; }
+        private string HorarioSeleccionado;
 
         //---------------------------------------------------------------------
         //Constructor.
@@ -78,6 +79,15 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public string GetSinopsis()
         {
             return Sinopsis;
+        }
+        public string CambiarHorarioSeleccionado(string NuevoHorario)
+        {
+            HorarioSeleccionado = NuevoHorario;
+            return HorarioSeleccionado;
+        }
+        public string GetHorarioSeleccionado()
+        {
+            return HorarioSeleccionado;
         }
     }
 }

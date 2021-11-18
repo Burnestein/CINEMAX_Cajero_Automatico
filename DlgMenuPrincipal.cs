@@ -20,10 +20,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //Atributos.
         //---------------------------------------------------------------------
         public static DlgMenuPrincipal MenuPrincipal;
-        //private TableLayoutPanel TablaCartelera;
         public List<CPelicula> ListaPeliculas;
         public List<CProducto> ListaProductos;
         private int indice=0;
+        public CCanastaCompras Compras;
 
         //---------------------------------------------------------------------
         //Constructor.
@@ -35,21 +35,23 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.ControlBox = false;
             this.Text = string.Empty;
             this.MstPrincipal.Visible = false;
-            //this.TablaCartelera = new TableLayoutPanel();
             ListaPeliculas = new List<CPelicula>();
+            ListaProductos = new List<CProducto>();
             Label Date = new Label();
             Date = LblCurrentTime;
-
+            Compras = new CCanastaCompras();
         }
         
         private void BtnCartelera_Click(object sender, EventArgs e)
         {
+            indice = 0;
             CargarCartelera();
         }
 
         private void BtnFuenteSodas_Click(object sender, EventArgs e)
         {
-
+            indice = 0;
+            CargarFuenteSodas();
         }
 
         public void CargarPanelPelicula(CPelicula Pelicula)
@@ -59,16 +61,67 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             PnlCartelera.Controls.Add(MiPanelGrande);
             MiPanelGrande.Dock = DockStyle.Fill;
         }
+
+        public void CargarFuenteSodas()
+        {
+            TableLayoutPanel TablaFuenteSodas;
+            TablaFuenteSodas = DibujarTabla(2, 3);
+            PnlCartelera.Controls.Clear();
+            PnlCartelera.Controls.Add(TablaFuenteSodas);
+
+            int n = 0;
+            int rows;
+            int cols;
+            int ocultos=0;
+            for(int i = 0; i < ListaProductos.Count; i++)
+            {
+                if (ListaProductos[i].Oculto)
+                {
+                    ocultos++;
+                }
+            }
+            //MessageBox.Show("Hay " + ocultos + " en la lista de productos.");
+            int Cantidad = ListaProductos.Count - indice - ocultos;
+            if (Cantidad <= 3)
+            {
+                rows = 1;
+                cols = Cantidad;
+            }
+            else
+            {
+                rows = 2;
+                cols = 3;
+            }
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < cols; col++)
+                {
+
+                    if (n < 6)
+                    {
+                        if (!(ListaProductos[n + indice].Oculto))
+                        {
+                            PanelProducto MiPanelProducto = new PanelProducto(ListaProductos[n + indice]);
+                            TablaFuenteSodas.Controls.Add(MiPanelProducto, col, row);
+                        }
+                        else
+                        {
+                            col--;
+                        }
+                        n++;
+                    }
+                }
+                cols = Cantidad - 3;
+            }
+            if (Cantidad > 6) PnlBtnDerecho.Visible = true;
+            else PnlBtnDerecho.Visible = false;
+            if (indice == 0) PnlBtnIzquierdo.Visible = false;
+        }
         public void CargarCartelera()
         {
+
             TableLayoutPanel TablaCartelera;
             TablaCartelera = DibujarTabla(2, 3);
-            TablaCartelera.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            TablaCartelera.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            TablaCartelera.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            TablaCartelera.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            TablaCartelera.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-
             PnlCartelera.Controls.Clear();
             PnlCartelera.Controls.Add(TablaCartelera);
             
@@ -102,7 +155,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             }
             if (Cantidad > 6) PnlBtnDerecho.Visible = true;
             else PnlBtnDerecho.Visible = false;
-
             if (indice == 0) PnlBtnIzquierdo.Visible = false;
         }
         private void BtnConfiguracion_Click(object sender, EventArgs e)
@@ -142,6 +194,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             MiTabla.Dock = DockStyle.Fill;
             MiTabla.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
             MiTabla.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
+            MiTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            MiTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            MiTabla.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            MiTabla.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            MiTabla.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             return MiTabla;
         }
 
@@ -179,6 +236,18 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         {
             indice -= 6;
             CargarCartelera();
+        }
+
+        private void BtnCompras_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tienes " + Compras.Count() + " compras, y son:");
+            string Mensaje = "";
+            List<string> MiLista = Compras.ConvertirAListaProductos();
+            for (int i = 0; i < Compras.Count(); i++)
+            {
+                Mensaje = Mensaje + MiLista[i] + "\n";
+            }
+            MessageBox.Show(Mensaje);
         }
     }
 }

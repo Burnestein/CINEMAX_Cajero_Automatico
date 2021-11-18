@@ -35,19 +35,19 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void PanelPeliculaGrande_Load(object sender, EventArgs e)
         {
-            CCaja MiCaja = new CCaja();
-            LblPrecioNiño.Text = "$" + MiCaja.GetBoletoNiño().ToString();
-            LblPrecioAdulto.Text = "$" + MiCaja.GetBoletoAdulto().ToString();
-            LblPrecio3raEdad.Text = "$" + MiCaja.GetBoleto3raEdad().ToString();
+            
         }
 
         private void BtnComprar_Click(object sender, EventArgs e)
         {
+            DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(Pelicula);
 
         }
 
         private void CbxHorarios_SelectedValueChanged(object sender, EventArgs e)
         {
+            Pelicula.CambiarHorarioSeleccionado(CbxHorarios.Text);
+            MessageBox.Show("El horario seleccionado es " + Pelicula.GetHorarioSeleccionado());
             if(CbxHorarios.SelectedIndex > 0)
             {
                 PnlSeleccionBoletos.Visible = true;

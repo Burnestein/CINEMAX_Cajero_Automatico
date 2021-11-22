@@ -257,6 +257,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblExportarXML.TabIndex = 24;
             this.LblExportarXML.Text = "Exportar XML";
             this.LblExportarXML.UseVisualStyleBackColor = true;
+            this.LblExportarXML.Click += new System.EventHandler(this.LblExportarXML_Click);
             // 
             // DtpHorarioPelicula
             // 

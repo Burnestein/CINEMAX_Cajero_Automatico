@@ -39,30 +39,31 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.VolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.PnlLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlBotones = new System.Windows.Forms.Panel();
-            this.LblCaja = new System.Windows.Forms.Label();
-            this.LblCurrentTime = new System.Windows.Forms.Label();
-            this.PnlSuperior = new System.Windows.Forms.Panel();
-            this.PnlCartelera = new System.Windows.Forms.Panel();
-            this.PnlBtnIzquierdo = new System.Windows.Forms.Panel();
-            this.PnlBtnDerecho = new System.Windows.Forms.Panel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.SspMenuPrincipal = new System.Windows.Forms.StatusStrip();
-            this.BtnDerecho = new System.Windows.Forms.Button();
-            this.BtnIzquierdo = new System.Windows.Forms.Button();
-            this.BtnConfiguracion = new System.Windows.Forms.Button();
             this.BtnCompras = new System.Windows.Forms.Button();
             this.BtnFuenteSodas = new System.Windows.Forms.Button();
             this.BtnCartelera = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LblCaja = new System.Windows.Forms.Label();
+            this.LblCurrentTime = new System.Windows.Forms.Label();
+            this.PnlSuperior = new System.Windows.Forms.Panel();
+            this.BtnConfiguracion = new System.Windows.Forms.Button();
+            this.PnlCartelera = new System.Windows.Forms.Panel();
+            this.PnlBtnIzquierdo = new System.Windows.Forms.Panel();
+            this.BtnIzquierdo = new System.Windows.Forms.Button();
+            this.PnlBtnDerecho = new System.Windows.Forms.Panel();
+            this.BtnDerecho = new System.Windows.Forms.Button();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.SspMenuPrincipal = new System.Windows.Forms.StatusStrip();
+            this.realizarCorteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MstPrincipal.SuspendLayout();
             this.PnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnlBotones.SuspendLayout();
             this.PnlSuperior.SuspendLayout();
             this.PnlBtnIzquierdo.SuspendLayout();
             this.PnlBtnDerecho.SuspendLayout();
             this.SspMenuPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MstPrincipal
@@ -76,7 +77,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.VolverToolStripMenuItem});
             this.MstPrincipal.Location = new System.Drawing.Point(0, 0);
             this.MstPrincipal.Name = "MstPrincipal";
-            this.MstPrincipal.Size = new System.Drawing.Size(1583, 30);
+            this.MstPrincipal.Size = new System.Drawing.Size(1583, 28);
             this.MstPrincipal.TabIndex = 2;
             this.MstPrincipal.Text = "menuStrip1";
             // 
@@ -87,35 +88,37 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.productosToolStripMenuItem});
             this.editarToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // carteleraToolStripMenuItem
             // 
             this.carteleraToolStripMenuItem.Name = "carteleraToolStripMenuItem";
-            this.carteleraToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.carteleraToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.carteleraToolStripMenuItem.Text = "Cartelera";
             this.carteleraToolStripMenuItem.Click += new System.EventHandler(this.carteleraToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
+            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.realizarCorteToolStripMenuItem});
             this.ayudaToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(65, 26);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.ayudaToolStripMenuItem.Text = "Caja";
             // 
             // VolverToolStripMenuItem
             // 
             this.VolverToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem";
-            this.VolverToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.VolverToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
             this.VolverToolStripMenuItem.Text = "Volver a terminal";
             this.VolverToolStripMenuItem.Click += new System.EventHandler(this.VolverToolStripMenuItem_Click);
             // 
@@ -133,6 +136,17 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlLogo.Size = new System.Drawing.Size(308, 148);
             this.PnlLogo.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.CinemaxWhite_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(308, 148);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // PnlBotones
             // 
             this.PnlBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
@@ -141,139 +155,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlBotones.Controls.Add(this.BtnCartelera);
             this.PnlBotones.Controls.Add(this.PnlLogo);
             this.PnlBotones.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PnlBotones.Location = new System.Drawing.Point(0, 30);
+            this.PnlBotones.Location = new System.Drawing.Point(0, 28);
             this.PnlBotones.Name = "PnlBotones";
-            this.PnlBotones.Size = new System.Drawing.Size(308, 940);
+            this.PnlBotones.Size = new System.Drawing.Size(308, 942);
             this.PnlBotones.TabIndex = 0;
-            // 
-            // LblCaja
-            // 
-            this.LblCaja.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.LblCaja.AutoSize = true;
-            this.LblCaja.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCaja.ForeColor = System.Drawing.Color.White;
-            this.LblCaja.Location = new System.Drawing.Point(1126, 57);
-            this.LblCaja.Name = "LblCaja";
-            this.LblCaja.Size = new System.Drawing.Size(83, 31);
-            this.LblCaja.TabIndex = 0;
-            this.LblCaja.Text = "Caja 1";
-            // 
-            // LblCurrentTime
-            // 
-            this.LblCurrentTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.LblCurrentTime.AutoSize = true;
-            this.LblCurrentTime.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCurrentTime.ForeColor = System.Drawing.Color.White;
-            this.LblCurrentTime.Location = new System.Drawing.Point(6, 57);
-            this.LblCurrentTime.Name = "LblCurrentTime";
-            this.LblCurrentTime.Size = new System.Drawing.Size(145, 30);
-            this.LblCurrentTime.TabIndex = 2;
-            this.LblCurrentTime.Text = "--/--/-- --:--";
-            // 
-            // PnlSuperior
-            // 
-            this.PnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
-            this.PnlSuperior.Controls.Add(this.LblCurrentTime);
-            this.PnlSuperior.Controls.Add(this.BtnConfiguracion);
-            this.PnlSuperior.Controls.Add(this.LblCaja);
-            this.PnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlSuperior.Location = new System.Drawing.Point(308, 30);
-            this.PnlSuperior.Name = "PnlSuperior";
-            this.PnlSuperior.Size = new System.Drawing.Size(1275, 148);
-            this.PnlSuperior.TabIndex = 1;
-            // 
-            // PnlCartelera
-            // 
-            this.PnlCartelera.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PnlCartelera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PnlCartelera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlCartelera.Location = new System.Drawing.Point(358, 178);
-            this.PnlCartelera.Margin = new System.Windows.Forms.Padding(10);
-            this.PnlCartelera.Name = "PnlCartelera";
-            this.PnlCartelera.Size = new System.Drawing.Size(1175, 792);
-            this.PnlCartelera.TabIndex = 7;
-            // 
-            // PnlBtnIzquierdo
-            // 
-            this.PnlBtnIzquierdo.Controls.Add(this.BtnIzquierdo);
-            this.PnlBtnIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PnlBtnIzquierdo.Location = new System.Drawing.Point(308, 178);
-            this.PnlBtnIzquierdo.Name = "PnlBtnIzquierdo";
-            this.PnlBtnIzquierdo.Size = new System.Drawing.Size(50, 792);
-            this.PnlBtnIzquierdo.TabIndex = 8;
-            this.PnlBtnIzquierdo.Visible = false;
-            // 
-            // PnlBtnDerecho
-            // 
-            this.PnlBtnDerecho.Controls.Add(this.BtnDerecho);
-            this.PnlBtnDerecho.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnlBtnDerecho.Location = new System.Drawing.Point(1533, 178);
-            this.PnlBtnDerecho.Name = "PnlBtnDerecho";
-            this.PnlBtnDerecho.Size = new System.Drawing.Size(50, 792);
-            this.PnlBtnDerecho.TabIndex = 9;
-            this.PnlBtnDerecho.Visible = false;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(43, 20);
-            this.toolStripStatusLabel1.Text = "NJSA";
-            // 
-            // SspMenuPrincipal
-            // 
-            this.SspMenuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.SspMenuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.SspMenuPrincipal.Location = new System.Drawing.Point(0, 944);
-            this.SspMenuPrincipal.Name = "SspMenuPrincipal";
-            this.SspMenuPrincipal.Size = new System.Drawing.Size(1583, 26);
-            this.SspMenuPrincipal.TabIndex = 4;
-            this.SspMenuPrincipal.Text = "statusStrip1";
-            this.SspMenuPrincipal.Visible = false;
-            // 
-            // BtnDerecho
-            // 
-            this.BtnDerecho.BackgroundImage = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.right_arrow;
-            this.BtnDerecho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnDerecho.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnDerecho.FlatAppearance.BorderSize = 0;
-            this.BtnDerecho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDerecho.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDerecho.Location = new System.Drawing.Point(0, 0);
-            this.BtnDerecho.Name = "BtnDerecho";
-            this.BtnDerecho.Size = new System.Drawing.Size(50, 792);
-            this.BtnDerecho.TabIndex = 11;
-            this.BtnDerecho.UseVisualStyleBackColor = true;
-            this.BtnDerecho.Click += new System.EventHandler(this.BtnDerecho_Click);
-            // 
-            // BtnIzquierdo
-            // 
-            this.BtnIzquierdo.BackgroundImage = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.left_arrow;
-            this.BtnIzquierdo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnIzquierdo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnIzquierdo.FlatAppearance.BorderSize = 0;
-            this.BtnIzquierdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnIzquierdo.Location = new System.Drawing.Point(0, 0);
-            this.BtnIzquierdo.Name = "BtnIzquierdo";
-            this.BtnIzquierdo.Size = new System.Drawing.Size(50, 792);
-            this.BtnIzquierdo.TabIndex = 10;
-            this.BtnIzquierdo.UseVisualStyleBackColor = true;
-            this.BtnIzquierdo.Click += new System.EventHandler(this.BtnIzquierdo_Click);
-            // 
-            // BtnConfiguracion
-            // 
-            this.BtnConfiguracion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(34)))), ((int)(((byte)(214)))), ((int)(((byte)(30)))));
-            this.BtnConfiguracion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnConfiguracion.BackgroundImage")));
-            this.BtnConfiguracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnConfiguracion.FlatAppearance.BorderSize = 0;
-            this.BtnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConfiguracion.Location = new System.Drawing.Point(1250, 0);
-            this.BtnConfiguracion.Name = "BtnConfiguracion";
-            this.BtnConfiguracion.Size = new System.Drawing.Size(25, 25);
-            this.BtnConfiguracion.TabIndex = 1;
-            this.BtnConfiguracion.UseVisualStyleBackColor = false;
-            this.BtnConfiguracion.Click += new System.EventHandler(this.BtnConfiguracion_Click);
             // 
             // BtnCompras
             // 
@@ -341,16 +226,141 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnCartelera.UseVisualStyleBackColor = true;
             this.BtnCartelera.Click += new System.EventHandler(this.BtnCartelera_Click);
             // 
-            // pictureBox1
+            // LblCaja
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.CinemaxWhite_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(308, 148);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.LblCaja.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.LblCaja.AutoSize = true;
+            this.LblCaja.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCaja.ForeColor = System.Drawing.Color.White;
+            this.LblCaja.Location = new System.Drawing.Point(1126, 57);
+            this.LblCaja.Name = "LblCaja";
+            this.LblCaja.Size = new System.Drawing.Size(83, 31);
+            this.LblCaja.TabIndex = 0;
+            this.LblCaja.Text = "Caja 1";
+            // 
+            // LblCurrentTime
+            // 
+            this.LblCurrentTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblCurrentTime.AutoSize = true;
+            this.LblCurrentTime.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCurrentTime.ForeColor = System.Drawing.Color.White;
+            this.LblCurrentTime.Location = new System.Drawing.Point(6, 57);
+            this.LblCurrentTime.Name = "LblCurrentTime";
+            this.LblCurrentTime.Size = new System.Drawing.Size(145, 30);
+            this.LblCurrentTime.TabIndex = 2;
+            this.LblCurrentTime.Text = "--/--/-- --:--";
+            // 
+            // PnlSuperior
+            // 
+            this.PnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.PnlSuperior.Controls.Add(this.LblCurrentTime);
+            this.PnlSuperior.Controls.Add(this.BtnConfiguracion);
+            this.PnlSuperior.Controls.Add(this.LblCaja);
+            this.PnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlSuperior.Location = new System.Drawing.Point(308, 28);
+            this.PnlSuperior.Name = "PnlSuperior";
+            this.PnlSuperior.Size = new System.Drawing.Size(1275, 148);
+            this.PnlSuperior.TabIndex = 1;
+            // 
+            // BtnConfiguracion
+            // 
+            this.BtnConfiguracion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(34)))), ((int)(((byte)(214)))), ((int)(((byte)(30)))));
+            this.BtnConfiguracion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnConfiguracion.BackgroundImage")));
+            this.BtnConfiguracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnConfiguracion.FlatAppearance.BorderSize = 0;
+            this.BtnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConfiguracion.Location = new System.Drawing.Point(1250, 0);
+            this.BtnConfiguracion.Name = "BtnConfiguracion";
+            this.BtnConfiguracion.Size = new System.Drawing.Size(25, 25);
+            this.BtnConfiguracion.TabIndex = 1;
+            this.BtnConfiguracion.UseVisualStyleBackColor = false;
+            this.BtnConfiguracion.Click += new System.EventHandler(this.BtnConfiguracion_Click);
+            // 
+            // PnlCartelera
+            // 
+            this.PnlCartelera.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PnlCartelera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PnlCartelera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnlCartelera.Location = new System.Drawing.Point(358, 176);
+            this.PnlCartelera.Margin = new System.Windows.Forms.Padding(10);
+            this.PnlCartelera.Name = "PnlCartelera";
+            this.PnlCartelera.Size = new System.Drawing.Size(1175, 794);
+            this.PnlCartelera.TabIndex = 7;
+            // 
+            // PnlBtnIzquierdo
+            // 
+            this.PnlBtnIzquierdo.Controls.Add(this.BtnIzquierdo);
+            this.PnlBtnIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PnlBtnIzquierdo.Location = new System.Drawing.Point(308, 176);
+            this.PnlBtnIzquierdo.Name = "PnlBtnIzquierdo";
+            this.PnlBtnIzquierdo.Size = new System.Drawing.Size(50, 794);
+            this.PnlBtnIzquierdo.TabIndex = 8;
+            this.PnlBtnIzquierdo.Visible = false;
+            // 
+            // BtnIzquierdo
+            // 
+            this.BtnIzquierdo.BackgroundImage = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.left_arrow;
+            this.BtnIzquierdo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnIzquierdo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnIzquierdo.FlatAppearance.BorderSize = 0;
+            this.BtnIzquierdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnIzquierdo.Location = new System.Drawing.Point(0, 0);
+            this.BtnIzquierdo.Name = "BtnIzquierdo";
+            this.BtnIzquierdo.Size = new System.Drawing.Size(50, 794);
+            this.BtnIzquierdo.TabIndex = 10;
+            this.BtnIzquierdo.UseVisualStyleBackColor = true;
+            this.BtnIzquierdo.Click += new System.EventHandler(this.BtnIzquierdo_Click);
+            // 
+            // PnlBtnDerecho
+            // 
+            this.PnlBtnDerecho.Controls.Add(this.BtnDerecho);
+            this.PnlBtnDerecho.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PnlBtnDerecho.Location = new System.Drawing.Point(1533, 176);
+            this.PnlBtnDerecho.Name = "PnlBtnDerecho";
+            this.PnlBtnDerecho.Size = new System.Drawing.Size(50, 794);
+            this.PnlBtnDerecho.TabIndex = 9;
+            this.PnlBtnDerecho.Visible = false;
+            // 
+            // BtnDerecho
+            // 
+            this.BtnDerecho.BackgroundImage = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.right_arrow;
+            this.BtnDerecho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnDerecho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnDerecho.FlatAppearance.BorderSize = 0;
+            this.BtnDerecho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDerecho.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDerecho.Location = new System.Drawing.Point(0, 0);
+            this.BtnDerecho.Name = "BtnDerecho";
+            this.BtnDerecho.Size = new System.Drawing.Size(50, 794);
+            this.BtnDerecho.TabIndex = 11;
+            this.BtnDerecho.UseVisualStyleBackColor = true;
+            this.BtnDerecho.Click += new System.EventHandler(this.BtnDerecho_Click);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(43, 20);
+            this.toolStripStatusLabel1.Text = "NJSA";
+            // 
+            // SspMenuPrincipal
+            // 
+            this.SspMenuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.SspMenuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.SspMenuPrincipal.Location = new System.Drawing.Point(0, 944);
+            this.SspMenuPrincipal.Name = "SspMenuPrincipal";
+            this.SspMenuPrincipal.Size = new System.Drawing.Size(1583, 26);
+            this.SspMenuPrincipal.TabIndex = 4;
+            this.SspMenuPrincipal.Text = "statusStrip1";
+            this.SspMenuPrincipal.Visible = false;
+            // 
+            // realizarCorteToolStripMenuItem
+            // 
+            this.realizarCorteToolStripMenuItem.Name = "realizarCorteToolStripMenuItem";
+            this.realizarCorteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.realizarCorteToolStripMenuItem.Text = "Realizar corte";
+            this.realizarCorteToolStripMenuItem.Click += new System.EventHandler(this.realizarCorteToolStripMenuItem_Click);
             // 
             // DlgMenuPrincipal
             // 
@@ -376,6 +386,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.MstPrincipal.ResumeLayout(false);
             this.MstPrincipal.PerformLayout();
             this.PnlLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnlBotones.ResumeLayout(false);
             this.PnlSuperior.ResumeLayout(false);
             this.PnlSuperior.PerformLayout();
@@ -383,7 +394,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlBtnDerecho.ResumeLayout(false);
             this.SspMenuPrincipal.ResumeLayout(false);
             this.SspMenuPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,6 +424,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private System.Windows.Forms.Button BtnDerecho;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.StatusStrip SspMenuPrincipal;
+        private System.Windows.Forms.ToolStripMenuItem realizarCorteToolStripMenuItem;
     }
 }
 

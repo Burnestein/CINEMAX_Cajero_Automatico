@@ -50,6 +50,12 @@
     <Compile Include="CCanastaCompras.cs" />
     <Compile Include="CPelicula.cs" />
     <Compile Include="CProducto.cs" />
+    <Compile Include="DlgConfigurarCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgConfigurarCaja.Designer.cs">
+      <DependentUpon>DlgConfigurarCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="DlgConfigurarCartelera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,24 @@
     </Compile>
     <Compile Include="DlgMenuPrincipal.Designer.cs">
       <DependentUpon>DlgMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DlgSeleccionarAsientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgSeleccionarAsientos.Designer.cs">
+      <DependentUpon>DlgSeleccionarAsientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelAsiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelAsiento.Designer.cs">
+      <DependentUpon>PanelAsiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelCanastaCompras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelCanastaCompras.Designer.cs">
+      <DependentUpon>PanelCanastaCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="PanelPeliculaGrande.cs">
       <SubType>UserControl</SubType>
@@ -88,6 +112,9 @@
     <Compile Include="PanelPelicula.Designer.cs">
       <DependentUpon>PanelPelicula.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DlgConfigurarCaja.resx">
+      <DependentUpon>DlgConfigurarCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DlgConfigurarCartelera.resx">
       <DependentUpon>DlgConfigurarCartelera.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +123,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DlgMenuPrincipal.resx">
       <DependentUpon>DlgMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgSeleccionarAsientos.resx">
+      <DependentUpon>DlgSeleccionarAsientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelAsiento.resx">
+      <DependentUpon>PanelAsiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelCanastaCompras.resx">
+      <DependentUpon>PanelCanastaCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelPelicula.resx">
       <DependentUpon>PanelPelicula.cs</DependentUpon>
@@ -152,6 +188,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clapperboard-tiny-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cinema-gray-chair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cinema-green-chair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cinema-red-chair.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

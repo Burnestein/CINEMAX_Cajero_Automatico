@@ -63,6 +63,36 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cinema_gray_chair {
+            get {
+                object obj = ResourceManager.GetObject("Cinema-gray-chair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cinema_green_chair {
+            get {
+                object obj = ResourceManager.GetObject("Cinema-green-chair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cinema_red_chair {
+            get {
+                object obj = ResourceManager.GetObject("Cinema-red-chair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cinemax_Logo {
             get {
                 object obj = ResourceManager.GetObject("Cinemax-Logo", resourceCulture);

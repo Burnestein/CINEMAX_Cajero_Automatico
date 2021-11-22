@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Xml;
 using System.IO;
 using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
@@ -11,6 +16,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //public static DlgConfigurarCartelera ConfigurarCartelera;
         private int indice=-1;
         public List<CPelicula> Peliculas = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas;
+        private DataSet ds = new DataSet("tbl");
 
         public DlgConfigurarCartelera()
         {
@@ -155,6 +161,58 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 ActualizarTabla();
                 
             }
+        }
+
+        private void LblExportarXML_Click(object sender, EventArgs e)
+        {
+            //This line of code creates a text file for the data export.
+            System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\burn_\Desktop\\Test.txt");
+            try
+            {
+                string sLine = "";
+
+                //This for loop loops through each row in the table
+                for (int r = 0; r <= DgvPeliculas.Rows.Count - 1; r++)
+                {
+                    //This for loop loops through each column, and the row number
+                    //is passed from the for loop above.
+                    for (int c = 0; c <= DgvPeliculas.Columns.Count - 1; c++)
+                    {
+                        sLine = sLine + DgvPeliculas.Rows[r].Cells[c].Value;
+                        if (c != DgvPeliculas.Columns.Count - 1)
+                        {
+                            //A comma is added as a text delimiter in order
+                            //to separate each field in the text file.
+                            //You can choose another character as a delimiter.
+                            sLine = sLine + ",";
+                        }
+                    }
+                    //The exported text is written to the text file, one line at a time.
+                    file.WriteLine(sLine);
+                    sLine = "";
+                }
+
+                file.Close();
+                System.Windows.Forms.MessageBox.Show("Export Complete.", "Program Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (System.Exception err)
+            {
+                System.Windows.Forms.MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                file.Close();
+            }
+            /*SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "XML|*.xml";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ds.Tables[0].WriteXml(sfd.FileName);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }*/
         }
     }
 }

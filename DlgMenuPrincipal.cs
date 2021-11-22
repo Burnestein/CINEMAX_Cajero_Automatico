@@ -24,6 +24,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public List<CProducto> ListaProductos;
         private int indice=0;
         public CCanastaCompras Compras;
+        public List<string> AsientosNoDisponibles;
+        private DataTable TablaCortes;
 
         //---------------------------------------------------------------------
         //Constructor.
@@ -40,6 +42,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             Label Date = new Label();
             Date = LblCurrentTime;
             Compras = new CCanastaCompras();
+            AsientosNoDisponibles = new List<string>();
         }
         
         private void BtnCartelera_Click(object sender, EventArgs e)
@@ -204,6 +207,13 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void DlgMenuPrincipal_Load(object sender, EventArgs e)
         {
+            TablaCortes = new DataTable();
+            TablaCortes.Columns.Add("Fecha Apertura");
+            TablaCortes.Columns.Add("Fecha Corte");
+            TablaCortes.Columns.Add("Fondo inicial");
+            TablaCortes.Columns.Add("Monto Total");
+            
+            GenerarBoletos();
             CargarCartelera();
             timer.Start();
         }
@@ -240,14 +250,40 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void BtnCompras_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tienes " + Compras.Count() + " compras, y son:");
+            /*MessageBox.Show("Tienes " + Compras.Count() + " compras, y son:");
             string Mensaje = "";
             List<string> MiLista = Compras.ConvertirAListaProductos();
             for (int i = 0; i < Compras.Count(); i++)
             {
                 Mensaje = Mensaje + MiLista[i] + "\n";
             }
-            MessageBox.Show(Mensaje);
+            MessageBox.Show(Mensaje);*/
+            string ListaCompras = Compras.ConvertirAListaString();
+            PanelCanastaCompras MiPanel = new PanelCanastaCompras(ListaCompras);
+            PnlCartelera.Controls.Clear();
+            PnlCartelera.Controls.Add(MiPanel);
+            MiPanel.Dock = DockStyle.Fill;
+
+        }
+
+        private void GenerarBoletos()
+        {
+            CProducto BoletoNiño = new CProducto(1, "Boleto Niño", 50 , 999, Properties.Resources.CinemaxWhite_Logo, true);
+            ListaProductos.Add(BoletoNiño);
+            CProducto BoletoAdulto = new CProducto(2, "Boleto Adulto", 75, 999, Properties.Resources.CinemaxWhite_Logo, true);
+            ListaProductos.Add(BoletoAdulto);
+            CProducto Boleto3raEdad = new CProducto(3, "Boleto 3ra Edad", 55, 999, Properties.Resources.CinemaxWhite_Logo, true);
+            ListaProductos.Add(Boleto3raEdad);
+        }
+
+        private void realizarCorteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DlgConfigurarCaja configurarCaja = new DlgConfigurarCaja(TablaCortes);
+            configurarCaja.Show();
+        }
+        public void ActualizarTablaCortes(DataTable Tabla)
+        {
+            TablaCortes = Tabla;
         }
     }
 }

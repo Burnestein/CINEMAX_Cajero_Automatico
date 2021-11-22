@@ -32,8 +32,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlSala = new System.Windows.Forms.Panel();
             this.LblPrecio = new System.Windows.Forms.Label();
             this.LblNumCantidad = new System.Windows.Forms.Label();
-            this.BtnMenosNiño = new System.Windows.Forms.Button();
-            this.BtnMasNiño = new System.Windows.Forms.Button();
+            this.BtnMenosProducto = new System.Windows.Forms.Button();
+            this.BtnMasProducto = new System.Windows.Forms.Button();
             this.BtnAgregarCarrito = new System.Windows.Forms.Button();
             this.LblCantidad = new System.Windows.Forms.Label();
             this.LblNombreProducto = new System.Windows.Forms.Label();
@@ -46,8 +46,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             this.PnlSala.Controls.Add(this.LblPrecio);
             this.PnlSala.Controls.Add(this.LblNumCantidad);
-            this.PnlSala.Controls.Add(this.BtnMenosNiño);
-            this.PnlSala.Controls.Add(this.BtnMasNiño);
+            this.PnlSala.Controls.Add(this.BtnMenosProducto);
+            this.PnlSala.Controls.Add(this.BtnMasProducto);
             this.PnlSala.Controls.Add(this.BtnAgregarCarrito);
             this.PnlSala.Controls.Add(this.LblCantidad);
             this.PnlSala.Controls.Add(this.LblNombreProducto);
@@ -84,30 +84,33 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblNumCantidad.Size = new System.Drawing.Size(45, 36);
             this.LblNumCantidad.TabIndex = 25;
             this.LblNumCantidad.Text = "x0";
+            this.LblNumCantidad.TextChanged += new System.EventHandler(this.LblNumCantidad_TextChanged);
             // 
-            // BtnMenosNiño
+            // BtnMenosProducto
             // 
-            this.BtnMenosNiño.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnMenosNiño.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnMenosNiño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMenosNiño.Location = new System.Drawing.Point(280, 227);
-            this.BtnMenosNiño.Name = "BtnMenosNiño";
-            this.BtnMenosNiño.Size = new System.Drawing.Size(36, 36);
-            this.BtnMenosNiño.TabIndex = 24;
-            this.BtnMenosNiño.Text = "-";
-            this.BtnMenosNiño.UseVisualStyleBackColor = false;
+            this.BtnMenosProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnMenosProducto.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnMenosProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMenosProducto.Location = new System.Drawing.Point(280, 227);
+            this.BtnMenosProducto.Name = "BtnMenosProducto";
+            this.BtnMenosProducto.Size = new System.Drawing.Size(36, 36);
+            this.BtnMenosProducto.TabIndex = 24;
+            this.BtnMenosProducto.Text = "-";
+            this.BtnMenosProducto.UseVisualStyleBackColor = false;
+            this.BtnMenosProducto.Click += new System.EventHandler(this.BtnMenosProducto_Click);
             // 
-            // BtnMasNiño
+            // BtnMasProducto
             // 
-            this.BtnMasNiño.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnMasNiño.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnMasNiño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMasNiño.Location = new System.Drawing.Point(280, 185);
-            this.BtnMasNiño.Name = "BtnMasNiño";
-            this.BtnMasNiño.Size = new System.Drawing.Size(36, 36);
-            this.BtnMasNiño.TabIndex = 23;
-            this.BtnMasNiño.Text = "+";
-            this.BtnMasNiño.UseVisualStyleBackColor = false;
+            this.BtnMasProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnMasProducto.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnMasProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMasProducto.Location = new System.Drawing.Point(280, 185);
+            this.BtnMasProducto.Name = "BtnMasProducto";
+            this.BtnMasProducto.Size = new System.Drawing.Size(36, 36);
+            this.BtnMasProducto.TabIndex = 23;
+            this.BtnMasProducto.Text = "+";
+            this.BtnMasProducto.UseVisualStyleBackColor = false;
+            this.BtnMasProducto.Click += new System.EventHandler(this.BtnMasProducto_Click);
             // 
             // BtnAgregarCarrito
             // 
@@ -187,8 +190,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private System.Windows.Forms.Label LblCantidad;
         private System.Windows.Forms.Button BtnAgregarCarrito;
         private System.Windows.Forms.Label LblNumCantidad;
-        private System.Windows.Forms.Button BtnMenosNiño;
-        private System.Windows.Forms.Button BtnMasNiño;
+        private System.Windows.Forms.Button BtnMenosProducto;
+        private System.Windows.Forms.Button BtnMasProducto;
         private System.Windows.Forms.Label LblPrecio;
     }
 }

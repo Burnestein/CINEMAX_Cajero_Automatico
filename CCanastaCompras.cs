@@ -64,5 +64,18 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             }
             return MiLista;
         }
+        public string ConvertirAListaString()
+        {
+            string Lista = "";
+            for (int i = 0; i < Pelicula.Count; i++)
+            {
+                Lista = Lista + Pelicula[i].Titulo + "\n";
+            }
+            for (int i = 0; i < Productos.Count; i++)
+            {
+                Lista = Lista + Productos[i].Producto + "\n";
+            }
+            return Lista;
+        }
     }
 }

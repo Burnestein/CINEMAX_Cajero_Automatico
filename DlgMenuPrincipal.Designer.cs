@@ -36,11 +36,13 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.carteleraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.realizarCorteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.PnlLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlBotones = new System.Windows.Forms.Panel();
+            this.LblContadorCompras = new System.Windows.Forms.Label();
             this.BtnCompras = new System.Windows.Forms.Button();
             this.BtnFuenteSodas = new System.Windows.Forms.Button();
             this.BtnCartelera = new System.Windows.Forms.Button();
@@ -55,7 +57,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnDerecho = new System.Windows.Forms.Button();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.SspMenuPrincipal = new System.Windows.Forms.StatusStrip();
-            this.realizarCorteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MstPrincipal.SuspendLayout();
             this.PnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,14 +95,14 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // carteleraToolStripMenuItem
             // 
             this.carteleraToolStripMenuItem.Name = "carteleraToolStripMenuItem";
-            this.carteleraToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.carteleraToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.carteleraToolStripMenuItem.Text = "Cartelera";
             this.carteleraToolStripMenuItem.Click += new System.EventHandler(this.carteleraToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
@@ -113,6 +114,13 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
             this.ayudaToolStripMenuItem.Text = "Caja";
+            // 
+            // realizarCorteToolStripMenuItem
+            // 
+            this.realizarCorteToolStripMenuItem.Name = "realizarCorteToolStripMenuItem";
+            this.realizarCorteToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.realizarCorteToolStripMenuItem.Text = "Realizar corte";
+            this.realizarCorteToolStripMenuItem.Click += new System.EventHandler(this.realizarCorteToolStripMenuItem_Click);
             // 
             // VolverToolStripMenuItem
             // 
@@ -150,6 +158,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // PnlBotones
             // 
             this.PnlBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
+            this.PnlBotones.Controls.Add(this.LblContadorCompras);
             this.PnlBotones.Controls.Add(this.BtnCompras);
             this.PnlBotones.Controls.Add(this.BtnFuenteSodas);
             this.PnlBotones.Controls.Add(this.BtnCartelera);
@@ -159,6 +168,24 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlBotones.Name = "PnlBotones";
             this.PnlBotones.Size = new System.Drawing.Size(308, 942);
             this.PnlBotones.TabIndex = 0;
+            // 
+            // LblContadorCompras
+            // 
+            this.LblContadorCompras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblContadorCompras.AutoSize = true;
+            this.LblContadorCompras.BackColor = System.Drawing.Color.Lime;
+            this.LblContadorCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LblContadorCompras.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblContadorCompras.ForeColor = System.Drawing.Color.Green;
+            this.LblContadorCompras.Location = new System.Drawing.Point(235, 389);
+            this.LblContadorCompras.Name = "LblContadorCompras";
+            this.LblContadorCompras.Size = new System.Drawing.Size(18, 19);
+            this.LblContadorCompras.TabIndex = 4;
+            this.LblContadorCompras.Text = "0";
+            this.LblContadorCompras.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LblContadorCompras.Visible = false;
             // 
             // BtnCompras
             // 
@@ -355,13 +382,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.SspMenuPrincipal.Text = "statusStrip1";
             this.SspMenuPrincipal.Visible = false;
             // 
-            // realizarCorteToolStripMenuItem
-            // 
-            this.realizarCorteToolStripMenuItem.Name = "realizarCorteToolStripMenuItem";
-            this.realizarCorteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.realizarCorteToolStripMenuItem.Text = "Realizar corte";
-            this.realizarCorteToolStripMenuItem.Click += new System.EventHandler(this.realizarCorteToolStripMenuItem_Click);
-            // 
             // DlgMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -388,6 +408,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnlBotones.ResumeLayout(false);
+            this.PnlBotones.PerformLayout();
             this.PnlSuperior.ResumeLayout(false);
             this.PnlSuperior.PerformLayout();
             this.PnlBtnIzquierdo.ResumeLayout(false);
@@ -425,6 +446,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.StatusStrip SspMenuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem realizarCorteToolStripMenuItem;
+        private System.Windows.Forms.Label LblContadorCompras;
     }
 }
 

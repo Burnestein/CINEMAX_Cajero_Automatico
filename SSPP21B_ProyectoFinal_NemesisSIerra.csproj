@@ -46,10 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAsiento.cs" />
     <Compile Include="CCaja.cs" />
     <Compile Include="CCanastaCompras.cs" />
     <Compile Include="CPelicula.cs" />
     <Compile Include="CProducto.cs" />
+    <Compile Include="CSala.cs" />
     <Compile Include="DlgConfigurarCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +94,12 @@
     <Compile Include="PanelCanastaCompras.Designer.cs">
       <DependentUpon>PanelCanastaCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="PanelCompraRealizada.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelCompraRealizada.Designer.cs">
+      <DependentUpon>PanelCompraRealizada.cs</DependentUpon>
+    </Compile>
     <Compile Include="PanelPeliculaGrande.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PanelCanastaCompras.resx">
       <DependentUpon>PanelCanastaCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelCompraRealizada.resx">
+      <DependentUpon>PanelCompraRealizada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelPelicula.resx">
       <DependentUpon>PanelPelicula.cs</DependentUpon>
@@ -197,6 +208,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cinema-red-chair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

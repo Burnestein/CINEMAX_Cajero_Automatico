@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
@@ -20,7 +16,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private double PrecioNiño = DlgMenuPrincipal.MenuPrincipal.ListaProductos[0].Precio;
         private double PrecioAdulto = DlgMenuPrincipal.MenuPrincipal.ListaProductos[1].Precio;
         private double Precio3ra = DlgMenuPrincipal.MenuPrincipal.ListaProductos[2].Precio;
-        private List<string> AsientosSeleccionados;
+        public List<int> AsientosSeleccionados = DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados;
+        int Asientos;
         public PanelPeliculaGrande()
         {
             InitializeComponent();
@@ -50,11 +47,12 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             LblCantidadNiño.Text = "x" + BoletosNiño.ToString();
             LblCantidadAdulto.Text = "x" + BoletosAdulto.ToString();
             LblCantidad3raEdad.Text = "x" + Boletos3raEdad.ToString();
+            AsientosSeleccionados = new List<int>();
         }
 
         private void PanelPeliculaGrande_Load(object sender, EventArgs e)
         {
-            
+            timer1.Start();
         }
 
         private void BtnComprar_Click(object sender, EventArgs e)
@@ -83,26 +81,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
             this.Parent.Controls.Remove(this);
             DlgMenuPrincipal.MenuPrincipal.CargarFuenteSodas();
-        }
-
-        private void CbxHorarios_SelectedValueChanged(object sender, EventArgs e)
-        {
-            Pelicula.CambiarHorarioSeleccionado(CbxHorarios.Text);
-            MessageBox.Show("El horario seleccionado es " + Pelicula.GetHorarioSeleccionado());
-            if(CbxHorarios.SelectedIndex > 0)
-            {
-                PnlSeleccionBoletos.Visible = true;
-                BtnComprar.Enabled = true;
-                BtnComprar.BackColor = Color.Khaki;
-                BtnComprar.FlatAppearance.BorderColor = Color.Gold;
-            }
-            else
-            {
-                PnlSeleccionBoletos.Visible = false;
-                BtnComprar.Enabled = false;
-                BtnComprar.BackColor = Color.DarkGray;
-                BtnComprar.FlatAppearance.BorderColor = Color.DimGray;
-            }
         }
 
         private void BtnMasNiño_Click(object sender, EventArgs e)
@@ -161,33 +139,85 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             return Total;
         }
 
-        private void LblCantidadNiño_TextChanged(object sender, EventArgs e)
-        {
-            GetTotal();
-        }
-
-        private void LblCantidadAdulto_TextChanged(object sender, EventArgs e)
-        {
-            GetTotal();
-        }
-
-        private void LblCantidad3raEdad_TextChanged(object sender, EventArgs e)
-        {
-            GetTotal();
-        }
-
         private void BtnAsientos_Click(object sender, EventArgs e)
         {
             int TotalAsientos = BoletosNiño + BoletosAdulto + Boletos3raEdad;
             DlgSeleccionarAsientos seleccionarAsientos;
             seleccionarAsientos = new DlgSeleccionarAsientos(TotalAsientos);
-
             seleccionarAsientos.Show();
         }
-        public List<string> ExtraerAsientosSeleccionados()
+        public void ExtraerAsientosSeleccionados(List<int> Asientos)
         {
-            AsientosSeleccionados = DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados;
-            return AsientosSeleccionados;
+            AsientosSeleccionados = Asientos;
+            string mensaje = "";
+            for(int i = 0; i < AsientosSeleccionados.Count(); i++)
+            {
+                mensaje = mensaje + AsientosSeleccionados[i] + "\n";
+            }
+            MessageBox.Show(mensaje);
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string mensaje = "";
+            for(int i = 0; i < AsientosSeleccionados.Count(); i++)
+            {
+                mensaje = mensaje + AsientosSeleccionados[i] + "\n";
+            }
+            MessageBox.Show(mensaje);
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            AsientosSeleccionados = DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados;
+            GetTotal();
+            if (Total > 0)
+            {
+                BtnAsientos.Enabled = true;
+                BtnAsientos.BackColor = Color.Khaki;
+                BtnAsientos.FlatAppearance.BorderColor = Color.Gold;
+                
+            }
+            else
+            {
+                BtnAsientos.Enabled = false;
+                BtnAsientos.BackColor = Color.DarkGray;
+                BtnAsientos.FlatAppearance.BorderColor = Color.DimGray;
+                
+            }
+            
+            if (AsientosSeleccionados == null)
+            {
+                Asientos = 0;
+            }
+            else
+            {
+                Asientos = AsientosSeleccionados.Count();
+            }
+            if (Asientos == (BoletosNiño + BoletosAdulto + Boletos3raEdad) && Asientos > 0)
+            {
+                BtnComprar.Enabled = true;
+                BtnComprar.BackColor = Color.Khaki;
+                BtnComprar.FlatAppearance.BorderColor = Color.Gold;
+            }
+            else
+            {
+                BtnComprar.Enabled = false;
+                BtnComprar.BackColor = Color.DarkGray;
+                BtnComprar.FlatAppearance.BorderColor = Color.DimGray;
+            }
+        }
+
+        private void CbxHorarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CbxHorarios.SelectedIndex > 0)
+            {
+                PnlSeleccionBoletos.Visible = true;
+            }
+            else
+            {
+                PnlSeleccionBoletos.Visible = false;
+            }
+        }
+
+        
     }
 }

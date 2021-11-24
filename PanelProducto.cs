@@ -36,6 +36,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             for(int i = 0; i < CantidadProducto; i++)
             {
                 DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(Producto);
+                LblNumCantidad.Text = "x0";
             }
         }
 
@@ -47,8 +48,12 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void BtnMenosProducto_Click(object sender, EventArgs e)
         {
-            CantidadProducto--;
-            LblNumCantidad.Text = "x" + CantidadProducto;
+            if (CantidadProducto > 0)
+            {
+                CantidadProducto--;
+                LblNumCantidad.Text = "x" + CantidadProducto;
+            }
+            
         }
 
         private void LblNumCantidad_TextChanged(object sender, EventArgs e)

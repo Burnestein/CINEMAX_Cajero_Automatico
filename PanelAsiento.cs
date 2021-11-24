@@ -13,11 +13,14 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
     public partial class PanelAsiento : UserControl
     {
         private bool Toggle = false;
-        private string NumAsiento;
-        public PanelAsiento(string NumAsiento)
+        private int NumAsiento;
+        private CAsiento MiAsiento;
+        //private bool Ocupado = false;
+        public PanelAsiento(int NumAsiento)
         {
             InitializeComponent();
             this.NumAsiento = NumAsiento;
+            MiAsiento = new CAsiento(this.NumAsiento);
         }
 
         private void PbxAsiento_Click(object sender, EventArgs e)
@@ -27,52 +30,26 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void TogglePicture()
         {
-            if (Toggle)
+            if (Toggle && MiAsiento.Ocupado==false)
             {
                 Toggle = false;
                 PbxAsiento.Image = Properties.Resources.Cinema_gray_chair;
                 DlgSeleccionarAsientos.SeleccionarAsientos.TotalAsientos++;
-                BorrarAsiento();
+                MiAsiento.BorrarAsiento();
             }
-            else if(DlgSeleccionarAsientos.SeleccionarAsientos.TotalAsientos > 0)
+            else if(DlgSeleccionarAsientos.SeleccionarAsientos.TotalAsientos > 0 && MiAsiento.Ocupado == false)
             {
                 Toggle = true;
                 PbxAsiento.Image = Properties.Resources.Cinema_green_chair;
                 DlgSeleccionarAsientos.SeleccionarAsientos.TotalAsientos--;
-                GuardarAsiento();
+                MiAsiento.GuardarAsiento();
             }
         }
-        public string GetNumAsiento()
-        {
-            return NumAsiento;
-        }
+
         public bool GetToggle()
         {
             return Toggle;
         }
-        private void GuardarAsiento()
-        {
-            if (DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.Contains(NumAsiento))
-            {
-                MessageBox.Show("El Asiento ya está guardado.");
-            }
-            else
-            {
-                DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.Add(NumAsiento);
-            }
-        }
-        private void BorrarAsiento()
-        {
-            if (DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.Contains(NumAsiento))
-            {
-                int indice;
-                indice = DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.IndexOf(NumAsiento);
-                DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.RemoveAt(indice);
-            }
-            else
-            {
-                MessageBox.Show("El asiento no existe.");
-            }
-        }
+
     }
 }

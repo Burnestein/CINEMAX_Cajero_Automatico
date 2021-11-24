@@ -20,12 +20,17 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //Atributos.
         //---------------------------------------------------------------------
         public static DlgMenuPrincipal MenuPrincipal;
+        
         public List<CPelicula> ListaPeliculas;
         public List<CProducto> ListaProductos;
         private int indice=0;
         public CCanastaCompras Compras;
         public List<string> AsientosNoDisponibles;
         private DataTable TablaCortes;
+        public decimal ContadorCompras;
+        //public List<string> AsientosSeleccionados;
+        public CCaja MiCaja;
+        public CSala MiSala;
 
         //---------------------------------------------------------------------
         //Constructor.
@@ -43,6 +48,15 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             Date = LblCurrentTime;
             Compras = new CCanastaCompras();
             AsientosNoDisponibles = new List<string>();
+            TablaCortes = new DataTable();
+            TablaCortes.Columns.Add("Fecha Apertura");
+            TablaCortes.Columns.Add("Fecha Corte");
+            TablaCortes.Columns.Add("Fondo inicial");
+            TablaCortes.Columns.Add("Total Efectivo");
+            TablaCortes.Columns.Add("Total Tarjeta");
+            TablaCortes.Columns.Add("Monto Total");
+            MiCaja = new CCaja();
+            MiSala = new CSala();
         }
         
         private void BtnCartelera_Click(object sender, EventArgs e)
@@ -207,11 +221,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void DlgMenuPrincipal_Load(object sender, EventArgs e)
         {
-            TablaCortes = new DataTable();
-            TablaCortes.Columns.Add("Fecha Apertura");
-            TablaCortes.Columns.Add("Fecha Corte");
-            TablaCortes.Columns.Add("Fondo inicial");
-            TablaCortes.Columns.Add("Monto Total");
+            
             
             GenerarBoletos();
             CargarCartelera();
@@ -221,6 +231,15 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private void timer_Tick(object sender, EventArgs e)
         {
             LblCurrentTime.Text = DateTime.Now.ToString("dddd dd/MMM/yyyy hh:mm tt");
+            if (Compras.Count() > 0)
+            {
+                LblContadorCompras.Visible = true;
+                LblContadorCompras.Text = Compras.Count().ToString();
+            }
+            else
+            {
+                LblContadorCompras.Visible = false;
+            }
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -263,7 +282,13 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             PnlCartelera.Controls.Clear();
             PnlCartelera.Controls.Add(MiPanel);
             MiPanel.Dock = DockStyle.Fill;
-
+            /*string mensaje = "";
+            for(int i = 0; i < MiSala.AsientosSeleccionados.Count(); i++)
+            {
+                mensaje = mensaje + MiSala.AsientosSeleccionados[i].ToString() + ", ";
+            }
+            
+            MessageBox.Show("Los asientos seleccionados son: " + mensaje);*/
         }
 
         private void GenerarBoletos()
@@ -278,7 +303,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void realizarCorteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DlgConfigurarCaja configurarCaja = new DlgConfigurarCaja(TablaCortes);
+            DlgConfigurarCaja configurarCaja;
+            configurarCaja = new DlgConfigurarCaja(TablaCortes);
             configurarCaja.Show();
         }
         public void ActualizarTablaCortes(DataTable Tabla)

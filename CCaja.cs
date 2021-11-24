@@ -17,6 +17,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         private double Fondo;
         private double TotalCaja;
+        private double TotalEfectivo;
+        private double TotalTarjeta;
         private int UnPeso;
         private int DosPesos;
         private int CincoPesos;
@@ -25,17 +27,14 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private int CincuentaPesos;
         private int CienPesos;
         private int DoscientosPesos;
+        private double TotalTransacciones;
+        public bool CajaAbierta;
 
         //---------------------------------------------------------------------
         //Costructor.
         //---------------------------------------------------------------------
         public CCaja()
         {
-            
-        }
-        public CCaja(double Fondo)
-        {
-            this.Fondo = Fondo;
             UnPeso = 0;
             DosPesos = 0;
             CincoPesos = 0;
@@ -44,8 +43,12 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             CincuentaPesos = 0;
             CienPesos = 0;
             DoscientosPesos = 0;
-
+            TotalTransacciones = 0;
+            TotalEfectivo = 0;
+            TotalTarjeta = 0;
+            CajaAbierta = false;
         }
+        
         public double TotalUnPeso()
         {
             return UnPeso * 1;
@@ -78,12 +81,52 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         {
             return DoscientosPesos * 200;
         }
-        public double GetTotalCaja()
+        /*public double GetTotalCaja()
         {
             double Total;
             Total = TotalUnPeso() + TotalDosPesos() + TotalCincoPesos() + TotalDiezPesos() + TotalVeintePesos() + TotalCincuentaPesos() + TotalCienPesos() + TotalDoscientosPesos();
             Total += Fondo;
             return Total;
+        }*/
+        public void AgregarAMontoTotal(double NuevaTransaccion)
+        {
+            TotalTransacciones += NuevaTransaccion;
+        }
+        public void AgregarEfectivo(double Efectivo)
+        {
+            TotalEfectivo += Efectivo;
+        }
+        public void AgregarTransaccionTarjeta(double Pago)
+        {
+            TotalTarjeta += Pago;
+        }
+        public void NuevoFondo(double Fondo)
+        {
+            this.Fondo = Fondo;
+        }
+
+        public double GetFondo()
+        {
+            return Fondo;
+        }
+        public double GetTotalTransacciones()
+        {
+            return TotalTransacciones;
+        }
+        public double GetTotalEfectivo()
+        {
+            return TotalEfectivo;
+        }
+        public double GetTotalTarjeta()
+        {
+            return TotalTarjeta;
+        }
+        public void VaciarCaja()
+        {
+            Fondo = 0;
+            TotalEfectivo = 0;
+            TotalTarjeta = 0;
+            TotalTransacciones = 0;
         }
     }
 }

@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
@@ -15,7 +10,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public static DlgSeleccionarAsientos SeleccionarAsientos;
         public int TotalAsientos;
         private string[] ColumnasAsientos;
-        public List<string> AsientosSeleccionados;
+        public List<int> AsientosSeleccionados;
         private int rows;
         private int cols;
         private TableLayoutPanel MiTabla;
@@ -26,8 +21,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             SeleccionarAsientos = this;
             this.TotalAsientos = TotalAsientos;
             LblAsientosDisponibles.Text = "Seleccione " + this.TotalAsientos.ToString() + "asientos.";
-            ColumnasAsientos = new string[] { "A", "B","C","D","E","F","G","H","I","J","K","L" };
-            AsientosSeleccionados = new List<string>();
+            ColumnasAsientos = DlgMenuPrincipal.MenuPrincipal.MiSala.ColumnasAsientos;
+            AsientosSeleccionados = new List<int>();
             rows = 8;
             cols = 12;
             MiTabla = new TableLayoutPanel();
@@ -35,6 +30,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void DlgSeleccionarAsientos_Load(object sender, EventArgs e)
         {
+            int NumeroAsiento = 0;
             MiTabla.Controls.Clear();
             MiTabla.Location = new System.Drawing.Point(0, 0);
             MiTabla.RowCount = rows;
@@ -54,8 +50,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 for (int col = 0; col < cols; col++)
                 {
-                    PanelAsiento MiPanel = new PanelAsiento(ColumnasAsientos[col] + (row+1));
+                    PanelAsiento MiPanel = new PanelAsiento(NumeroAsiento/*ColumnasAsientos[col] + (row+1)*/);
                     MiTabla.Controls.Add(MiPanel, col, row);
+                    NumeroAsiento++;
                 }
             }
 
@@ -68,9 +65,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            PanelPeliculaGrande MiPanelGrande = new PanelPeliculaGrande();
-            MiPanelGrande.ExtraerAsientosSeleccionados();
+            //DlgMenuPrincipal.MenuPrincipal.AsientosSeleccionados = AsientosSeleccionados;
+            DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados = AsientosSeleccionados;
             Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,7 +81,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             MessageBox.Show(Lista);
         }
 
-        public List<string> GetAsientosSeleccionados()
+        public List<int> GetAsientosSeleccionados()
         {
             return AsientosSeleccionados;
         }

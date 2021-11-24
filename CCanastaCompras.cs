@@ -35,7 +35,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.Pelicula.Add(Pelicula);
             return this.Pelicula;
         }
-        public void GetTotalCompras()
+        public double GetTotalCompras()
         {
             double Total=0;
             int Cantidad = Productos.Count();
@@ -43,7 +43,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 Total += Productos[i].Precio;
             }
-            MessageBox.Show("El total es " + Total);
+            //MessageBox.Show("El total es " + Total);
+            return Total;
         }
         public int Count()
         {
@@ -76,6 +77,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 Lista = Lista + Productos[i].Producto + "\n";
             }
             return Lista;
+        }
+        public void VaciarCanasta()
+        {
+            Pelicula.Clear();
+            Productos.Clear();
         }
     }
 }

@@ -50,5 +50,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         {
 
         }
+
+        private void LblNombrePelicula_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

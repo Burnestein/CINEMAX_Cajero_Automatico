@@ -51,10 +51,16 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         {   
             
             DlgMenuPrincipal.MenuPrincipal.MiCaja.AgregarAMontoTotal(TotalCompras);
-            //for(int i=0;i<DlgMenuPrincipal.)
-            //DlgMenuPrincipal.MenuPrincipal.AsientosNoDisponibles.Add(DlgMenuPrincipal.MenuPrincipal.AsientosSeleccionados);
+            DlgMenuPrincipal.MenuPrincipal.MiSala.OcuparAsientos();
             DlgMenuPrincipal.MenuPrincipal.Compras.VaciarCanasta();
+            DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados.Clear();
             CambiarVisibilidad();
+            string mensaje = "";
+            for(int i = 0; i<DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados.Count(); i++)
+            {
+                mensaje = mensaje + DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados[i]+", ";
+            }
+            //MessageBox.Show("Los Asientos Seleccionados son: " + mensaje);
             //MessageBox.Show("El total de compras fue: " + MiCanasta.GetTotalCompras().ToString());
         }
         private void CambiarVisibilidad()

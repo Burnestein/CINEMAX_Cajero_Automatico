@@ -43,7 +43,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 Total += Productos[i].Precio;
             }
-            //MessageBox.Show("El total es " + Total);
             return Total;
         }
         public int Count()

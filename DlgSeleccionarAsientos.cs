@@ -14,6 +14,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private int rows;
         private int cols;
         private TableLayoutPanel MiTabla;
+        private bool ocupado;
 
         public DlgSeleccionarAsientos(int TotalAsientos)
         {
@@ -50,8 +51,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 for (int col = 0; col < cols; col++)
                 {
-                    PanelAsiento MiPanel = new PanelAsiento(NumeroAsiento/*ColumnasAsientos[col] + (row+1)*/);
+                    bool Ocupado = DlgMenuPrincipal.MenuPrincipal.MiSala.Asientos[NumeroAsiento];
+                    PanelAsiento MiPanel = new PanelAsiento(NumeroAsiento, Ocupado /*ColumnasAsientos[col] + (row+1)*/);
                     MiTabla.Controls.Add(MiPanel, col, row);
+
                     NumeroAsiento++;
                 }
             }

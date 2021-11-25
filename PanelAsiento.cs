@@ -15,12 +15,17 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private bool Toggle = false;
         private int NumAsiento;
         private CAsiento MiAsiento;
-        //private bool Ocupado = false;
-        public PanelAsiento(int NumAsiento)
+        private bool Ocupado = false;
+        public PanelAsiento(int NumAsiento, bool Ocupado)
         {
             InitializeComponent();
             this.NumAsiento = NumAsiento;
+            this.Ocupado = Ocupado;
             MiAsiento = new CAsiento(this.NumAsiento);
+            if (Ocupado)
+            {
+                PbxAsiento.Image = Properties.Resources.Cinema_red_chair;
+            }
         }
 
         private void PbxAsiento_Click(object sender, EventArgs e)
@@ -30,20 +35,21 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void TogglePicture()
         {
-            if (Toggle && MiAsiento.Ocupado==false)
+            if (Toggle && Ocupado == false)
             {
                 Toggle = false;
                 PbxAsiento.Image = Properties.Resources.Cinema_gray_chair;
                 DlgSeleccionarAsientos.SeleccionarAsientos.TotalAsientos++;
                 MiAsiento.BorrarAsiento();
             }
-            else if(DlgSeleccionarAsientos.SeleccionarAsientos.TotalAsientos > 0 && MiAsiento.Ocupado == false)
+            else if(DlgSeleccionarAsientos.SeleccionarAsientos.TotalAsientos > 0 && Ocupado == false)
             {
                 Toggle = true;
                 PbxAsiento.Image = Properties.Resources.Cinema_green_chair;
                 DlgSeleccionarAsientos.SeleccionarAsientos.TotalAsientos--;
                 MiAsiento.GuardarAsiento();
             }
+            
         }
 
         public bool GetToggle()

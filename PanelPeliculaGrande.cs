@@ -68,14 +68,14 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 CProducto BoletosAd = new CProducto();
                 BoletosAd.Producto = Pelicula.Titulo + " " + CbxHorarios.Text + " Boleto Adulto x" + BoletosAdulto;
-                BoletosAd.Precio = BoletosAdulto * PrecioNiño;
+                BoletosAd.Precio = BoletosAdulto * PrecioAdulto;
                 DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(BoletosAd);
             }
             if (Boletos3raEdad > 0)
             {
                 CProducto Boletos3r = new CProducto();
                 Boletos3r.Producto = Pelicula.Titulo + " " + CbxHorarios.Text + " Boleto 3ra Edad x" + Boletos3raEdad;
-                Boletos3r.Precio = Boletos3raEdad * PrecioNiño;
+                Boletos3r.Precio = Boletos3raEdad * Precio3ra;
                 DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(Boletos3r);
             }
 
@@ -149,12 +149,12 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public void ExtraerAsientosSeleccionados(List<int> Asientos)
         {
             AsientosSeleccionados = Asientos;
-            string mensaje = "";
+            /*string mensaje = "";
             for(int i = 0; i < AsientosSeleccionados.Count(); i++)
             {
                 mensaje = mensaje + AsientosSeleccionados[i] + "\n";
             }
-            MessageBox.Show(mensaje);
+            MessageBox.Show(mensaje);*/
         }
         private void button1_Click(object sender, EventArgs e)
         {

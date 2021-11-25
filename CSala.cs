@@ -32,5 +32,12 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 Asientos[i] = false;
             }
         }
+        public void OcuparAsientos()
+        {
+            for (int i = 0; i < AsientosSeleccionados.Count(); i++)
+            {
+                DlgMenuPrincipal.MenuPrincipal.MiSala.Asientos[AsientosSeleccionados[i]] = true;
+            }
+        }
     }
 }

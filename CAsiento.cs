@@ -36,6 +36,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             else
             {
                 DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.Add(NumAsiento);
+                //DlgMenuPrincipal.MenuPrincipal.MiSala.Asientos[NumAsiento] = true;
             }
         }
 
@@ -46,13 +47,20 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 int indice;
                 indice = DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.IndexOf(NumAsiento);
                 DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.RemoveAt(indice);
+                //DlgMenuPrincipal.MenuPrincipal.MiSala.Asientos[NumAsiento] = false;
             }
             else
             {
                 MessageBox.Show("El asiento no existe.");
             }
         }
-
+        /*public void OcuparAsientos(List<int> AsientosSeleccionados)
+        {
+            for(int i = 0; i < AsientosSeleccionados.Count(); i++)
+            {
+                DlgMenuPrincipal.MenuPrincipal.MiSala.Asientos[AsientosSeleccionados[i]] = true;
+            }
+        }*/
         public int GetNumAsiento()
         {
             return NumAsiento;

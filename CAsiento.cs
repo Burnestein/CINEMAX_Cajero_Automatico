@@ -54,7 +54,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 MessageBox.Show("El asiento no existe.");
             }
         }
-        /*public void OcuparAsientos(List<int> AsientosSeleccionados)
+        /* public void OcuparAsientos(List<int> AsientosSeleccionados)
         {
             for(int i = 0; i < AsientosSeleccionados.Count(); i++)
             {

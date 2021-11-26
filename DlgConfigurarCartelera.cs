@@ -17,11 +17,13 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private int indice=-1;
         public List<CPelicula> Peliculas = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas;
         private DataSet ds = new DataSet("tbl");
+        
 
         public DlgConfigurarCartelera()
         {
             InitializeComponent();
             //ConfigurarCartelera = this;
+
         }
         private void BtnLimpiarFormulario_Click(object sender, EventArgs e)
         {
@@ -34,21 +36,25 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         private void BtnGuardarPelicula_Click(object sender, EventArgs e)
         {
-            int ConteoHorarios = LbxHorariosPelicula.Items.Count;
             List<string> HorarioPelicula = new List<string>();
+            int ConteoHorarios = LbxHorariosPelicula.Items.Count;
+            //MessageBox.Show("Numero de Horarios: " + ConteoHorarios.ToString());
 
             for (int i = 0; i < ConteoHorarios; i++)
             {
                 HorarioPelicula.Add(LbxHorariosPelicula.Items[i].ToString());
+       
+                //MessageBox.Show(HorarioPelicula[i].ToString());
             }
-            CPelicula Pelicula = new CPelicula(//"Title","Duration","Gender","Clasif","Sinopsis","Schedule"
+            CPelicula Pelicula = new CPelicula(
                 TbxTituloPelicula.Text,
                 NudDuracionPelicula.Text,
                 CbxGeneroPelicula.Text,
                 CbxClasificacionPelicula.Text,
                 RtbSinopsisPelicula.Text,
-                HorarioPelicula,
-                PbxImagenPelicula.Image
+                //HorarioPelicula,
+                PbxImagenPelicula.Image,
+                CbxSala.SelectedIndex+1
                 );
 
             if (indice > -1)
@@ -60,9 +66,64 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 Peliculas.Add(Pelicula);
             }
+            //MessageBox.Show("Sala seleccionada: "+ CbxSala.SelectedItem.ToString());
+            for(int i = 0; i < HorarioPelicula.Count(); i++)
+            {
+                if (!ObtenerSala(int.Parse(CbxSala.SelectedItem.ToString())).HorariosOcupados.Contains(HorarioPelicula[i]))
+                {
+                    ObtenerSala(int.Parse(CbxSala.SelectedItem.ToString())).HorariosOcupados.Add(HorarioPelicula[i]);
+                }
+                else
+                {
+                    MessageBox.Show("Horario repetido");
+                }
+                
+            }
+            //Pelicula.Horarios.Clear();
+            Pelicula.Horarios = HorarioPelicula;
+            //ObtenerSala(int.Parse(CbxSala.SelectedItem.ToString())).HorariosOcupados.Add();
+
+
             DlgMenuPrincipal.MenuPrincipal.CargarCartelera();
+            
             LimpiarFormulario();
+            /*string mensaje = "";
+            for (int i = 0; i < DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[0].Horarios.Count(); i++)
+            {
+                mensaje = mensaje + DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[0].Horarios[i].ToString() + "\n";
+            }
+            MessageBox.Show("Los horarios de la pelicula son: \n" + mensaje);*/
             ActualizarTabla();
+            
+        }
+
+        private CSala ObtenerSala(int NumSala)
+        {
+            CSala MiSala = new CSala();
+            switch (NumSala)
+            {
+                case 1:
+                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala1;
+                    break;
+                case 2:
+                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala2;
+                    break;
+                case 3:
+                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala3;
+                    break;
+                case 4:
+                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala4;
+                    break;
+                case 5:
+                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala5;
+                    break;
+                case 6:
+                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala6;
+                    break;
+                default:
+                    break;
+            }
+            return MiSala;
         }
 
         //---------------------------------------------------------------------
@@ -77,7 +138,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             LbxHorariosPelicula.Items.Clear();
             PbxImagenPelicula.Image = Properties.Resources.Cinemax_Logo;
             RtbSinopsisPelicula.Text = "";
-
+            //HorarioPelicula.Clear();
         }
 
         //---------------------------------------------------------------------
@@ -148,14 +209,21 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             RtbSinopsisPelicula.Text = Pelicula.Sinopsis;
             LbxHorariosPelicula.Items.Clear();
             PbxImagenPelicula.Image = Pelicula.Portada;
-            for(int i=0;i< Pelicula.Horarios.Count; i++)
+            for(int i=0;i< Pelicula.Horarios.Count(); i++)
             {
-                LbxHorariosPelicula.Items.Add(Pelicula.Horarios[i]);
+                LbxHorariosPelicula.Items.Add(Pelicula.Horarios[i].ToString());
             }
+            /*string mensaje = "";
+            for (int i = 0; i < Pelicula.Horarios.Count(); i++)
+            {
+                mensaje = mensaje + Pelicula.Horarios[i].ToString() + "\n";
+            }
+            MessageBox.Show("Los horarios de la pelicula son: \n" + mensaje);*/
         }
 
         private void DlgConfigurarCartelera_Load(object sender, EventArgs e)
         {
+            CbxSala.SelectedIndex = 0;
             if (Peliculas.Count!=0)
             {
                 ActualizarTabla();

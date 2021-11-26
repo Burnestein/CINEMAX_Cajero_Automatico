@@ -49,6 +49,7 @@
     <Compile Include="CAsiento.cs" />
     <Compile Include="CCaja.cs" />
     <Compile Include="CCanastaCompras.cs" />
+    <Compile Include="CFuncion.cs" />
     <Compile Include="CPelicula.cs" />
     <Compile Include="CProducto.cs" />
     <Compile Include="CSala.cs" />

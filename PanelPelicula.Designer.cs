@@ -31,20 +31,20 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         {
             this.PnlSala = new System.Windows.Forms.Panel();
             this.LblGenero = new System.Windows.Forms.Label();
-            this.TlpHorariosPelicula = new System.Windows.Forms.TableLayoutPanel();
             this.LblHorarios = new System.Windows.Forms.Label();
             this.LblDuracionPelicula = new System.Windows.Forms.Label();
             this.LblClasificacionPelicula = new System.Windows.Forms.Label();
             this.LblNombrePelicula = new System.Windows.Forms.Label();
             this.PbxPelicula = new System.Windows.Forms.PictureBox();
+            this.LbxHorariosPelicula = new System.Windows.Forms.ListBox();
             this.PnlSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPelicula)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlSala
             // 
+            this.PnlSala.Controls.Add(this.LbxHorariosPelicula);
             this.PnlSala.Controls.Add(this.LblGenero);
-            this.PnlSala.Controls.Add(this.TlpHorariosPelicula);
             this.PnlSala.Controls.Add(this.LblHorarios);
             this.PnlSala.Controls.Add(this.LblDuracionPelicula);
             this.PnlSala.Controls.Add(this.LblClasificacionPelicula);
@@ -67,22 +67,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblGenero.Size = new System.Drawing.Size(57, 20);
             this.LblGenero.TabIndex = 6;
             this.LblGenero.Text = "Género";
-            // 
-            // TlpHorariosPelicula
-            // 
-            this.TlpHorariosPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TlpHorariosPelicula.AutoSize = true;
-            this.TlpHorariosPelicula.ColumnCount = 1;
-            this.TlpHorariosPelicula.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.TlpHorariosPelicula.Location = new System.Drawing.Point(257, 140);
-            this.TlpHorariosPelicula.Name = "TlpHorariosPelicula";
-            this.TlpHorariosPelicula.RowCount = 4;
-            this.TlpHorariosPelicula.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TlpHorariosPelicula.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TlpHorariosPelicula.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TlpHorariosPelicula.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TlpHorariosPelicula.Size = new System.Drawing.Size(135, 257);
-            this.TlpHorariosPelicula.TabIndex = 5;
             // 
             // LblHorarios
             // 
@@ -144,6 +128,19 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PbxPelicula.Click += new System.EventHandler(this.PbxPelicula_Click);
             this.PbxPelicula.MouseEnter += new System.EventHandler(this.PbxPelicula_MouseEnter);
             // 
+            // LbxHorariosPelicula
+            // 
+            this.LbxHorariosPelicula.BackColor = System.Drawing.SystemColors.Control;
+            this.LbxHorariosPelicula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LbxHorariosPelicula.FormattingEnabled = true;
+            this.LbxHorariosPelicula.ItemHeight = 16;
+            this.LbxHorariosPelicula.Location = new System.Drawing.Point(257, 142);
+            this.LbxHorariosPelicula.Name = "LbxHorariosPelicula";
+            this.LbxHorariosPelicula.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.LbxHorariosPelicula.Size = new System.Drawing.Size(140, 256);
+            this.LbxHorariosPelicula.Sorted = true;
+            this.LbxHorariosPelicula.TabIndex = 7;
+            // 
             // PanelPelicula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -162,11 +159,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private System.Windows.Forms.Panel PnlSala;
         private System.Windows.Forms.Label LblGenero;
-        private System.Windows.Forms.TableLayoutPanel TlpHorariosPelicula;
         private System.Windows.Forms.Label LblHorarios;
         private System.Windows.Forms.Label LblDuracionPelicula;
         private System.Windows.Forms.Label LblClasificacionPelicula;
         private System.Windows.Forms.Label LblNombrePelicula;
         private System.Windows.Forms.PictureBox PbxPelicula;
+        private System.Windows.Forms.ListBox LbxHorariosPelicula;
     }
 }

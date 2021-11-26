@@ -31,6 +31,13 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //public List<string> AsientosSeleccionados;
         public CCaja MiCaja;
         public CSala MiSala;
+        public CSala Sala1;
+        public CSala Sala2;
+        public CSala Sala3;
+        public CSala Sala4;
+        public CSala Sala5;
+        public CSala Sala6;
+
 
         //---------------------------------------------------------------------
         //Constructor.
@@ -57,6 +64,12 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             TablaCortes.Columns.Add("Monto Total");
             MiCaja = new CCaja();
             MiSala = new CSala();
+            Sala1 = new CSala();
+            Sala2 = new CSala();
+            Sala3 = new CSala();
+            Sala4 = new CSala();
+            Sala5 = new CSala();
+            Sala6 = new CSala();
         }
         
         private void BtnCartelera_Click(object sender, EventArgs e)

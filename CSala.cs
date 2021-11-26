@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
@@ -19,7 +20,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public bool[] Asientos;
         public List<int> AsientosSeleccionados;
         public List<string> AsientosOcupados;
-
+        public List<string> HorariosOcupados;
+        public CFuncion MiFuncion;
         //---------------------------------------------------------------------
         //Constructor.
         //---------------------------------------------------------------------
@@ -31,6 +33,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 Asientos[i] = false;
             }
+            HorariosOcupados = new List<string>();
         }
         public void OcuparAsientos()
         {

@@ -14,7 +14,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private int rows;
         private int cols;
         private TableLayoutPanel MiTabla;
-        private bool ocupado;
+        //private bool ocupado;
 
         public DlgSeleccionarAsientos(int TotalAsientos)
         {

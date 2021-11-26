@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
@@ -20,11 +21,21 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public string Sinopsis { get; set; }
         public Image Portada { get; set; }
         private string HorarioSeleccionado;
+        public int Sala { get; set; }
 
         //---------------------------------------------------------------------
         //Constructor.
         //---------------------------------------------------------------------
-        public CPelicula(string Titulo, string Duracion, string Genero, string Clasificacion, string Sinopsis, List<string> Horarios, Image Portada)
+        public CPelicula(
+            string Titulo,
+            string Duracion, 
+            string Genero, 
+            string Clasificacion, 
+            string Sinopsis, 
+            //List<string> Horarios, 
+            Image Portada,
+            int Sala
+            )
         {
             this.Titulo = Titulo;
             this.Duracion = Duracion;
@@ -33,6 +44,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.Sinopsis = Sinopsis;
             this.Horarios = Horarios;
             this.Portada = Portada;
+            this.Sala = Sala;
         }
 
         //---------------------------------------------------------------------
@@ -49,6 +61,17 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             return lista;
         }
 
+        public void AgregarHorario(string NuevoHorario)
+        {
+            if (Horarios.Contains(NuevoHorario))
+            {
+                MessageBox.Show("El horario ya existe en la pelicula.");
+            }
+            else
+            {
+                Horarios.Add(NuevoHorario);
+            }
+        }
         //---------------------------------------------------------------------
         //Obtiene el titulo de la Pelicula.
         //---------------------------------------------------------------------

@@ -31,14 +31,15 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             LblDuracionPelicula.Text = Pelicula.Duracion + " Mins";
             LblGenero.Text = Pelicula.Genero;
             PbxPelicula.Image = Pelicula.Portada;
-            int ConteoHorarios = Pelicula.Horarios.Count;
+            
+            int ConteoHorarios = Pelicula.Horarios.Count();
             for (int i = 0; i < ConteoHorarios; i++)
             {
-                Label Hora = new Label();
-                Hora.Text = Pelicula.Horarios[i];
-                TlpHorariosPelicula.Controls.Add(Hora);
+                LbxHorariosPelicula.Items.Add(Pelicula.Horarios[i]);
+                //Label Hora = new Label();
+                //Hora.Text = Pelicula.Horarios[i];
+                //TlpHorariosPelicula.Controls.Add(Hora);
             }
-            
         }
 
         private void PbxPelicula_Click(object sender, EventArgs e)

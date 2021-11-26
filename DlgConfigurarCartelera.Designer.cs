@@ -58,6 +58,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlTablaPeliculas = new System.Windows.Forms.Panel();
             this.BtnLimpiarFormulario = new System.Windows.Forms.Button();
             this.PbxImagenPelicula = new System.Windows.Forms.PictureBox();
+            this.CbxSala = new System.Windows.Forms.ComboBox();
+            this.LblSala = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NudDuracionPelicula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPeliculas)).BeginInit();
             this.PnlTablaPeliculas.SuspendLayout();
@@ -359,12 +361,39 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PbxImagenPelicula.TabIndex = 27;
             this.PbxImagenPelicula.TabStop = false;
             // 
+            // CbxSala
+            // 
+            this.CbxSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxSala.FormattingEnabled = true;
+            this.CbxSala.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.CbxSala.Location = new System.Drawing.Point(315, 171);
+            this.CbxSala.Name = "CbxSala";
+            this.CbxSala.Size = new System.Drawing.Size(81, 24);
+            this.CbxSala.TabIndex = 31;
+            // 
+            // LblSala
+            // 
+            this.LblSala.AutoSize = true;
+            this.LblSala.Location = new System.Drawing.Point(273, 172);
+            this.LblSala.Name = "LblSala";
+            this.LblSala.Size = new System.Drawing.Size(36, 17);
+            this.LblSala.TabIndex = 30;
+            this.LblSala.Text = "Sala";
+            // 
             // DlgConfigurarCartelera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(982, 553);
+            this.Controls.Add(this.CbxSala);
+            this.Controls.Add(this.LblSala);
             this.Controls.Add(this.BtnLimpiarFormulario);
             this.Controls.Add(this.BtnCargarImagen);
             this.Controls.Add(this.PbxImagenPelicula);
@@ -431,5 +460,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private System.Windows.Forms.DataGridView DgvPeliculas;
         private System.Windows.Forms.Panel PnlTablaPeliculas;
         private System.Windows.Forms.Button BtnLimpiarFormulario;
+        private System.Windows.Forms.ComboBox CbxSala;
+        private System.Windows.Forms.Label LblSala;
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
@@ -12,6 +11,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
     {
         //---------------------------------------------------------------------
         //Atributos.
+        //Nota: Algunos atributos son utilizados para llenar los datos de la tabla de peliculas
+        //en DlgConfigurarCartelera. get {return Titulo;} y set{name = Titulo} es igual a
+        //Titulo { get; set; }
         //---------------------------------------------------------------------
         public string Titulo { get; set; }
         public string Duracion { get; set; }
@@ -20,7 +22,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public List<string> Horarios { get; set; }
         public string Sinopsis { get; set; }
         public Image Portada { get; set; }
-        private string HorarioSeleccionado;
         public CSala MiSala;
 
         //---------------------------------------------------------------------
@@ -32,7 +33,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             string Genero, 
             string Clasificacion, 
             string Sinopsis, 
-            //List<string> Horarios, 
             Image Portada,
             CSala MiSala
             )
@@ -42,76 +42,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.Clasificacion = Clasificacion;
             this.Genero = Genero;
             this.Sinopsis = Sinopsis;
-            this.Horarios = Horarios;
             this.Portada = Portada;
-            //this.Sala = Sala;
             this.MiSala = MiSala;
-        }
-
-        //---------------------------------------------------------------------
-        //Retorna el objeto CPelicula en forma de lista.
-        //---------------------------------------------------------------------
-        public List<string> ToList()
-        {
-            List<string> lista = new List<string>();
-            lista.Add(Titulo);
-            lista.Add(Clasificacion);
-            lista.Add(Duracion);
-            lista.Add(Genero);
-            lista.Add(Sinopsis);
-            return lista;
-        }
-
-        public void AgregarHorario(string NuevoHorario)
-        {
-            if (Horarios.Contains(NuevoHorario))
-            {
-                MessageBox.Show("El horario ya existe en la pelicula.");
-            }
-            else
-            {
-                Horarios.Add(NuevoHorario);
-            }
-        }
-        //---------------------------------------------------------------------
-        //Obtiene el titulo de la Pelicula.
-        //---------------------------------------------------------------------
-        public string GetTitulo()
-        {
-            return Titulo;
-        }
-
-        //---------------------------------------------------------------------
-        //Obtiene el género de la pelicula.
-        //---------------------------------------------------------------------
-        public string GetGenero()
-        {
-            return Genero;
-        }
-
-        //---------------------------------------------------------------------
-        //Obtiene la clasificacion de la Pelicula.
-        //---------------------------------------------------------------------
-        public string GetClasificacion()
-        {
-            return Clasificacion;
-        }
-
-        //---------------------------------------------------------------------
-        //Obtiene la sinópsis de la pelicula.
-        //---------------------------------------------------------------------
-        public string GetSinopsis()
-        {
-            return Sinopsis;
-        }
-        public string CambiarHorarioSeleccionado(string NuevoHorario)
-        {
-            HorarioSeleccionado = NuevoHorario;
-            return HorarioSeleccionado;
-        }
-        public string GetHorarioSeleccionado()
-        {
-            return HorarioSeleccionado;
         }
     }
 }

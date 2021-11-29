@@ -6,8 +6,15 @@ using System.Windows.Forms;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
+    //---------------------------------------------------------------------
+    //Control de usuario que visualiza la pelicula en grande en menu principal.
+    //NJSA. 06/11/2021.
+    //---------------------------------------------------------------------
     public partial class PanelPeliculaGrande : UserControl
     {
+        //---------------------------------------------------------------------
+        //Atributos.
+        //---------------------------------------------------------------------
         private CPelicula Pelicula;
         private double Total;
         private int BoletosNiño;
@@ -21,15 +28,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private CSala MiSala;
         int indicePelicula;
         int indiceFuncion;
-        public PanelPeliculaGrande()
-        {
-            InitializeComponent();
-            Total = 0;
-            BoletosNiño = 0;
-            BoletosAdulto = 0;
-            Boletos3raEdad = 0;
-            AsientosSeleccionados = new List<int>();
-        }
+
+        //---------------------------------------------------------------------
+        //Constructor.
+        //---------------------------------------------------------------------
         public PanelPeliculaGrande(CPelicula Pelicula)
         {
             InitializeComponent();
@@ -51,18 +53,23 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             LblCantidadNiño.Text = "x" + BoletosNiño.ToString();
             LblCantidadAdulto.Text = "x" + BoletosAdulto.ToString();
             LblCantidad3raEdad.Text = "x" + Boletos3raEdad.ToString();
-            //AsientosSeleccionados = new List<int>();
             MiSala = Pelicula.MiSala;
             indiceFuncion = 0;
             indicePelicula = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas.IndexOf(Pelicula);
-            AsientosSeleccionados = new List<int>();//DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[indicePelicula].MiSala.AsientosSeleccionados;
+            AsientosSeleccionados = new List<int>();
         }
 
+        //---------------------------------------------------------------------
+        //Evento que se inicia al cargar el control de usuario.
+        //---------------------------------------------------------------------
         private void PanelPeliculaGrande_Load(object sender, EventArgs e)
         {
             timer1.Start();
         }
 
+        //---------------------------------------------------------------------
+        //Agrega los boletos seleccionados a la canasta de compras.
+        //---------------------------------------------------------------------
         private void BtnComprar_Click(object sender, EventArgs e)
         {
             if (BoletosNiño > 0)
@@ -86,22 +93,23 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 Boletos3r.Precio = Boletos3raEdad * Precio3ra;
                 DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(Boletos3r);
             }
-            //MiSala.AsientosSeleccionados = AsientosSeleccionados;
-            //MessageBox.Show("Asientos que fueron selecccionados: "+ MiSala.AsientosSeleccionados.Count());
             DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(Pelicula);
-            //MessageBox.Show("Compras"+DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula.Count().ToString());
-            this.Parent.Controls.Remove(this);
-            DlgMenuPrincipal.MenuPrincipal.CargarFuenteSodas();
+            this.Parent.Controls.Remove(this); //Se cierra
+            DlgMenuPrincipal.MenuPrincipal.CargarFuenteSodas(); //Carga la fuente de sodas
         }
 
+        //---------------------------------------------------------------------
+        //Boton + aumenta los boletos de niño.
+        //---------------------------------------------------------------------
         private void BtnMasNiño_Click(object sender, EventArgs e)
         {
-
             BoletosNiño++;
             LblCantidadNiño.Text = "x" + BoletosNiño.ToString();
-
         }
 
+        //---------------------------------------------------------------------
+        //Boton - disminuye los boletos de niño.
+        //---------------------------------------------------------------------
         private void BtnMenosNiño_Click(object sender, EventArgs e)
         {
             if (BoletosNiño > 0)
@@ -111,12 +119,18 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             }
         }
 
+        //---------------------------------------------------------------------
+        //Boton + aumenta los boletos de adulto.
+        //---------------------------------------------------------------------
         private void BtnMasAdulto_Click(object sender, EventArgs e)
         {
             BoletosAdulto++;
             LblCantidadAdulto.Text = "x" + BoletosAdulto.ToString();
         }
 
+        //---------------------------------------------------------------------
+        //Boton - disminuye los boletos de adulto.
+        //---------------------------------------------------------------------
         private void BtnMenosAdulto_Click(object sender, EventArgs e)
         {
             if (BoletosAdulto > 0)
@@ -126,12 +140,18 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             }
         }
 
+        //---------------------------------------------------------------------
+        //Boton + aumenta los boletos de 3ra edad.
+        //---------------------------------------------------------------------
         private void BtnMas3raEdad_Click(object sender, EventArgs e)
         {
             Boletos3raEdad++;
             LblCantidad3raEdad.Text = "x" + Boletos3raEdad.ToString();
         }
 
+        //---------------------------------------------------------------------
+        //Boton - disminuye los boletos de 3ra edad.
+        //---------------------------------------------------------------------
         private void BtnMenos3raEdad_Click(object sender, EventArgs e)
         {
             if (Boletos3raEdad > 0)
@@ -140,6 +160,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 LblCantidad3raEdad.Text = "x" + Boletos3raEdad.ToString();
             }
         }
+
+        //---------------------------------------------------------------------
+        //Retorna el total por los boletos seleccionados.
+        //---------------------------------------------------------------------
         private double GetTotal()
         {
             double TotalBoletosNiño = BoletosNiño * PrecioNiño;
@@ -150,6 +174,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             return Total;
         }
 
+        //---------------------------------------------------------------------
+        //Abre el formulario para seleccionar los asientos.
+        //---------------------------------------------------------------------
         private void BtnAsientos_Click(object sender, EventArgs e)
         {
             string Horario = CbxHorarios.Text;
@@ -157,33 +184,18 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             DlgSeleccionarAsientos seleccionarAsientos;
             seleccionarAsientos = new DlgSeleccionarAsientos(TotalAsientos, MiSala, Pelicula, Horario);
             seleccionarAsientos.Show();
-            
-            //MessageBox.Show("Asientos seleccionados del panel grande: "+AsientosSeleccionados.Count());
         }
-        public void ExtraerAsientosSeleccionados(List<int> Asientos)
-        {
-            AsientosSeleccionados = Asientos;
-            /*string mensaje = "";
-            for(int i = 0; i < AsientosSeleccionados.Count(); i++)
-            {
-                mensaje = mensaje + AsientosSeleccionados[i] + "\n";
-            }
-            MessageBox.Show(mensaje);*/
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string mensaje = "";
-            for(int i = 0; i < AsientosSeleccionados.Count(); i++)
-            {
-                mensaje = mensaje + AsientosSeleccionados[i] + "\n";
-            }
-            MessageBox.Show(mensaje);
-        }
+
+        //---------------------------------------------------------------------
+        //Evento que se inicia a cada ciclo del reloj (100ms).
+        //Mantiene actualizados los valores de asientos y estado de botones.
+        //---------------------------------------------------------------------
         private void timer1_Tick(object sender, EventArgs e)
         {
             indiceFuncion = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[indicePelicula].MiSala.ObtenerIndiceFuncion(CbxHorarios.Text,Pelicula.Titulo);
             AsientosSeleccionados = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[indicePelicula].MiSala.Funciones[indiceFuncion].AsientosSeleccionados;
             GetTotal();
+            //Cambia el color del Boton Asientos si hay mas de un boleto seleccionado.
             if (Total > 0)
             {
                 BtnAsientos.Enabled = true;
@@ -207,6 +219,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 Asientos = AsientosSeleccionados.Count();
             }
+
+            //Cambia el color del botón Comprar si se han seleccionado los asientos
             if (Asientos == (BoletosNiño + BoletosAdulto + Boletos3raEdad) && Asientos > 0)
             {
                 BtnComprar.Enabled = true;
@@ -221,6 +235,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             }
         }
 
+        //---------------------------------------------------------------------
+        //Visualiza el panel de seleccion de boletos al seleccionar horario.
+        //---------------------------------------------------------------------
         private void CbxHorarios_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CbxHorarios.SelectedIndex >= 0)
@@ -233,7 +250,5 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 PnlSeleccionBoletos.Visible = false;
             }
         }
-
-        
     }
 }

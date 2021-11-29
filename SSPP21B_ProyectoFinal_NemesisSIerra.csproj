@@ -95,12 +95,6 @@
     <Compile Include="PanelCanastaCompras.Designer.cs">
       <DependentUpon>PanelCanastaCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="PanelCompraRealizada.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PanelCompraRealizada.Designer.cs">
-      <DependentUpon>PanelCompraRealizada.cs</DependentUpon>
-    </Compile>
     <Compile Include="PanelPeliculaGrande.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,9 +135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PanelCanastaCompras.resx">
       <DependentUpon>PanelCanastaCompras.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PanelCompraRealizada.resx">
-      <DependentUpon>PanelCompraRealizada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelPelicula.resx">
       <DependentUpon>PanelPelicula.cs</DependentUpon>

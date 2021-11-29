@@ -1,20 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
+    //---------------------------------------------------------------------
+    //Control de usuario que crea el panel de la canasta de compras en el menu principal.
+    //NJSA. 20/11/2021.
+    //---------------------------------------------------------------------
     public partial class PanelCanastaCompras : UserControl
     {
+        //---------------------------------------------------------------------
+        //Atributos.
+        //---------------------------------------------------------------------
         private string ListaCompras;
         private double TotalCompras;
-        
+
+        //---------------------------------------------------------------------
+        //Constructor.
+        //---------------------------------------------------------------------
         public PanelCanastaCompras(string ListaCompras)
         {
             InitializeComponent();
@@ -23,12 +27,17 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             LblTotal.Text = "Total $ " + TotalCompras.ToString();
         }
 
+        //---------------------------------------------------------------------
+        //Evento que inicia al cargar el control de usuario.
+        //---------------------------------------------------------------------
         private void PanelCanastaCompras_Load(object sender, EventArgs e)
         {
             RtbListaCompras.Text = ListaCompras;
-
         }
 
+        //---------------------------------------------------------------------
+        //Visualiza la ventana de forma d epago.
+        //---------------------------------------------------------------------
         private void BtnPagar_Click(object sender, EventArgs e)
         {
             if(ListaCompras != "")
@@ -37,40 +46,47 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             }
         }
 
+        //---------------------------------------------------------------------
+        //Efectúa el pago en forma de efectivo y se guarda la transacción.
+        //---------------------------------------------------------------------
         private void BtnEfectivo_Click(object sender, EventArgs e)
         {
             DlgMenuPrincipal.MenuPrincipal.MiCaja.AgregarEfectivo(TotalCompras);
             EfectuarPago();
         }
+
+        //---------------------------------------------------------------------
+        //Efectúa el pago en forma de tarjeta y se guarda la transacción.
+        //---------------------------------------------------------------------
         private void BtnTarjeta_Click(object sender, EventArgs e)
         {
             DlgMenuPrincipal.MenuPrincipal.MiCaja.AgregarTransaccionTarjeta(TotalCompras);
             EfectuarPago();
         }
+
+        //---------------------------------------------------------------------
+        //Asegura los asientos seleccionados como ocupados, agrega el monto al monto total de
+        //compras, vacía la canasta de compras para la siguiente transacción.
+        //---------------------------------------------------------------------
         private void EfectuarPago()
         {
-            //CSala MiSala = new CSala();
             DlgMenuPrincipal.MenuPrincipal.MiCaja.AgregarAMontoTotal(TotalCompras);
-            MessageBox.Show("DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula.Count()="+ DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula.Count().ToString());
             for(int i = 0; i < DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula.Count(); i++)
             {
-                MessageBox.Show("La sala a ocupar asientos es "+ DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i].MiSala);
-                //DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i].MiSala.OcuparAsientos();
                 for (int j = 0; j < DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i].MiSala.Funciones.Count(); j++)
                 {
                     DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i].MiSala.Funciones[j].OcuparAsientos();
                     DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[DlgMenuPrincipal.MenuPrincipal.ListaPeliculas.IndexOf(DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i])].MiSala.Funciones[j].AsientosSeleccionados.Clear();
                 }
-                //DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[DlgMenuPrincipal.MenuPrincipal.ListaPeliculas.IndexOf(DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i])].MiSala.AsientosSeleccionados.Clear();
-                //DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados.Clear();
             }
             
             DlgMenuPrincipal.MenuPrincipal.Compras.VaciarCanasta();
-            
             CambiarVisibilidad();
-            //MessageBox.Show("Los Asientos Seleccionados son: " + mensaje);
-            //MessageBox.Show("El total de compras fue: " + MiCanasta.GetTotalCompras().ToString());
         }
+
+        //---------------------------------------------------------------------
+        //Cambia el panel dependiendo si ya pagó o no.
+        //---------------------------------------------------------------------
         private void CambiarVisibilidad()
         {
             if (LblTuCanasta.Visible)
@@ -93,9 +109,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 BtnPagar.Visible = true;
                 RtbListaCompras.Visible = true;
             }
-            
         }
 
+        //---------------------------------------------------------------------
+        //Actualiza el monto total de la etiqueta.
+        //---------------------------------------------------------------------
         private void LblTotal_TextChanged(object sender, EventArgs e)
         {
             if (TotalCompras > 0)
@@ -106,7 +124,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 BtnPagar.Visible = false;
             }
-            
         }
     }
 }

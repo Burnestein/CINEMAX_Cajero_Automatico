@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
@@ -21,9 +18,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public bool[] Asientos;
         public List<int> AsientosSeleccionados;
         public List<int> AsientosOcupados;
-        //public List<string> AsientosOcupados;
         public List<string> HorariosOcupados;
         public List<CFuncion> Funciones;
+
         //---------------------------------------------------------------------
         //Constructor.
         //---------------------------------------------------------------------
@@ -39,66 +36,34 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             AsientosSeleccionados = new List<int>();
             Funciones = new List<CFuncion>();
         }
-        public void OcuparAsientos()
-        {
-            //MessageBox.Show("El asiento seleccionado es: " + AsientosSeleccionados[0].ToString());
-            MessageBox.Show("Asientos Seleccionados Count: "+AsientosSeleccionados.Count().ToString());
-            //MessageBox.Show("...de la sala " );
-            for(int j = 0; j < Funciones.Count(); j++)
-            {
-                for (int i = 0; i < Funciones[j].AsientosSeleccionados.Count(); i++)
-                {
-                    MessageBox.Show("La funcion " + Funciones[j].Pelicula + " " + Funciones[j].Horario + " asiento " + Funciones[j].AsientosSeleccionados[i] + " tiene indice " + Funciones[j].AsientosSeleccionados[i]);
-                    Funciones[j].Asientos[Funciones[j].AsientosSeleccionados[i]] = true;
-                }
-            }
-            
-        }
-        public CSala ObtenerSala(int NumSala)
-        {
-            CSala MiSala = new CSala();
-            switch (NumSala)
-            {
-                case 1:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala1;
-                    break;
-                case 2:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala2;
-                    break;
-                case 3:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala3;
-                    break;
-                case 4:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala4;
-                    break;
-                case 5:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala5;
-                    break;
-                case 6:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala6;
-                    break;
-                default:
-                    break;
-            }
-            return MiSala;
-        }
+
+        //---------------------------------------------------------------------
+        //Agrega un horario a la lista de horarios ocupados de la sala.
+        //---------------------------------------------------------------------
         public void AgregarHorariosOcupados(string Horario)
         {
             if (HorariosOcupados.Contains(Horario))
             {
-                MessageBox.Show("Este horario esta ocupado: " + Horario);
+                //MessageBox.Show("Este horario esta ocupado: " + Horario);
             }
             else
             {
                 HorariosOcupados.Add(Horario);
             }
         }
+
+        //---------------------------------------------------------------------
+        //Agrega una nueva funcion a la sala de cine.
+        //---------------------------------------------------------------------
         public void AgregarFuncion(string Horario, CPelicula Pelicula)
         {
-            CFuncion MiFuncion = new CFuncion(Horario/*, Asientos*/, Pelicula);
+            CFuncion MiFuncion = new CFuncion(Horario, Pelicula);
             Funciones.Add(MiFuncion);
-            
         }
+
+        //---------------------------------------------------------------------
+        //Retorna el indice de la funcion de la sala que coincida en pelicula y horario indicado.
+        //---------------------------------------------------------------------
         public int ObtenerIndiceFuncion(string Horario, string Pelicula)
         {
             int value = 0;

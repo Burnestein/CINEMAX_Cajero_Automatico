@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
@@ -16,27 +15,16 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         //Atributos.
         //---------------------------------------------------------------------
-        public static DlgMenuPrincipal MenuPrincipal;
-        
+        public static DlgMenuPrincipal MenuPrincipal; //esta instancia estática es accesible para todas las demás.
         public List<CPelicula> ListaPeliculas;
         public List<CProducto> ListaProductos;
-        private int indice=0;
+        private int indice=0; //indice para el cambio de pestañas de la cartelera
         public CCanastaCompras Compras;
-        public List<string> AsientosNoDisponibles;
         private DataTable TablaCortes;
         public decimal ContadorCompras;
-        //public List<int> AsientosSeleccionados;
         public CCaja MiCaja;
         public List<CSala> ListaSalas;
-        //public List<int> AsientosSeleccionados;
         public CSala MiSala;
-        public CSala Sala1;
-        public CSala Sala2;
-        public CSala Sala3;
-        public CSala Sala4;
-        public CSala Sala5;
-        public CSala Sala6;
-
 
         //---------------------------------------------------------------------
         //Constructor.
@@ -53,7 +41,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             Label Date = new Label();
             Date = LblCurrentTime;
             Compras = new CCanastaCompras();
-            AsientosNoDisponibles = new List<string>();
             TablaCortes = new DataTable();
             TablaCortes.Columns.Add("Fecha Apertura");
             TablaCortes.Columns.Add("Fecha Corte");
@@ -62,30 +49,30 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             TablaCortes.Columns.Add("Total Tarjeta");
             TablaCortes.Columns.Add("Monto Total");
             MiCaja = new CCaja();
-            //MiSala = new CSala();
-            //Sala1 = new CSala();
-            //Sala2 = new CSala();
-            //Sala3 = new CSala();
-            //Sala4 = new CSala();
-            //Sala5 = new CSala();
-            //Sala6 = new CSala();
-            //AsientosSeleccionados = new List<int>();
             ListaSalas = new List<CSala>();
-            //AsientosSeleccionados = new List<int>();
         }
-        
+
+        //---------------------------------------------------------------------
+        //Carga la cartelera y regresa la pesataña al inicio.
+        //---------------------------------------------------------------------
         private void BtnCartelera_Click(object sender, EventArgs e)
         {
             indice = 0;
             CargarCartelera();
         }
 
+        //---------------------------------------------------------------------
+        //Carga la fuente de sodas y regresa la pestaña al inicio.
+        //---------------------------------------------------------------------
         private void BtnFuenteSodas_Click(object sender, EventArgs e)
         {
-            indice = 0;
+            indice = 0; //NOTA: Este indice cambia la pestaña  de la cartelera, hay que hacer otro para productos.
             CargarFuenteSodas();
         }
 
+        //---------------------------------------------------------------------
+        //Carga el panel Pelicula Grande.
+        //---------------------------------------------------------------------
         public void CargarPanelPelicula(CPelicula Pelicula)
         {
             PanelPeliculaGrande MiPanelGrande = new PanelPeliculaGrande(Pelicula);
@@ -94,6 +81,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             MiPanelGrande.Dock = DockStyle.Fill;
         }
 
+        //---------------------------------------------------------------------
+        //Dibuja una tabla para la fuente de sodas y agrega todas las instancias de los productos.
+        //---------------------------------------------------------------------
         public void CargarFuenteSodas()
         {
             TableLayoutPanel TablaFuenteSodas;
@@ -112,7 +102,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                     ocultos++;
                 }
             }
-            //MessageBox.Show("Hay " + ocultos + " en la lista de productos.");
             int Cantidad = ListaProductos.Count - indice - ocultos;
             if (Cantidad <= 3)
             {
@@ -145,10 +134,14 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 }
                 cols = Cantidad - 3;
             }
-            if (Cantidad > 6) PnlBtnDerecho.Visible = true;
+            if (Cantidad > 6) PnlBtnDerecho.Visible = true; // Este boton sigue siendo de la cartelera debe tener uno para productos
             else PnlBtnDerecho.Visible = false;
             if (indice == 0) PnlBtnIzquierdo.Visible = false;
         }
+
+        //---------------------------------------------------------------------
+        //Dibuja una tabla para la cartelera y agrega todas las instancias de las peliculas.
+        //---------------------------------------------------------------------
         public void CargarCartelera()
         {
 
@@ -189,10 +182,26 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             else PnlBtnDerecho.Visible = false;
             if (indice == 0) PnlBtnIzquierdo.Visible = false;
         }
+
+        //---------------------------------------------------------------------
+        //Simula un login de usuario.
+        //---------------------------------------------------------------------
         private void BtnConfiguracion_Click(object sender, EventArgs e)
         {
             PnlLogin.Visible = true;
         }
+
+        //---------------------------------------------------------------------
+        //Oculta el simulador de login.
+        //---------------------------------------------------------------------
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            PnlLogin.Visible = false;
+        }
+
+        //---------------------------------------------------------------------
+        //Maximiza la pantalla a modo terminal.
+        //---------------------------------------------------------------------
         private void VolverToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BtnConfiguracion.Enabled = true;
@@ -203,6 +212,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.WindowState = FormWindowState.Maximized;
         }
 
+        //---------------------------------------------------------------------
+        //Abre el formulario DlgConfigurarCartelera.
+        //---------------------------------------------------------------------
         private void carteleraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DlgConfigurarCartelera MenuCartelera;
@@ -211,6 +223,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             MenuCartelera.Show();
         }
 
+        //---------------------------------------------------------------------
+        //Dibuja una tabla.
+        //---------------------------------------------------------------------
         private TableLayoutPanel DibujarTabla(int Filas, int Columnas)
         {
             TableLayoutPanel MiTabla = new TableLayoutPanel();
@@ -229,22 +244,26 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             return MiTabla;
         }
 
+        //---------------------------------------------------------------------
+        //Evento que inicia al abrir el formulario.
+        //---------------------------------------------------------------------
         private void DlgMenuPrincipal_Load(object sender, EventArgs e)
         {
-            
-            
-            GenerarBoletos();
+            GenerarBoletos(); //Genera los productos de tipo boleto por defecto
             CargarCartelera();
             timer.Start();
         }
 
+        //---------------------------------------------------------------------
+        //Evento que se inicia a cada ciclo del reloj (1000ms).
+        //---------------------------------------------------------------------
         private void timer_Tick(object sender, EventArgs e)
         {
             LblCurrentTime.Text = "Fecha, "+DateTime.Now.ToString("dddd dd/MMMM/yyyy hh:mm tt");
             if (Compras.Count() > 0)
             {
                 LblContadorCompras.Visible = true;
-                LblContadorCompras.Text = Compras.Count().ToString();
+                LblContadorCompras.Text = Compras.Count().ToString(); //Actualiza el indicador en el boton Compras
             }
             else
             {
@@ -252,6 +271,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             }
         }
 
+        //---------------------------------------------------------------------
+        //Abre el formulario DlgCOnfigurarProductos.
+        //---------------------------------------------------------------------
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DlgConfigurarProductos ConfigProductos;
@@ -260,6 +282,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             ConfigProductos.Show();
         }
 
+        //---------------------------------------------------------------------
+        //Cambia la pestaña de la cartelera a las siguientes 6 peliculas.
+        //---------------------------------------------------------------------
         private void BtnDerecho_Click(object sender, EventArgs e)
         {
             if (indice < ListaPeliculas.Count)
@@ -268,39 +293,32 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 PnlBtnIzquierdo.Visible = true;
                 CargarCartelera();
             }
-            
         }
 
+        //---------------------------------------------------------------------
+        //Cambia la pestaña de la cartelera a las 6 peliculas anteriores.
+        //---------------------------------------------------------------------
         private void BtnIzquierdo_Click(object sender, EventArgs e)
         {
             indice -= 6;
             CargarCartelera();
         }
 
+        //---------------------------------------------------------------------
+        //Carga el Panel de compras realizadas.
+        //---------------------------------------------------------------------
         private void BtnCompras_Click(object sender, EventArgs e)
         {
-            /*MessageBox.Show("Tienes " + Compras.Count() + " compras, y son:");
-            string Mensaje = "";
-            List<string> MiLista = Compras.ConvertirAListaProductos();
-            for (int i = 0; i < Compras.Count(); i++)
-            {
-                Mensaje = Mensaje + MiLista[i] + "\n";
-            }
-            MessageBox.Show(Mensaje);*/
             string ListaCompras = Compras.ConvertirAListaString();
             PanelCanastaCompras MiPanel = new PanelCanastaCompras(ListaCompras);
             PnlCartelera.Controls.Clear();
             PnlCartelera.Controls.Add(MiPanel);
             MiPanel.Dock = DockStyle.Fill;
-            /*string mensaje = "";
-            for(int i = 0; i < MiSala.AsientosSeleccionados.Count(); i++)
-            {
-                mensaje = mensaje + MiSala.AsientosSeleccionados[i].ToString() + ", ";
-            }
-            
-            MessageBox.Show("Los asientos seleccionados son: " + mensaje);*/
         }
 
+        //---------------------------------------------------------------------
+        //Genera las instancias de los productos de tipo boleto, el producto principal.
+        //---------------------------------------------------------------------
         private void GenerarBoletos()
         {
             CProducto BoletoNiño = new CProducto(1, "Boleto Niño", 50 , 999, Properties.Resources.CinemaxWhite_Logo, true);
@@ -311,17 +329,27 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             ListaProductos.Add(Boleto3raEdad);
         }
 
+        //---------------------------------------------------------------------
+        //Abre el formulario DlgConfigurarCaja.
+        //---------------------------------------------------------------------
         private void realizarCorteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DlgConfigurarCaja configurarCaja;
             configurarCaja = new DlgConfigurarCaja(TablaCortes);
             configurarCaja.Show();
         }
+
+        //---------------------------------------------------------------------
+        //Actualiza la tabla de cortes realizados.
+        //---------------------------------------------------------------------
         public void ActualizarTablaCortes(DataTable Tabla)
         {
             TablaCortes = Tabla;
         }
 
+        //---------------------------------------------------------------------
+        //Cambia el estado de la ventana y muestra la barra de herramientas.
+        //---------------------------------------------------------------------
         private void BtnAcceder_Click(object sender, EventArgs e)
         {
             BtnConfiguracion.Enabled = false;
@@ -333,11 +361,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             Size = new Size(1200, 800);
             CenterToScreen();
             SspMenuPrincipal.Visible = true;
-        }
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            PnlLogin.Visible = false;
         }
     }
 }

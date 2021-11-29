@@ -55,7 +55,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         private void DlgConfigurarCaja_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+            timer1.Start(); //inicia contador
 
             ActualizarTabla();
         }
@@ -155,7 +155,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         }
 
         //---------------------------------------------------------------------
-        //Actualiza la tabla.
+        //Actualiza la tabla de cortes.
         //---------------------------------------------------------------------
         private void ActualizarTabla()
         {
@@ -172,7 +172,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             double TotalEfectivo = DlgMenuPrincipal.MenuPrincipal.MiCaja.GetTotalEfectivo();
             double TotalTarjeta = DlgMenuPrincipal.MenuPrincipal.MiCaja.GetTotalTarjeta();
 
-            if (CajaAbierta)
+            if (CajaAbierta) 
             {
                 indice = DgvCortesRecientes.FirstDisplayedScrollingRowIndex;
                 DgvCortesRecientes.Rows[indice].Cells[1].Value = LblFecha.Text;

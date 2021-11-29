@@ -30,13 +30,13 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private void InitializeComponent()
         {
             this.PnlSala = new System.Windows.Forms.Panel();
+            this.LbxHorariosPelicula = new System.Windows.Forms.ListBox();
             this.LblGenero = new System.Windows.Forms.Label();
             this.LblHorarios = new System.Windows.Forms.Label();
             this.LblDuracionPelicula = new System.Windows.Forms.Label();
             this.LblClasificacionPelicula = new System.Windows.Forms.Label();
             this.LblNombrePelicula = new System.Windows.Forms.Label();
             this.PbxPelicula = new System.Windows.Forms.PictureBox();
-            this.LbxHorariosPelicula = new System.Windows.Forms.ListBox();
             this.PnlSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPelicula)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,19 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlSala.Name = "PnlSala";
             this.PnlSala.Size = new System.Drawing.Size(400, 400);
             this.PnlSala.TabIndex = 1;
+            // 
+            // LbxHorariosPelicula
+            // 
+            this.LbxHorariosPelicula.BackColor = System.Drawing.SystemColors.Control;
+            this.LbxHorariosPelicula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LbxHorariosPelicula.FormattingEnabled = true;
+            this.LbxHorariosPelicula.ItemHeight = 16;
+            this.LbxHorariosPelicula.Location = new System.Drawing.Point(257, 142);
+            this.LbxHorariosPelicula.Name = "LbxHorariosPelicula";
+            this.LbxHorariosPelicula.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.LbxHorariosPelicula.Size = new System.Drawing.Size(140, 256);
+            this.LbxHorariosPelicula.Sorted = true;
+            this.LbxHorariosPelicula.TabIndex = 7;
             // 
             // LblGenero
             // 
@@ -94,10 +107,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             this.LblClasificacionPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblClasificacionPelicula.AutoSize = true;
-            this.LblClasificacionPelicula.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblClasificacionPelicula.Location = new System.Drawing.Point(252, 17);
+            this.LblClasificacionPelicula.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblClasificacionPelicula.Location = new System.Drawing.Point(252, 26);
             this.LblClasificacionPelicula.Name = "LblClasificacionPelicula";
-            this.LblClasificacionPelicula.Size = new System.Drawing.Size(112, 23);
+            this.LblClasificacionPelicula.Size = new System.Drawing.Size(98, 20);
             this.LblClasificacionPelicula.TabIndex = 2;
             this.LblClasificacionPelicula.Text = "Clasificación";
             // 
@@ -127,19 +140,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PbxPelicula.TabStop = false;
             this.PbxPelicula.Click += new System.EventHandler(this.PbxPelicula_Click);
             this.PbxPelicula.MouseEnter += new System.EventHandler(this.PbxPelicula_MouseEnter);
-            // 
-            // LbxHorariosPelicula
-            // 
-            this.LbxHorariosPelicula.BackColor = System.Drawing.SystemColors.Control;
-            this.LbxHorariosPelicula.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LbxHorariosPelicula.FormattingEnabled = true;
-            this.LbxHorariosPelicula.ItemHeight = 16;
-            this.LbxHorariosPelicula.Location = new System.Drawing.Point(257, 142);
-            this.LbxHorariosPelicula.Name = "LbxHorariosPelicula";
-            this.LbxHorariosPelicula.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.LbxHorariosPelicula.Size = new System.Drawing.Size(140, 256);
-            this.LbxHorariosPelicula.Sorted = true;
-            this.LbxHorariosPelicula.TabIndex = 7;
             // 
             // PanelPelicula
             // 

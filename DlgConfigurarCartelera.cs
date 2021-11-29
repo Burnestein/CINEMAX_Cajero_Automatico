@@ -17,12 +17,14 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private int indice=-1;
         public List<CPelicula> Peliculas = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas;
         private DataSet ds = new DataSet("tbl");
+        public CSala NuevaSala;
         
 
         public DlgConfigurarCartelera()
         {
             InitializeComponent();
             //ConfigurarCartelera = this;
+            NuevaSala = new CSala();
 
         }
         private void BtnLimpiarFormulario_Click(object sender, EventArgs e)
@@ -36,6 +38,27 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         private void BtnGuardarPelicula_Click(object sender, EventArgs e)
         {
+            bool SalaExiste = false;
+            if (DlgMenuPrincipal.MenuPrincipal.ListaSalas.Count() > 0)
+            {
+                for(int i=0;i< DlgMenuPrincipal.MenuPrincipal.ListaSalas.Count(); i++)
+                {
+                    if(DlgMenuPrincipal.MenuPrincipal.ListaSalas[i].NumSala==CbxSala.SelectedIndex + 1)
+                    {
+                        SalaExiste = true;
+                    }
+                }
+            }    
+            if (!SalaExiste)
+            {
+                CSala NuevaSala = new CSala();
+                NuevaSala.NumSala = CbxSala.SelectedIndex + 1;
+                DlgMenuPrincipal.MenuPrincipal.ListaSalas.Add(NuevaSala);
+            }
+            else
+            {
+                MessageBox.Show("La sala ya existe");
+            }
             List<string> HorarioPelicula = new List<string>();
             int ConteoHorarios = LbxHorariosPelicula.Items.Count;
             //MessageBox.Show("Numero de Horarios: " + ConteoHorarios.ToString());
@@ -54,7 +77,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 RtbSinopsisPelicula.Text,
                 //HorarioPelicula,
                 PbxImagenPelicula.Image,
-                CbxSala.SelectedIndex+1
+                //CbxSala.SelectedIndex+1
+                NuevaSala
                 );
 
             if (indice > -1)
@@ -66,21 +90,32 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 Peliculas.Add(Pelicula);
             }
+            //CSala MiSala = new CSala();
             //MessageBox.Show("Sala seleccionada: "+ CbxSala.SelectedItem.ToString());
-            for(int i = 0; i < HorarioPelicula.Count(); i++)
+            /*for(int i = 0; i < HorarioPelicula.Count(); i++)
             {
-                if (!ObtenerSala(int.Parse(CbxSala.SelectedItem.ToString())).HorariosOcupados.Contains(HorarioPelicula[i]))
+                
+                if (!MiSala.ObtenerSala(int.Parse(CbxSala.SelectedItem.ToString())).HorariosOcupados.Contains(HorarioPelicula[i]))
                 {
-                    ObtenerSala(int.Parse(CbxSala.SelectedItem.ToString())).HorariosOcupados.Add(HorarioPelicula[i]);
+                    MiSala.ObtenerSala(int.Parse(CbxSala.SelectedItem.ToString())).HorariosOcupados.Add(HorarioPelicula[i]);
                 }
                 else
                 {
                     MessageBox.Show("Horario repetido");
                 }
                 
-            }
+            }*/
             //Pelicula.Horarios.Clear();
+            for(int i = 0; i < HorarioPelicula.Count(); i++)
+            {
+                NuevaSala.AgregarHorariosOcupados(HorarioPelicula[i]);
+            }
             Pelicula.Horarios = HorarioPelicula;
+            for(int i = 0; i < Pelicula.Horarios.Count(); i++)
+            {
+                NuevaSala.AgregarFuncion(Pelicula.Horarios[i], Pelicula);
+            }
+            
             //ObtenerSala(int.Parse(CbxSala.SelectedItem.ToString())).HorariosOcupados.Add();
 
 
@@ -97,34 +132,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             
         }
 
-        private CSala ObtenerSala(int NumSala)
-        {
-            CSala MiSala = new CSala();
-            switch (NumSala)
-            {
-                case 1:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala1;
-                    break;
-                case 2:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala2;
-                    break;
-                case 3:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala3;
-                    break;
-                case 4:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala4;
-                    break;
-                case 5:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala5;
-                    break;
-                case 6:
-                    MiSala = DlgMenuPrincipal.MenuPrincipal.Sala6;
-                    break;
-                default:
-                    break;
-            }
-            return MiSala;
-        }
+        
 
         //---------------------------------------------------------------------
         //Borra la informacion escrita en el formulario.

@@ -48,18 +48,26 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             EfectuarPago();
         }
         private void EfectuarPago()
-        {   
-            
+        {
+            //CSala MiSala = new CSala();
             DlgMenuPrincipal.MenuPrincipal.MiCaja.AgregarAMontoTotal(TotalCompras);
-            DlgMenuPrincipal.MenuPrincipal.MiSala.OcuparAsientos();
-            DlgMenuPrincipal.MenuPrincipal.Compras.VaciarCanasta();
-            DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados.Clear();
-            CambiarVisibilidad();
-            string mensaje = "";
-            for(int i = 0; i<DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados.Count(); i++)
+            MessageBox.Show("DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula.Count()="+ DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula.Count().ToString());
+            for(int i = 0; i < DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula.Count(); i++)
             {
-                mensaje = mensaje + DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados[i]+", ";
+                MessageBox.Show("La sala a ocupar asientos es "+ DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i].MiSala);
+                //DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i].MiSala.OcuparAsientos();
+                for (int j = 0; j < DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i].MiSala.Funciones.Count(); j++)
+                {
+                    DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i].MiSala.Funciones[j].OcuparAsientos();
+                    DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[DlgMenuPrincipal.MenuPrincipal.ListaPeliculas.IndexOf(DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i])].MiSala.Funciones[j].AsientosSeleccionados.Clear();
+                }
+                //DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[DlgMenuPrincipal.MenuPrincipal.ListaPeliculas.IndexOf(DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula[i])].MiSala.AsientosSeleccionados.Clear();
+                //DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados.Clear();
             }
+            
+            DlgMenuPrincipal.MenuPrincipal.Compras.VaciarCanasta();
+            
+            CambiarVisibilidad();
             //MessageBox.Show("Los Asientos Seleccionados son: " + mensaje);
             //MessageBox.Show("El total de compras fue: " + MiCanasta.GetTotalCompras().ToString());
         }
@@ -84,6 +92,19 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 PnlFormaPago.Visible = true;
                 BtnPagar.Visible = true;
                 RtbListaCompras.Visible = true;
+            }
+            
+        }
+
+        private void LblTotal_TextChanged(object sender, EventArgs e)
+        {
+            if (TotalCompras > 0)
+            {
+                BtnPagar.Visible = true;
+            }
+            else
+            {
+                BtnPagar.Visible = false;
             }
             
         }

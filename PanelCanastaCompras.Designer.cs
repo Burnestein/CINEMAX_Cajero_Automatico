@@ -71,8 +71,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // BtnPagar
             // 
             this.BtnPagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnPagar.BackColor = System.Drawing.Color.DarkGray;
-            this.BtnPagar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.BtnPagar.BackColor = System.Drawing.Color.Khaki;
+            this.BtnPagar.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
             this.BtnPagar.FlatAppearance.BorderSize = 5;
             this.BtnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,6 +83,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnPagar.TabIndex = 18;
             this.BtnPagar.Text = "Pagar";
             this.BtnPagar.UseVisualStyleBackColor = false;
+            this.BtnPagar.Visible = false;
             this.BtnPagar.Click += new System.EventHandler(this.BtnPagar_Click);
             // 
             // PnlFormaPago
@@ -101,8 +102,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // BtnTarjeta
             // 
             this.BtnTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnTarjeta.BackColor = System.Drawing.Color.DarkGray;
-            this.BtnTarjeta.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.BtnTarjeta.BackColor = System.Drawing.Color.Khaki;
+            this.BtnTarjeta.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
             this.BtnTarjeta.FlatAppearance.BorderSize = 5;
             this.BtnTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,8 +119,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // BtnEfectivo
             // 
             this.BtnEfectivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnEfectivo.BackColor = System.Drawing.Color.DarkGray;
-            this.BtnEfectivo.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.BtnEfectivo.BackColor = System.Drawing.Color.Khaki;
+            this.BtnEfectivo.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
             this.BtnEfectivo.FlatAppearance.BorderSize = 5;
             this.BtnEfectivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,6 +180,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblTotal.Size = new System.Drawing.Size(163, 52);
             this.LblTotal.TabIndex = 23;
             this.LblTotal.Text = "Total $";
+            this.LblTotal.TextChanged += new System.EventHandler(this.LblTotal_TextChanged);
             // 
             // PanelCanastaCompras
             // 

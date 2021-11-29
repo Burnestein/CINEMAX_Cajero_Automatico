@@ -21,7 +21,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             InitializeComponent();
             this.NumAsiento = NumAsiento;
             this.Ocupado = Ocupado;
-            MiAsiento = new CAsiento(this.NumAsiento);
+            MiAsiento = new CAsiento(NumAsiento);
             if (Ocupado)
             {
                 PbxAsiento.Image = Properties.Resources.Cinema_red_chair;

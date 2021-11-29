@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
@@ -28,8 +25,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public List<string> AsientosNoDisponibles;
         private DataTable TablaCortes;
         public decimal ContadorCompras;
-        //public List<string> AsientosSeleccionados;
+        //public List<int> AsientosSeleccionados;
         public CCaja MiCaja;
+        public List<CSala> ListaSalas;
+        //public List<int> AsientosSeleccionados;
         public CSala MiSala;
         public CSala Sala1;
         public CSala Sala2;
@@ -63,13 +62,16 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             TablaCortes.Columns.Add("Total Tarjeta");
             TablaCortes.Columns.Add("Monto Total");
             MiCaja = new CCaja();
-            MiSala = new CSala();
-            Sala1 = new CSala();
-            Sala2 = new CSala();
-            Sala3 = new CSala();
-            Sala4 = new CSala();
-            Sala5 = new CSala();
-            Sala6 = new CSala();
+            //MiSala = new CSala();
+            //Sala1 = new CSala();
+            //Sala2 = new CSala();
+            //Sala3 = new CSala();
+            //Sala4 = new CSala();
+            //Sala5 = new CSala();
+            //Sala6 = new CSala();
+            //AsientosSeleccionados = new List<int>();
+            ListaSalas = new List<CSala>();
+            //AsientosSeleccionados = new List<int>();
         }
         
         private void BtnCartelera_Click(object sender, EventArgs e)
@@ -189,16 +191,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         }
         private void BtnConfiguracion_Click(object sender, EventArgs e)
         {
-            this.ControlBox = true;
-            this.Text = "CINEMAX || Punto de venta automático";
-            this.MstPrincipal.Visible = true;
-            this.WindowState = FormWindowState.Normal;
-            Size = new Size(1200, 800);
-            CenterToScreen();
-            SspMenuPrincipal.Visible = true;
+            PnlLogin.Visible = true;
         }
         private void VolverToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            BtnConfiguracion.Enabled = true;
             SspMenuPrincipal.Visible = false;
             this.ControlBox = false;
             this.Text = string.Empty;
@@ -243,7 +240,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            LblCurrentTime.Text = DateTime.Now.ToString("dddd dd/MMM/yyyy hh:mm tt");
+            LblCurrentTime.Text = "Fecha, "+DateTime.Now.ToString("dddd dd/MMMM/yyyy hh:mm tt");
             if (Compras.Count() > 0)
             {
                 LblContadorCompras.Visible = true;
@@ -323,6 +320,24 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public void ActualizarTablaCortes(DataTable Tabla)
         {
             TablaCortes = Tabla;
+        }
+
+        private void BtnAcceder_Click(object sender, EventArgs e)
+        {
+            BtnConfiguracion.Enabled = false;
+            PnlLogin.Visible = false;
+            this.ControlBox = true;
+            this.Text = "CINEMAX || Punto de venta automático";
+            this.MstPrincipal.Visible = true;
+            this.WindowState = FormWindowState.Normal;
+            Size = new Size(1200, 800);
+            CenterToScreen();
+            SspMenuPrincipal.Visible = true;
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            PnlLogin.Visible = false;
         }
     }
 }

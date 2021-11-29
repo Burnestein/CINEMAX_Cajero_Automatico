@@ -65,7 +65,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         private void timer1_Tick(object sender, EventArgs e)
         {
-            LblFecha.Text = DateTime.Now.ToString("dd/mm/yyyy hh:mm:ss tt");
+            LblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt");
             LblTotalMonedasCant.Text = TotalPesosMonedas().ToString();
             LblTotalBilletesCant.Text = TotalPesosBilletes().ToString();
             LblFondoTotalCant.Text = TotalFondoCaja().ToString();

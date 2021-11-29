@@ -48,8 +48,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnAgregarHorario = new System.Windows.Forms.Button();
             this.RtbSinopsisPelicula = new System.Windows.Forms.RichTextBox();
             this.LblSinopsisPelicula = new System.Windows.Forms.Label();
-            this.LblImportarXML = new System.Windows.Forms.Button();
-            this.LblExportarXML = new System.Windows.Forms.Button();
             this.DtpHorarioPelicula = new System.Windows.Forms.DateTimePicker();
             this.BtnRemoverPelicula = new System.Windows.Forms.Button();
             this.BtnCargarImagen = new System.Windows.Forms.Button();
@@ -242,25 +240,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblSinopsisPelicula.TabIndex = 22;
             this.LblSinopsisPelicula.Text = "Sinópsis";
             // 
-            // LblImportarXML
-            // 
-            this.LblImportarXML.Location = new System.Drawing.Point(712, 12);
-            this.LblImportarXML.Name = "LblImportarXML";
-            this.LblImportarXML.Size = new System.Drawing.Size(126, 27);
-            this.LblImportarXML.TabIndex = 23;
-            this.LblImportarXML.Text = "Importar XML";
-            this.LblImportarXML.UseVisualStyleBackColor = true;
-            // 
-            // LblExportarXML
-            // 
-            this.LblExportarXML.Location = new System.Drawing.Point(844, 12);
-            this.LblExportarXML.Name = "LblExportarXML";
-            this.LblExportarXML.Size = new System.Drawing.Size(126, 27);
-            this.LblExportarXML.TabIndex = 24;
-            this.LblExportarXML.Text = "Exportar XML";
-            this.LblExportarXML.UseVisualStyleBackColor = true;
-            this.LblExportarXML.Click += new System.EventHandler(this.LblExportarXML_Click);
-            // 
             // DtpHorarioPelicula
             // 
             this.DtpHorarioPelicula.CustomFormat = "hh:mm tt";
@@ -399,8 +378,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.Controls.Add(this.PbxImagenPelicula);
             this.Controls.Add(this.BtnRemoverPelicula);
             this.Controls.Add(this.DtpHorarioPelicula);
-            this.Controls.Add(this.LblExportarXML);
-            this.Controls.Add(this.LblImportarXML);
             this.Controls.Add(this.LblSinopsisPelicula);
             this.Controls.Add(this.RtbSinopsisPelicula);
             this.Controls.Add(this.BtnAgregarHorario);
@@ -450,8 +427,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private System.Windows.Forms.Button BtnAgregarHorario;
         private System.Windows.Forms.RichTextBox RtbSinopsisPelicula;
         private System.Windows.Forms.Label LblSinopsisPelicula;
-        private System.Windows.Forms.Button LblImportarXML;
-        private System.Windows.Forms.Button LblExportarXML;
         private System.Windows.Forms.DateTimePicker DtpHorarioPelicula;
         private System.Windows.Forms.Button BtnRemoverPelicula;
         private System.Windows.Forms.PictureBox PbxImagenPelicula;

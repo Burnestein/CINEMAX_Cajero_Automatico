@@ -9,8 +9,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
     public class CCanastaCompras
     {
-        private List<CProducto> Productos = new List<CProducto>();
-        private List<CPelicula> Pelicula = new List<CPelicula>(); 
+        public List<CProducto> Productos = new List<CProducto>();
+        public List<CPelicula> Pelicula = new List<CPelicula>(); 
 
         public CCanastaCompras()
         {
@@ -48,7 +48,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public int Count()
         {
             int Items=0;
-            Items += Productos.Count() + Pelicula.Count();
+            Items += Productos.Count() /*+ Pelicula.Count()*/;
             return Items;
         }
         public List<string> ConvertirAListaProductos()

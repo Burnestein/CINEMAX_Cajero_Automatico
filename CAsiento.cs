@@ -29,15 +29,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         public void GuardarAsiento()
         {
-            if (DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.Contains(NumAsiento))
-            {
-                MessageBox.Show("El Asiento ya está guardado.");
-            }
-            else
-            {
-                DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.Add(NumAsiento);
-                //DlgMenuPrincipal.MenuPrincipal.MiSala.Asientos[NumAsiento] = true;
-            }
+            
+            DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.Add(NumAsiento);
+            //DlgMenuPrincipal.MenuPrincipal.MiSala.Asientos[NumAsiento] = true;
+            
         }
 
         public void BorrarAsiento()

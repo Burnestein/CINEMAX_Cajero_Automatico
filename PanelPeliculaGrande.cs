@@ -16,8 +16,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private double PrecioNiño = DlgMenuPrincipal.MenuPrincipal.ListaProductos[0].Precio;
         private double PrecioAdulto = DlgMenuPrincipal.MenuPrincipal.ListaProductos[1].Precio;
         private double Precio3ra = DlgMenuPrincipal.MenuPrincipal.ListaProductos[2].Precio;
-        public List<int> AsientosSeleccionados = DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados;
+        public List<int> AsientosSeleccionados;
         int Asientos;
+        private CSala MiSala;
+        int indicePelicula;
+        int indiceFuncion;
         public PanelPeliculaGrande()
         {
             InitializeComponent();
@@ -25,6 +28,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             BoletosNiño = 0;
             BoletosAdulto = 0;
             Boletos3raEdad = 0;
+            AsientosSeleccionados = new List<int>();
         }
         public PanelPeliculaGrande(CPelicula Pelicula)
         {
@@ -47,7 +51,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             LblCantidadNiño.Text = "x" + BoletosNiño.ToString();
             LblCantidadAdulto.Text = "x" + BoletosAdulto.ToString();
             LblCantidad3raEdad.Text = "x" + Boletos3raEdad.ToString();
-            AsientosSeleccionados = new List<int>();
+            //AsientosSeleccionados = new List<int>();
+            MiSala = Pelicula.MiSala;
+            indiceFuncion = 0;
+            indicePelicula = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas.IndexOf(Pelicula);
+            AsientosSeleccionados = new List<int>();//DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[indicePelicula].MiSala.AsientosSeleccionados;
         }
 
         private void PanelPeliculaGrande_Load(object sender, EventArgs e)
@@ -78,7 +86,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 Boletos3r.Precio = Boletos3raEdad * Precio3ra;
                 DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(Boletos3r);
             }
-
+            //MiSala.AsientosSeleccionados = AsientosSeleccionados;
+            //MessageBox.Show("Asientos que fueron selecccionados: "+ MiSala.AsientosSeleccionados.Count());
+            DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(Pelicula);
+            //MessageBox.Show("Compras"+DlgMenuPrincipal.MenuPrincipal.Compras.Pelicula.Count().ToString());
             this.Parent.Controls.Remove(this);
             DlgMenuPrincipal.MenuPrincipal.CargarFuenteSodas();
         }
@@ -141,10 +152,13 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void BtnAsientos_Click(object sender, EventArgs e)
         {
+            string Horario = CbxHorarios.Text;
             int TotalAsientos = BoletosNiño + BoletosAdulto + Boletos3raEdad;
             DlgSeleccionarAsientos seleccionarAsientos;
-            seleccionarAsientos = new DlgSeleccionarAsientos(TotalAsientos);
+            seleccionarAsientos = new DlgSeleccionarAsientos(TotalAsientos, MiSala, Pelicula, Horario);
             seleccionarAsientos.Show();
+            
+            //MessageBox.Show("Asientos seleccionados del panel grande: "+AsientosSeleccionados.Count());
         }
         public void ExtraerAsientosSeleccionados(List<int> Asientos)
         {
@@ -167,7 +181,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            AsientosSeleccionados = DlgMenuPrincipal.MenuPrincipal.MiSala.AsientosSeleccionados;
+            indiceFuncion = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[indicePelicula].MiSala.ObtenerIndiceFuncion(CbxHorarios.Text,Pelicula.Titulo);
+            AsientosSeleccionados = DlgMenuPrincipal.MenuPrincipal.ListaPeliculas[indicePelicula].MiSala.Funciones[indiceFuncion].AsientosSeleccionados;
             GetTotal();
             if (Total > 0)
             {
@@ -208,9 +223,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
 
         private void CbxHorarios_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CbxHorarios.SelectedIndex > 0)
+            if (CbxHorarios.SelectedIndex >= 0)
             {
                 PnlSeleccionBoletos.Visible = true;
+                CbxHorarios.Enabled = false;
             }
             else
             {

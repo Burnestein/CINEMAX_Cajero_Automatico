@@ -21,7 +21,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public string Sinopsis { get; set; }
         public Image Portada { get; set; }
         private string HorarioSeleccionado;
-        public int Sala { get; set; }
+        public CSala MiSala;
 
         //---------------------------------------------------------------------
         //Constructor.
@@ -34,7 +34,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             string Sinopsis, 
             //List<string> Horarios, 
             Image Portada,
-            int Sala
+            CSala MiSala
             )
         {
             this.Titulo = Titulo;
@@ -44,7 +44,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.Sinopsis = Sinopsis;
             this.Horarios = Horarios;
             this.Portada = Portada;
-            this.Sala = Sala;
+            //this.Sala = Sala;
+            this.MiSala = MiSala;
         }
 
         //---------------------------------------------------------------------

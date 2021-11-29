@@ -19,12 +19,16 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public List<CPelicula> ListaPeliculas;
         public List<CProducto> ListaProductos;
         private int indice=0; //indice para el cambio de pestañas de la cartelera
+        private int indiceProd = 0; //indice para cambio en productos
         public CCanastaCompras Compras;
         private DataTable TablaCortes;
         public decimal ContadorCompras;
         public CCaja MiCaja;
         public List<CSala> ListaSalas;
         public CSala MiSala;
+        private bool Cartelera;
+        private bool Productos;
+        private int ocultos;
 
         //---------------------------------------------------------------------
         //Constructor.
@@ -50,6 +54,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             TablaCortes.Columns.Add("Monto Total");
             MiCaja = new CCaja();
             ListaSalas = new List<CSala>();
+            Cartelera = false;
+            Productos = false;
+            ocultos = 0;
         }
 
         //---------------------------------------------------------------------
@@ -58,6 +65,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private void BtnCartelera_Click(object sender, EventArgs e)
         {
             indice = 0;
+            indiceProd = 0;
             CargarCartelera();
         }
 
@@ -66,7 +74,16 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         private void BtnFuenteSodas_Click(object sender, EventArgs e)
         {
-            indice = 0; //NOTA: Este indice cambia la pestaña  de la cartelera, hay que hacer otro para productos.
+            indice = 0;
+            indiceProd = 0;
+            ocultos = 0;
+            /*for (int i = 0; i < ListaProductos.Count; i++)
+            {
+                if (ListaProductos[i].Oculto)
+                {
+                    ocultos++;
+                }
+            }*/
             CargarFuenteSodas();
         }
 
@@ -86,6 +103,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         public void CargarFuenteSodas()
         {
+            Cartelera = false;
+            Productos = true;
             TableLayoutPanel TablaFuenteSodas;
             TablaFuenteSodas = DibujarTabla(2, 3);
             PnlCartelera.Controls.Clear();
@@ -94,19 +113,27 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             int n = 0;
             int rows;
             int cols;
-            int ocultos=0;
-            for(int i = 0; i < ListaProductos.Count; i++)
+            if (indiceProd == 0)
             {
-                if (ListaProductos[i].Oculto)
+                for (int i = 0; i < ListaProductos.Count; i++)
                 {
-                    ocultos++;
+                    if (ListaProductos[i].Oculto)
+                    {
+                        ocultos++;
+                    }
                 }
             }
-            int Cantidad = ListaProductos.Count - indice - ocultos;
+            else
+            {
+                ocultos = 0;
+            }
+            
+            int Cantidad = ListaProductos.Count - indiceProd - ocultos;
             if (Cantidad <= 3)
             {
                 rows = 1;
                 cols = Cantidad;
+                ocultos = 0;
             }
             else
             {
@@ -118,11 +145,11 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 for (int col = 0; col < cols; col++)
                 {
 
-                    if (n < 6)
+                    if (n < 6 + ocultos)
                     {
-                        if (!(ListaProductos[n + indice].Oculto))
+                        if (!(ListaProductos[n + indiceProd].Oculto))
                         {
-                            PanelProducto MiPanelProducto = new PanelProducto(ListaProductos[n + indice]);
+                            PanelProducto MiPanelProducto = new PanelProducto(ListaProductos[n + indiceProd]);
                             TablaFuenteSodas.Controls.Add(MiPanelProducto, col, row);
                         }
                         else
@@ -136,7 +163,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             }
             if (Cantidad > 6) PnlBtnDerecho.Visible = true; // Este boton sigue siendo de la cartelera debe tener uno para productos
             else PnlBtnDerecho.Visible = false;
-            if (indice == 0) PnlBtnIzquierdo.Visible = false;
+            if (indiceProd <= 3) PnlBtnIzquierdo.Visible = false;
         }
 
         //---------------------------------------------------------------------
@@ -144,7 +171,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         public void CargarCartelera()
         {
-
+            Cartelera = true;
+            Productos = false;
             TableLayoutPanel TablaCartelera;
             TablaCartelera = DibujarTabla(2, 3);
             PnlCartelera.Controls.Clear();
@@ -287,11 +315,24 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         private void BtnDerecho_Click(object sender, EventArgs e)
         {
-            if (indice < ListaPeliculas.Count)
+            if (Cartelera)
             {
-                indice += 6;
-                PnlBtnIzquierdo.Visible = true;
-                CargarCartelera();
+                if (indice < ListaPeliculas.Count)
+                {
+                    indice += 6;
+                    PnlBtnIzquierdo.Visible = true;
+                    CargarCartelera();
+                }
+            }
+
+            if (Productos)
+            {
+                if (indiceProd < ListaProductos.Count - ocultos)
+                {
+                    indiceProd += 6 + ocultos;
+                    PnlBtnIzquierdo.Visible = true;
+                    CargarFuenteSodas();
+                }
             }
         }
 
@@ -300,8 +341,17 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         private void BtnIzquierdo_Click(object sender, EventArgs e)
         {
-            indice -= 6;
-            CargarCartelera();
+            if (Cartelera)
+            {
+                indice -= 6;
+                CargarCartelera();
+            }
+
+            if (Productos)
+            {
+                indiceProd -= 6 + ocultos;
+                CargarFuenteSodas();
+            }
         }
 
         //---------------------------------------------------------------------

@@ -62,7 +62,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public int Count()
         {
             int Items=0;
-            Items += Productos.Count() /*+ Pelicula.Count()*/;
+            Items += Productos.Count();
             return Items;
         }
 
@@ -72,10 +72,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public string ConvertirAListaString()
         {
             string Lista = "";
-            for (int i = 0; i < Pelicula.Count; i++)
+            /*for (int i = 0; i < Pelicula.Count; i++)
             {
                 Lista = Lista + Pelicula[i].Titulo + "\n";
-            }
+            }*/
             for (int i = 0; i < Productos.Count; i++)
             {
                 Lista = Lista + Productos[i].Producto + "\n";

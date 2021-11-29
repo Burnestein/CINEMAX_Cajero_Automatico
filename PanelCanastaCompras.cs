@@ -36,7 +36,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         }
 
         //---------------------------------------------------------------------
-        //Visualiza la ventana de forma d epago.
+        //Visualiza la ventana de forma de pago.
         //---------------------------------------------------------------------
         private void BtnPagar_Click(object sender, EventArgs e)
         {
@@ -98,6 +98,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 PnlFormaPago.Visible = false;
                 BtnPagar.Visible = false;
                 RtbListaCompras.Visible = false;
+                BtnBorrarCanasta.Visible = true;
             }
             else
             {
@@ -108,6 +109,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 PnlFormaPago.Visible = true;
                 BtnPagar.Visible = true;
                 RtbListaCompras.Visible = true;
+                BtnBorrarCanasta.Visible = false;
             }
         }
 
@@ -124,6 +126,13 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 BtnPagar.Visible = false;
             }
+        }
+
+        private void BtnBorrarCanasta_Click(object sender, EventArgs e)
+        {
+            DlgMenuPrincipal.MenuPrincipal.Compras.VaciarCanasta();
+            RtbListaCompras.Clear();
+            LblTotal.Text = "Total $0";
         }
     }
 }

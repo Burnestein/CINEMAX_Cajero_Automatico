@@ -74,24 +74,33 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         {
             if (BoletosNiño > 0)
             {
-                CProducto BoletosNi = new CProducto();
-                BoletosNi.Producto = Pelicula.Titulo + " " + CbxHorarios.Text + " Boleto Niño x" + BoletosNiño;
-                BoletosNi.Precio = BoletosNiño * PrecioNiño;
-                DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(BoletosNi);
+                for(int i = 0; i < BoletosNiño; i++)
+                {
+                    CProducto BoletosNi = new CProducto();
+                    BoletosNi.Producto = Pelicula.Titulo + " " + CbxHorarios.Text + " Boleto Niño ";
+                    BoletosNi.Precio = PrecioNiño;
+                    DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(BoletosNi);
+                }
             }
             if (BoletosAdulto > 0)
             {
-                CProducto BoletosAd = new CProducto();
-                BoletosAd.Producto = Pelicula.Titulo + " " + CbxHorarios.Text + " Boleto Adulto x" + BoletosAdulto;
-                BoletosAd.Precio = BoletosAdulto * PrecioAdulto;
-                DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(BoletosAd);
+                for(int i = 0; i < BoletosAdulto; i++)
+                {
+                    CProducto BoletosAd = new CProducto();
+                    BoletosAd.Producto = Pelicula.Titulo + " " + CbxHorarios.Text + " Boleto Adulto ";
+                    BoletosAd.Precio = PrecioAdulto;
+                    DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(BoletosAd);
+                }
             }
             if (Boletos3raEdad > 0)
             {
-                CProducto Boletos3r = new CProducto();
-                Boletos3r.Producto = Pelicula.Titulo + " " + CbxHorarios.Text + " Boleto 3ra Edad x" + Boletos3raEdad;
-                Boletos3r.Precio = Boletos3raEdad * Precio3ra;
-                DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(Boletos3r);
+                for(int i = 0; i < Boletos3raEdad; i++)
+                {
+                    CProducto Boletos3r = new CProducto();
+                    Boletos3r.Producto = Pelicula.Titulo + " " + CbxHorarios.Text + " Boleto 3ra Edad ";
+                    Boletos3r.Precio = Precio3ra;
+                    DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(Boletos3r);
+                }
             }
             DlgMenuPrincipal.MenuPrincipal.Compras.AddToCanasta(Pelicula);
             this.Parent.Controls.Remove(this); //Se cierra

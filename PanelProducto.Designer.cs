@@ -148,7 +148,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PbxProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PbxProducto.BackColor = System.Drawing.SystemColors.Control;
+            this.PbxProducto.BackColor = System.Drawing.Color.Transparent;
             this.PbxProducto.Cursor = System.Windows.Forms.Cursors.Default;
             this.PbxProducto.Image = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.Cinemax_Logo;
             this.PbxProducto.Location = new System.Drawing.Point(12, 66);

@@ -39,6 +39,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblGracias = new System.Windows.Forms.Label();
             this.LblDisfrute = new System.Windows.Forms.Label();
             this.LblTotal = new System.Windows.Forms.Label();
+            this.BtnBorrarCanasta = new System.Windows.Forms.Button();
             this.PnlFormaPago.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // RtbListaCompras
             // 
-            this.RtbListaCompras.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.RtbListaCompras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RtbListaCompras.BackColor = System.Drawing.Color.WhiteSmoke;
             this.RtbListaCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RtbListaCompras.Cursor = System.Windows.Forms.Cursors.Default;
@@ -182,11 +185,29 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblTotal.Text = "Total $";
             this.LblTotal.TextChanged += new System.EventHandler(this.LblTotal_TextChanged);
             // 
+            // BtnBorrarCanasta
+            // 
+            this.BtnBorrarCanasta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnBorrarCanasta.BackColor = System.Drawing.Color.Khaki;
+            this.BtnBorrarCanasta.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.BtnBorrarCanasta.FlatAppearance.BorderSize = 5;
+            this.BtnBorrarCanasta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBorrarCanasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBorrarCanasta.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.BtnBorrarCanasta.Location = new System.Drawing.Point(26, 714);
+            this.BtnBorrarCanasta.Name = "BtnBorrarCanasta";
+            this.BtnBorrarCanasta.Size = new System.Drawing.Size(218, 66);
+            this.BtnBorrarCanasta.TabIndex = 24;
+            this.BtnBorrarCanasta.Text = "Borrar Canasta";
+            this.BtnBorrarCanasta.UseVisualStyleBackColor = false;
+            this.BtnBorrarCanasta.Click += new System.EventHandler(this.BtnBorrarCanasta_Click);
+            // 
             // PanelCanastaCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.BtnBorrarCanasta);
             this.Controls.Add(this.LblGracias);
             this.Controls.Add(this.PnlFormaPago);
             this.Controls.Add(this.LblTotal);
@@ -216,5 +237,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private System.Windows.Forms.Label LblGracias;
         private System.Windows.Forms.Label LblDisfrute;
         private System.Windows.Forms.Label LblTotal;
+        private System.Windows.Forms.Button BtnBorrarCanasta;
     }
 }

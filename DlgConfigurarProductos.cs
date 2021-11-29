@@ -129,6 +129,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             NudStockProducto.Value = MiProducto.Stock;
             NudPrecioProducto.Value = (int)MiProducto.Precio;
             CbxOcultar.Checked = MiProducto.Oculto;
+            PbxImagenProducto.Image = MiProducto.Imagen;
         }
 
         //---------------------------------------------------------------------

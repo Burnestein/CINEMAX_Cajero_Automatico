@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
@@ -15,6 +10,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
     {
         //---------------------------------------------------------------------
         //Atributos.
+        //Nota: Algunos atributos son utilizados para llenar los datos de la tabla de Productos
+        //en DlgConfigurarProductos.
         //---------------------------------------------------------------------
         public int Codigo { get; set; }
         public string Producto { get; set; }
@@ -25,7 +22,15 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public Image Imagen;
 
         //---------------------------------------------------------------------
-        //Constructor.
+        //Constructor sin parámetros.
+        //---------------------------------------------------------------------
+        public CProducto()
+        {
+
+        }
+
+        //---------------------------------------------------------------------
+        //Constructor con parametros.
         //---------------------------------------------------------------------
         public CProducto(int Codigo, string Producto, double Precio, int Stock, Image Imagen, bool Oculto)
         {

@@ -11,6 +11,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
     {
         //---------------------------------------------------------------------
         //Atributos.
+        //Nota: Algunos atributos son utilizados para llenar los datos de la tabla de peliculas
+        //en DlgConfigurarCartelera. get {return Titulo;} y set{name = Titulo} es igual a
+        //Titulo { get; set; }
         //---------------------------------------------------------------------
         public string Titulo { get; set; }
         public string Duracion { get; set; }
@@ -19,75 +22,28 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         public List<string> Horarios { get; set; }
         public string Sinopsis { get; set; }
         public Image Portada { get; set; }
-        private string HorarioSeleccionado;
+        public CSala MiSala;
 
         //---------------------------------------------------------------------
         //Constructor.
         //---------------------------------------------------------------------
-        public CPelicula(string Titulo, string Duracion, string Genero, string Clasificacion, string Sinopsis, List<string> Horarios, Image Portada)
+        public CPelicula(
+            string Titulo,
+            string Duracion, 
+            string Genero, 
+            string Clasificacion, 
+            string Sinopsis, 
+            Image Portada,
+            CSala MiSala
+            )
         {
             this.Titulo = Titulo;
             this.Duracion = Duracion;
             this.Clasificacion = Clasificacion;
             this.Genero = Genero;
             this.Sinopsis = Sinopsis;
-            this.Horarios = Horarios;
             this.Portada = Portada;
-        }
-
-        //---------------------------------------------------------------------
-        //Retorna el objeto CPelicula en forma de lista.
-        //---------------------------------------------------------------------
-        public List<string> ToList()
-        {
-            List<string> lista = new List<string>();
-            lista.Add(Titulo);
-            lista.Add(Clasificacion);
-            lista.Add(Duracion);
-            lista.Add(Genero);
-            lista.Add(Sinopsis);
-            return lista;
-        }
-
-        //---------------------------------------------------------------------
-        //Obtiene el titulo de la Pelicula.
-        //---------------------------------------------------------------------
-        public string GetTitulo()
-        {
-            return Titulo;
-        }
-
-        //---------------------------------------------------------------------
-        //Obtiene el género de la pelicula.
-        //---------------------------------------------------------------------
-        public string GetGenero()
-        {
-            return Genero;
-        }
-
-        //---------------------------------------------------------------------
-        //Obtiene la clasificacion de la Pelicula.
-        //---------------------------------------------------------------------
-        public string GetClasificacion()
-        {
-            return Clasificacion;
-        }
-
-        //---------------------------------------------------------------------
-        //Obtiene la sinópsis de la pelicula.
-        //---------------------------------------------------------------------
-        public string GetSinopsis()
-        {
-            return Sinopsis;
-        }
-        public string CambiarHorarioSeleccionado(string NuevoHorario)
-        {
-            HorarioSeleccionado = NuevoHorario;
-            return HorarioSeleccionado;
-        }
-        public string GetHorarioSeleccionado()
-        {
-            return HorarioSeleccionado;
+            this.MiSala = MiSala;
         }
     }
 }

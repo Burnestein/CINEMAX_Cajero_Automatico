@@ -1,41 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
+    //---------------------------------------------------------------------
+    //Clase que representa una canasta de compras.
+    //NJSA. 20/11/2021.
+    //---------------------------------------------------------------------
     public class CCanastaCompras
     {
-        private List<CProducto> Productos = new List<CProducto>();
-        private List<CPelicula> Pelicula = new List<CPelicula>(); 
+        //---------------------------------------------------------------------
+        //Atributos.
+        //---------------------------------------------------------------------
+        public List<CProducto> Productos;
+        public List<CPelicula> Pelicula;
 
+        //---------------------------------------------------------------------
+        //Constructor.
+        //---------------------------------------------------------------------
         public CCanastaCompras()
         {
-
-        }
-        public CCanastaCompras(List<CProducto> Productos)
-        {
-            this.Productos = Productos;
-        }
-        public CCanastaCompras(List<CPelicula> Pelicula)
-        {
-            this.Pelicula = Pelicula;
+            Productos = new List<CProducto>();
+            Pelicula = new List<CPelicula>();
         }
 
+        //---------------------------------------------------------------------
+        //Agrega un producto a la lista de productos de la cansata y retorna la nueva lista.
+        //---------------------------------------------------------------------
         public List<CProducto> AddToCanasta(CProducto Producto)
         {
             Productos.Add(Producto);
             return Productos;
         }
+
+        //---------------------------------------------------------------------
+        //Agrega una pelicula a la lista de peliculas de la cansata y retorna la nueva lista.
+        //---------------------------------------------------------------------
         public List<CPelicula> AddToCanasta(CPelicula Pelicula)
         {
             this.Pelicula.Add(Pelicula);
             return this.Pelicula;
         }
-        public void GetTotalCompras()
+
+        //---------------------------------------------------------------------
+        //Retorna el total de los productos en la canasta.
+        //---------------------------------------------------------------------
+        public double GetTotalCompras()
         {
             double Total=0;
             int Cantidad = Productos.Count();
@@ -43,26 +53,43 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             {
                 Total += Productos[i].Precio;
             }
-            MessageBox.Show("El total es " + Total);
+            return Total;
         }
+
+        //---------------------------------------------------------------------
+        //Cuenta los productos de la canasta, retorna un entero.
+        //---------------------------------------------------------------------
         public int Count()
         {
             int Items=0;
-            Items += Productos.Count() + Pelicula.Count();
+            Items += Productos.Count();
             return Items;
         }
-        public List<string> ConvertirAListaProductos()
+
+        //---------------------------------------------------------------------
+        //Convierte la lista de productos a un string.
+        //---------------------------------------------------------------------
+        public string ConvertirAListaString()
         {
-            List<string> MiLista = new List<string>();
-            for(int i = 0; i < Pelicula.Count; i++)
+            string Lista = "";
+            /*for (int i = 0; i < Pelicula.Count; i++)
             {
-                MiLista.Add(Pelicula[i].Titulo);
-            }
-            for(int i = 0; i < Productos.Count; i++)
+                Lista = Lista + Pelicula[i].Titulo + "\n";
+            }*/
+            for (int i = 0; i < Productos.Count; i++)
             {
-                MiLista.Add(Productos[i].Producto);
+                Lista = Lista + Productos[i].Producto + "\n";
             }
-            return MiLista;
+            return Lista;
+        }
+
+        //---------------------------------------------------------------------
+        //Limpia todos los elementos de la canasta.
+        //---------------------------------------------------------------------
+        public void VaciarCanasta()
+        {
+            Pelicula.Clear();
+            Productos.Clear();
         }
     }
 }

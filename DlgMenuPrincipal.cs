@@ -364,6 +364,10 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             PnlCartelera.Controls.Clear();
             PnlCartelera.Controls.Add(MiPanel);
             MiPanel.Dock = DockStyle.Fill;
+            indice = 0;
+            indiceProd = 0;
+            PnlBtnIzquierdo.Visible = false;
+            PnlBtnDerecho.Visible = false;
         }
 
         //---------------------------------------------------------------------

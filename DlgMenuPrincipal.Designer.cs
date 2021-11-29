@@ -86,7 +86,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.VolverToolStripMenuItem});
             this.MstPrincipal.Location = new System.Drawing.Point(0, 0);
             this.MstPrincipal.Name = "MstPrincipal";
-            this.MstPrincipal.Size = new System.Drawing.Size(1583, 28);
+            this.MstPrincipal.Size = new System.Drawing.Size(1583, 30);
             this.MstPrincipal.TabIndex = 2;
             this.MstPrincipal.Text = "menuStrip1";
             // 
@@ -97,7 +97,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.productosToolStripMenuItem});
             this.editarToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // carteleraToolStripMenuItem
@@ -120,7 +120,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.realizarCorteToolStripMenuItem});
             this.ayudaToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(52, 26);
             this.ayudaToolStripMenuItem.Text = "Caja";
             // 
             // realizarCorteToolStripMenuItem
@@ -134,7 +134,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             this.VolverToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem";
-            this.VolverToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
+            this.VolverToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.VolverToolStripMenuItem.Text = "Volver a terminal";
             this.VolverToolStripMenuItem.Click += new System.EventHandler(this.VolverToolStripMenuItem_Click);
             // 
@@ -172,9 +172,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlBotones.Controls.Add(this.BtnCartelera);
             this.PnlBotones.Controls.Add(this.PnlLogo);
             this.PnlBotones.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PnlBotones.Location = new System.Drawing.Point(0, 28);
+            this.PnlBotones.Location = new System.Drawing.Point(0, 30);
             this.PnlBotones.Name = "PnlBotones";
-            this.PnlBotones.Size = new System.Drawing.Size(308, 942);
+            this.PnlBotones.Size = new System.Drawing.Size(308, 914);
             this.PnlBotones.TabIndex = 0;
             // 
             // LblContadorCompras
@@ -292,7 +292,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlSuperior.Controls.Add(this.BtnConfiguracion);
             this.PnlSuperior.Controls.Add(this.LblCaja);
             this.PnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlSuperior.Location = new System.Drawing.Point(308, 28);
+            this.PnlSuperior.Location = new System.Drawing.Point(308, 30);
             this.PnlSuperior.Name = "PnlSuperior";
             this.PnlSuperior.Size = new System.Drawing.Size(1275, 148);
             this.PnlSuperior.TabIndex = 1;
@@ -317,19 +317,19 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.PnlCartelera.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PnlCartelera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PnlCartelera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlCartelera.Location = new System.Drawing.Point(358, 176);
+            this.PnlCartelera.Location = new System.Drawing.Point(358, 178);
             this.PnlCartelera.Margin = new System.Windows.Forms.Padding(10);
             this.PnlCartelera.Name = "PnlCartelera";
-            this.PnlCartelera.Size = new System.Drawing.Size(1175, 794);
+            this.PnlCartelera.Size = new System.Drawing.Size(1175, 766);
             this.PnlCartelera.TabIndex = 7;
             // 
             // PnlBtnIzquierdo
             // 
             this.PnlBtnIzquierdo.Controls.Add(this.BtnIzquierdo);
             this.PnlBtnIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PnlBtnIzquierdo.Location = new System.Drawing.Point(308, 176);
+            this.PnlBtnIzquierdo.Location = new System.Drawing.Point(308, 178);
             this.PnlBtnIzquierdo.Name = "PnlBtnIzquierdo";
-            this.PnlBtnIzquierdo.Size = new System.Drawing.Size(50, 794);
+            this.PnlBtnIzquierdo.Size = new System.Drawing.Size(50, 766);
             this.PnlBtnIzquierdo.TabIndex = 8;
             this.PnlBtnIzquierdo.Visible = false;
             // 
@@ -342,7 +342,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnIzquierdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnIzquierdo.Location = new System.Drawing.Point(0, 0);
             this.BtnIzquierdo.Name = "BtnIzquierdo";
-            this.BtnIzquierdo.Size = new System.Drawing.Size(50, 794);
+            this.BtnIzquierdo.Size = new System.Drawing.Size(50, 766);
             this.BtnIzquierdo.TabIndex = 10;
             this.BtnIzquierdo.UseVisualStyleBackColor = true;
             this.BtnIzquierdo.Click += new System.EventHandler(this.BtnIzquierdo_Click);
@@ -351,9 +351,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             this.PnlBtnDerecho.Controls.Add(this.BtnDerecho);
             this.PnlBtnDerecho.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnlBtnDerecho.Location = new System.Drawing.Point(1533, 176);
+            this.PnlBtnDerecho.Location = new System.Drawing.Point(1533, 178);
             this.PnlBtnDerecho.Name = "PnlBtnDerecho";
-            this.PnlBtnDerecho.Size = new System.Drawing.Size(50, 794);
+            this.PnlBtnDerecho.Size = new System.Drawing.Size(50, 766);
             this.PnlBtnDerecho.TabIndex = 9;
             this.PnlBtnDerecho.Visible = false;
             // 
@@ -367,7 +367,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.BtnDerecho.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDerecho.Location = new System.Drawing.Point(0, 0);
             this.BtnDerecho.Name = "BtnDerecho";
-            this.BtnDerecho.Size = new System.Drawing.Size(50, 794);
+            this.BtnDerecho.Size = new System.Drawing.Size(50, 766);
             this.BtnDerecho.TabIndex = 11;
             this.BtnDerecho.UseVisualStyleBackColor = true;
             this.BtnDerecho.Click += new System.EventHandler(this.BtnDerecho_Click);
@@ -375,8 +375,9 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(43, 20);
-            this.toolStripStatusLabel1.Text = "NJSA";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(904, 20);
+            this.toolStripStatusLabel1.Text = "Proyecto FInal Seminario de Solución de Problemas de Programación || Nemesis Jess" +
+    "iel Sierra Aranda || Centro Universitario de la Costa";
             // 
             // SspMenuPrincipal
             // 

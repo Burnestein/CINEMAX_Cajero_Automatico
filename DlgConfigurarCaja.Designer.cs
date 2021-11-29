@@ -62,7 +62,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblTotalBilletesCant = new System.Windows.Forms.Label();
             this.LblTotalBilletes = new System.Windows.Forms.Label();
             this.LblCortesRecientes = new System.Windows.Forms.Label();
-            this.BtnImprimir = new System.Windows.Forms.Button();
             this.LblFecha = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.NudUnPeso)).BeginInit();
@@ -301,7 +300,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // BtnAperturaCaja
             // 
-            this.BtnAperturaCaja.Location = new System.Drawing.Point(363, 80);
+            this.BtnAperturaCaja.Location = new System.Drawing.Point(364, 108);
             this.BtnAperturaCaja.Name = "BtnAperturaCaja";
             this.BtnAperturaCaja.Size = new System.Drawing.Size(149, 59);
             this.BtnAperturaCaja.TabIndex = 24;
@@ -311,7 +310,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // BtnCorteCaja
             // 
-            this.BtnCorteCaja.Location = new System.Drawing.Point(363, 154);
+            this.BtnCorteCaja.Location = new System.Drawing.Point(364, 182);
             this.BtnCorteCaja.Name = "BtnCorteCaja";
             this.BtnCorteCaja.Size = new System.Drawing.Size(149, 59);
             this.BtnCorteCaja.TabIndex = 25;
@@ -382,15 +381,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.LblCortesRecientes.TabIndex = 32;
             this.LblCortesRecientes.Text = "Cortes Recientes";
             // 
-            // BtnImprimir
-            // 
-            this.BtnImprimir.Location = new System.Drawing.Point(363, 226);
-            this.BtnImprimir.Name = "BtnImprimir";
-            this.BtnImprimir.Size = new System.Drawing.Size(149, 43);
-            this.BtnImprimir.TabIndex = 33;
-            this.BtnImprimir.Text = "Imprimir";
-            this.BtnImprimir.UseVisualStyleBackColor = true;
-            // 
             // LblFecha
             // 
             this.LblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -414,7 +404,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(582, 553);
             this.Controls.Add(this.LblFecha);
-            this.Controls.Add(this.BtnImprimir);
             this.Controls.Add(this.LblCortesRecientes);
             this.Controls.Add(this.LblTotalBilletesCant);
             this.Controls.Add(this.LblTotalBilletes);
@@ -498,7 +487,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         private System.Windows.Forms.Label LblTotalBilletesCant;
         private System.Windows.Forms.Label LblTotalBilletes;
         private System.Windows.Forms.Label LblCortesRecientes;
-        private System.Windows.Forms.Button BtnImprimir;
         private System.Windows.Forms.Label LblFecha;
         private System.Windows.Forms.Timer timer1;
     }

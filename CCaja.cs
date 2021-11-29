@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SSPP21B_ProyectoFinal_NemesisSIerra
+﻿namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
     //---------------------------------------------------------------------
     //Clase que representa una caja de cobro.
@@ -16,17 +10,8 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //Atributos.
         //---------------------------------------------------------------------
         private double Fondo;
-        private double TotalCaja;
         private double TotalEfectivo;
         private double TotalTarjeta;
-        private int UnPeso;
-        private int DosPesos;
-        private int CincoPesos;
-        private int DiezPesos;
-        private int VeintePesos;
-        private int CincuentaPesos;
-        private int CienPesos;
-        private int DoscientosPesos;
         private double TotalTransacciones;
         public bool CajaAbierta;
 
@@ -35,92 +20,80 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //---------------------------------------------------------------------
         public CCaja()
         {
-            UnPeso = 0;
-            DosPesos = 0;
-            CincoPesos = 0;
-            DiezPesos = 0;
-            VeintePesos = 0;
-            CincuentaPesos = 0;
-            CienPesos = 0;
-            DoscientosPesos = 0;
+            Fondo = 0;
             TotalTransacciones = 0;
             TotalEfectivo = 0;
             TotalTarjeta = 0;
             CajaAbierta = false;
         }
-        
-        public double TotalUnPeso()
-        {
-            return UnPeso * 1;
-        }
-        public double TotalDosPesos()
-        {
-            return DosPesos * 2;
-        }
-        public double TotalCincoPesos()
-        {
-            return CincoPesos * 5;
-        }
-        public double TotalDiezPesos()
-        {
-            return DiezPesos * 10;
-        }
-        public double TotalVeintePesos()
-        {
-            return VeintePesos * 20;
-        }
-        public double TotalCincuentaPesos()
-        {
-            return CincuentaPesos * 50;
-        }
-        public double TotalCienPesos()
-        {
-            return CienPesos * 100;
-        }
-        public double TotalDoscientosPesos()
-        {
-            return DoscientosPesos * 200;
-        }
-        /*public double GetTotalCaja()
-        {
-            double Total;
-            Total = TotalUnPeso() + TotalDosPesos() + TotalCincoPesos() + TotalDiezPesos() + TotalVeintePesos() + TotalCincuentaPesos() + TotalCienPesos() + TotalDoscientosPesos();
-            Total += Fondo;
-            return Total;
-        }*/
+
+        //---------------------------------------------------------------------
+        //Suma el monto de la venta al total de las transacciones.
+        //---------------------------------------------------------------------
         public void AgregarAMontoTotal(double NuevaTransaccion)
         {
             TotalTransacciones += NuevaTransaccion;
         }
+
+        //---------------------------------------------------------------------
+        //Suma el monto de la venta en efictivo al total de las transacciones en efectivo.
+        //---------------------------------------------------------------------
         public void AgregarEfectivo(double Efectivo)
         {
             TotalEfectivo += Efectivo;
         }
+
+        //---------------------------------------------------------------------
+        //Suma el monto de la venta con tarjeta al total de las transacciones con tarjeta.
+        //---------------------------------------------------------------------
         public void AgregarTransaccionTarjeta(double Pago)
         {
             TotalTarjeta += Pago;
         }
+
+        //---------------------------------------------------------------------
+        //Asigna un nuevo valor al fondo de caja.
+        //---------------------------------------------------------------------
         public void NuevoFondo(double Fondo)
         {
             this.Fondo = Fondo;
         }
 
+        //---------------------------------------------------------------------
+        //Retorna el fondo de caja.
+        //---------------------------------------------------------------------
         public double GetFondo()
         {
             return Fondo;
         }
+
+        //---------------------------------------------------------------------
+        //Retorna el monto total de transacciones.
+        //---------------------------------------------------------------------
         public double GetTotalTransacciones()
         {
             return TotalTransacciones;
         }
+
+        //---------------------------------------------------------------------
+        //Retorna el monto total en transacciones con efectivo.
+        //---------------------------------------------------------------------
         public double GetTotalEfectivo()
         {
             return TotalEfectivo;
         }
+
+        //---------------------------------------------------------------------
+        //Retorna el monto total en transacciones con tarjeta.
+        //---------------------------------------------------------------------
         public double GetTotalTarjeta()
         {
             return TotalTarjeta;
         }
+
+        //---------------------------------------------------------------------
+        //Reinicia todos los valores de la caja a cero.
+        //---------------------------------------------------------------------
         public void VaciarCaja()
         {
             Fondo = 0;

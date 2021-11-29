@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace SSPP21B_ProyectoFinal_NemesisSIerra
+﻿namespace SSPP21B_ProyectoFinal_NemesisSIerra
 {
     //---------------------------------------------------------------------
     //Clase que representa un asiento de cine.
@@ -17,7 +10,6 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         //Atributos.
         //---------------------------------------------------------------------
         private int NumAsiento;
-        public bool Ocupado = false;
 
         //---------------------------------------------------------------------
         //Constructor.
@@ -27,14 +19,17 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             this.NumAsiento = NumAsiento;
         }
 
+        //---------------------------------------------------------------------
+        //Agrega el asiento en la lista de asientos seleccionados de DlgSeleccionarAsientos.
+        //---------------------------------------------------------------------
         public void GuardarAsiento()
         {
-            
             DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.Add(NumAsiento);
-            //DlgMenuPrincipal.MenuPrincipal.MiSala.Asientos[NumAsiento] = true;
-            
         }
 
+        //---------------------------------------------------------------------
+        //Remueve el asiento en la lista de asientos seleccionados de DlgSeleccionarAsientos.
+        //---------------------------------------------------------------------
         public void BorrarAsiento()
         {
             if (DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.Contains(NumAsiento))
@@ -42,24 +37,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
                 int indice;
                 indice = DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.IndexOf(NumAsiento);
                 DlgSeleccionarAsientos.SeleccionarAsientos.AsientosSeleccionados.RemoveAt(indice);
-                //DlgMenuPrincipal.MenuPrincipal.MiSala.Asientos[NumAsiento] = false;
-            }
-            else
-            {
-                MessageBox.Show("El asiento no existe.");
             }
         }
-        /* public void OcuparAsientos(List<int> AsientosSeleccionados)
-        {
-            for(int i = 0; i < AsientosSeleccionados.Count(); i++)
-            {
-                DlgMenuPrincipal.MenuPrincipal.MiSala.Asientos[AsientosSeleccionados[i]] = true;
-            }
-        }*/
-        public int GetNumAsiento()
-        {
-            return NumAsiento;
-        }
-
     }
 }

@@ -67,7 +67,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblGenero
             // 
-            this.LblGenero.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblGenero.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblGenero.AutoSize = true;
             this.LblGenero.BackColor = System.Drawing.Color.LightSkyBlue;
             this.LblGenero.Font = new System.Drawing.Font("Microsoft YaHei Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -79,7 +79,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblDuracionPelicula
             // 
-            this.LblDuracionPelicula.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblDuracionPelicula.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblDuracionPelicula.AutoSize = true;
             this.LblDuracionPelicula.BackColor = System.Drawing.Color.Transparent;
             this.LblDuracionPelicula.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,7 +91,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblClasificacionPelicula
             // 
-            this.LblClasificacionPelicula.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblClasificacionPelicula.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblClasificacionPelicula.AutoSize = true;
             this.LblClasificacionPelicula.BackColor = System.Drawing.Color.Transparent;
             this.LblClasificacionPelicula.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,7 +103,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblNombrePelicula
             // 
-            this.LblNombrePelicula.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblNombrePelicula.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblNombrePelicula.AutoEllipsis = true;
             this.LblNombrePelicula.AutoSize = true;
             this.LblNombrePelicula.BackColor = System.Drawing.Color.Transparent;
@@ -117,7 +117,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblSinopsis
             // 
-            this.LblSinopsis.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblSinopsis.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblSinopsis.AutoEllipsis = true;
             this.LblSinopsis.AutoSize = true;
             this.LblSinopsis.BackColor = System.Drawing.Color.Transparent;
@@ -131,7 +131,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblContSinopsis
             // 
-            this.LblContSinopsis.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblContSinopsis.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblContSinopsis.BackColor = System.Drawing.Color.Transparent;
             this.LblContSinopsis.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblContSinopsis.Location = new System.Drawing.Point(576, 181);
@@ -142,7 +142,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblSelecHorario
             // 
-            this.LblSelecHorario.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblSelecHorario.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblSelecHorario.AutoEllipsis = true;
             this.LblSelecHorario.AutoSize = true;
             this.LblSelecHorario.BackColor = System.Drawing.Color.Transparent;
@@ -156,7 +156,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // CbxHorarios
             // 
-            this.CbxHorarios.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.CbxHorarios.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.CbxHorarios.BackColor = System.Drawing.Color.White;
             this.CbxHorarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxHorarios.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,7 +169,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // BtnComprar
             // 
-            this.BtnComprar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BtnComprar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.BtnComprar.BackColor = System.Drawing.Color.DarkGray;
             this.BtnComprar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.BtnComprar.FlatAppearance.BorderSize = 5;
@@ -186,7 +186,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // PnlSeleccionBoletos
             // 
-            this.PnlSeleccionBoletos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.PnlSeleccionBoletos.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.PnlSeleccionBoletos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
             this.PnlSeleccionBoletos.Controls.Add(this.LblPrecio3raEdad);
             this.PnlSeleccionBoletos.Controls.Add(this.LblPrecioAdulto);
@@ -418,7 +418,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblTotal
             // 
-            this.LblTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblTotal.AutoEllipsis = true;
             this.LblTotal.AutoSize = true;
             this.LblTotal.BackColor = System.Drawing.Color.Transparent;
@@ -432,7 +432,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // LblTotalPesos
             // 
-            this.LblTotalPesos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblTotalPesos.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblTotalPesos.AutoEllipsis = true;
             this.LblTotalPesos.AutoSize = true;
             this.LblTotalPesos.BackColor = System.Drawing.Color.Transparent;
@@ -446,7 +446,7 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // BtnAsientos
             // 
-            this.BtnAsientos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BtnAsientos.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.BtnAsientos.BackColor = System.Drawing.Color.DarkGray;
             this.BtnAsientos.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.BtnAsientos.FlatAppearance.BorderSize = 5;
@@ -463,13 +463,15 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
             // 
             // PbxPortadaGrande
             // 
+            this.PbxPortadaGrande.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PbxPortadaGrande.BackColor = System.Drawing.Color.Transparent;
-            this.PbxPortadaGrande.Dock = System.Windows.Forms.DockStyle.Left;
             this.PbxPortadaGrande.ErrorImage = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.Cinemax_Logo;
             this.PbxPortadaGrande.Image = global::SSPP21B_ProyectoFinal_NemesisSIerra.Properties.Resources.Cinemax_Logo;
-            this.PbxPortadaGrande.Location = new System.Drawing.Point(0, 0);
+            this.PbxPortadaGrande.Location = new System.Drawing.Point(3, 3);
             this.PbxPortadaGrande.Name = "PbxPortadaGrande";
-            this.PbxPortadaGrande.Size = new System.Drawing.Size(560, 800);
+            this.PbxPortadaGrande.Size = new System.Drawing.Size(571, 794);
             this.PbxPortadaGrande.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbxPortadaGrande.TabIndex = 0;
             this.PbxPortadaGrande.TabStop = false;

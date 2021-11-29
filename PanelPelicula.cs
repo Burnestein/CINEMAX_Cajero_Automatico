@@ -46,15 +46,5 @@ namespace SSPP21B_ProyectoFinal_NemesisSIerra
         {
             DlgMenuPrincipal.MenuPrincipal.CargarPanelPelicula(Pelicula);
         }
-
-        private void PbxPelicula_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblNombrePelicula_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
